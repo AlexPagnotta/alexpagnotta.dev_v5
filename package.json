@@ -1,0 +1,45 @@
+{
+  "name": "alexpagnotta.dev",
+  "version": "0.1.0",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=20.9.0",
+    "npm": ">=10.1.0"
+  },
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "preview": "next build && next start",
+    "lint": "npm run lint.eslint && npm run lint.types",
+    "lint.eslint": "eslint --color --cache --cache-location 'node_modules/.cache/eslint' app --ext .js,.jsx,.ts,.tsx",
+    "lint.eslint.git": "eslint --color --cache --cache-location 'node_modules/.cache/eslint'",
+    "lint.types": "tsc --noEmit",
+    "lint.staged": "lint-staged",
+    "format": "prettier --write 'app/**/*.{json,md,mdx,css,js,jsx,ts,tsx}' && npm run lint -- --fix",
+    "format.git": "prettier --write",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "next": "15.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@next/eslint-plugin-next": "^15.1.6",
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.20",
+    "eslint-config-react-alexpagnotta": "^1.1.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.2",
+    "postcss": "^8",
+    "prettier-config-alexpagnotta": "^1.1.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5"
+  }
+}

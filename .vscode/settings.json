@@ -1,0 +1,13 @@
+{
+  "tailwindCSS.rootFontSize": 10,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(((?:[^()]|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cn\\(((?:[^()]|\\([^()]*\\))*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ],
+  "tailwindCSS.classAttributes": ["class", "className", ".*Styles"], // Matches style in class and className attributes, and variables that end in "Styles"
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
+}
