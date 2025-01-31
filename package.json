@@ -34,11 +34,14 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.20",
+    "class-variance-authority": "^0.7.1",
+    "cva": "^1.0.0-beta.3",
     "eslint-config-react-alexpagnotta": "^1.1.1",
     "husky": "^9.1.7",
     "lint-staged": "^15.4.2",
     "postcss": "^8",
     "prettier-config-alexpagnotta": "^1.1.0",
+    "tailwind-merge": "^3.0.1",
     "tailwindcss": "^4.0.0",
     "typescript": "^5"
   }

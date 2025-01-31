@@ -1,19 +1,251 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme inline {
+  /* Colors */
+
+  --color-*: initial;
+
+  --color-white: var(--base-color-white);
+  --color-black: var(--base-color-black);
+
+  --color-grey-100: var(--base-color-grey-100);
+  --color-grey-500: var(--base-color-grey-500);
+  --color-grey-700: var(--base-color-grey-700);
+
+  --color-light-blue-100: var(--base-color-light-blue-100);
+  --color-light-blue-500: var(--base-color-light-blue-500);
+  --color-light-blue-700: var(--base-color-light-blue-700);
+
+  --color-blue-100: var(--base-color-blue-100);
+  --color-blue-500: var(--base-color-blue-500);
+  --color-blue-700: var(--base-color-blue-700);
+
+  --color-green-100: var(--base-color-green-100);
+  --color-green-500: var(--base-color-green-500);
+  --color-green-700: var(--base-color-green-700);
+
+  --color-yellow-100: var(--base-color-yellow-100);
+  --color-yellow-500: var(--base-color-yellow-500);
+  --color-yellow-700: var(--base-color-yellow-700);
+
+  --color-red-100: var(--base-color-red-100);
+  --color-red-500: var(--base-color-red-500);
+  --color-red-700: var(--base-color-red-700);
+
+  --color-purple-100: var(--base-color-purple-100);
+  --color-purple-500: var(--base-color-purple-500);
+  --color-purple-700: var(--base-color-purple-700);
+
+  --color-pink-100: var(--base-color-pink-100);
+  --color-pink-500: var(--base-color-pink-500);
+  --color-pink-700: var(--base-color-pink-700);
+
+  --color-theme-background: var(--base-color-theme-background);
+  --color-theme-foreground: var(--base-color-theme-foreground);
+  --color-theme-focus-outline: var(--base-color-theme-focus-outline);
+
+  /* Spacing */
+
+  --spacing-*: initial;
+
+  --spacing-4: 0.4rem;
+  --spacing-8: 0.8rem;
+  --spacing-12: 1.2rem;
+  --spacing-16: 1.6rem;
+  --spacing-20: 2rem;
+  --spacing-24: 2.4rem;
+  --spacing-32: 3.2rem;
+  --spacing-48: 4.8rem;
+  --spacing-64: 6.4rem;
+  --spacing-96: 9.6rem;
+  --spacing-128: 12.8rem;
+  --spacing-192: 19.2rem;
+  --spacing-256: 25.6rem;
+  --spacing-384: 38.4rem;
+
+  --spacing-4-px: 4px;
+  --spacing-8-px: 8px;
+  --spacing-12-px: 12px;
+  --spacing-16-px: 16px;
+  --spacing-20-px: 20px;
+  --spacing-24-px: 24px;
+  --spacing-32-px: 32px;
+  --spacing-48-px: 48px;
+  --spacing-64-px: 64px;
+  --spacing-96-px: 96px;
+  --spacing-128-px: 128px;
+  --spacing-192-px: 192px;
+  --spacing-256-px: 256px;
+  --spacing-384-px: 384px;
+
+  /* Typography */
+
+  --font-*: initial;
+  --font-title: "Fredoka", sans-serif;
+  --font-body: "Nunito Sans", sans-serif;
+
+  --font-weight-*: initial;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-semi-bold: 500;
+  --font-weight-bold: 700;
+
+  --text-*: initial;
+
+  --text-title-1-desktop: 3.2rem;
+  --text-title-1-desktop--line-height: 1.4;
+  --text-title-1: 3.2rem;
+  --text-title-1--line-height: 1.4;
+
+  --text-title-2-desktop: 2.6rem;
+  --text-title-2-desktop--line-height: 1.4;
+  --text-title-2-desktop--font-w: 0.01em;
+  --text-title-2: 2.6rem;
+  --text-title-2--line-height: 1.4;
+
+  --text-body-3-desktop: 1.8rem;
+  --text-body-3-desktop--line-height: 1.6;
+  --text-body-3: 1.8rem;
+  --text-body-3--line-height: 1.6;
+
+  --text-body-2-desktop: 1.6rem;
+  --text-body-2-desktop--line-height: 1.8;
+  --text-body-2: 1.6rem;
+  --text-body-2--line-height: 1.8;
+
+  --text-body-1-desktop: 1.4rem;
+  --text-body-1-desktop--line-height: 1.8;
+  --text-body-1: 1.4rem;
+  --text-body-1--line-height: 1.8;
+
+  --leading-*: initial;
+  --leading-none: 1;
+  --leading-sm: 1.4;
+  --leading-md: 1.6;
+  --leading-lg: 1.8;
+
+  /* Others */
+
+  --rounded-*: initial;
+  --rounded-none: 0rem;
+  --rounded-md: 1.2rem;
+  --rounded-lg: 2.8rem;
+  --rounded-full: 9999px;
+
+  --shadow-*: initial;
+  /* TODO: Change with real shadow, possibly a composite one */
+  --shadow-md: 0px 0px 1.6rem rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-color-scheme: dark) {
+/* Typography */
+
+@utility title-1 {
+  @apply text-title-1 lg:text-title-1-desktop font-title font-regular;
+}
+
+@utility title-1-light {
+  @apply text-title-1 lg:text-title-1-desktop font-title font-light;
+}
+
+@utility title-2 {
+  @apply text-title-2 lg:text-title-2-desktop font-title font-regular;
+}
+
+@utility title-2-light {
+  @apply text-title-2 lg:text-title-2-desktop font-title font-light;
+}
+
+@utility body-3 {
+  @apply text-body-3 lg:text-body-3-desktop font-body font-regular;
+}
+
+@utility body-2 {
+  @apply text-body-2 lg:text-body-2-desktop font-body font-regular;
+}
+
+@utility body-2-semi-bold {
+  @apply text-body-2 lg:text-body-2-desktop font-body font-semi-bold;
+}
+
+@utility body-1 {
+  @apply text-body-1 lg:text-body-1-desktop font-body font-regular;
+}
+
+/** Base Styles */
+
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+    --base-color-white: #ffffff;
+    --base-color-black: #333333;
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    --base-color-grey-100: hsl(0, 0%, 97%);
+    --base-color-grey-500: hsl(0, 0%, 55%);
+    --base-color-grey-700: hsl(0, 0%, 35%);
+
+    --base-color-light-blue-100: hsl(197, 100%, 94%);
+    --base-color-light-blue-500: hsl(197, 100%, 55%);
+    --base-color-light-blue-700: hsl(197, 100%, 30%);
+
+    --base-color-blue-100: hsl(220, 100%, 94%);
+    --base-color-blue-500: hsl(220, 100%, 55%);
+    --base-color-blue-700: hsl(220, 100%, 30%);
+
+    --base-color-green-100: hsl(152, 100%, 94%);
+    --base-color-green-500: hsl(152, 100%, 55%);
+    --base-color-green-700: hsl(152, 100%, 30%);
+
+    --base-color-yellow-100: hsl(50, 100%, 94%);
+    --base-color-yellow-500: hsl(50, 100%, 55%);
+    --base-color-yellow-700: hsl(50, 100%, 30%);
+
+    --base-color-red-100: hsl(0, 100%, 94%);
+    --base-color-red-500: hsl(0, 100%, 55%);
+    --base-color-red-700: hsl(0, 100%, 30%);
+
+    --base-color-purple-100: hsl(264, 100%, 94%);
+    --base-color-purple-500: hsl(264, 100%, 55%);
+    --base-color-purple-700: hsl(264, 100%, 30%);
+
+    --base-color-pink-100: hsl(324, 100%, 94%);
+    --base-color-pink-500: hsl(324, 100%, 55%);
+    --base-color-pink-700: hsl(324, 100%, 30%);
+
+    /* Set the base font size to 10px, useful for rem calculations */
+    font-size: calc((10 / 16) * 100%);
+  }
+
+  :root.theme-light {
+    --base-color-theme-background: var(--base-color-white);
+    --base-color-theme-foreground: var(--base-color-black);
+
+    --base-color-theme-focus-outline: var(--base-color-black);
+  }
+
+  :root.theme-dark {
+    --base-color-theme-background: var(--base-color-black);
+    --base-color-theme-foreground: var(--base-color-white);
+
+    --base-color-theme-focus-outline: var(--base-color-white);
+  }
+
+  /* Global Styles */
+  html {
+    @apply bg-theme-background text-theme-foreground leading-none cursor-default h-full;
+  }
+
+  body {
+    @apply font-body antialiased body-3 overflow-x-hidden min-w-[320px] h-full;
+  }
+
+  /* Focus Outline */
+
+  /* Disable focus outline when focus comes from mouse/touch interactions */
+  :focus:not(:focus-visible) {
+    @apply outline-none;
+  }
+
+  /* Custom style for keyboard interaction focus */
+  :focus-visible {
+    @apply outline-hidden ring-4 ring-theme-focus-outline; /* TODO: Temp, replace with better style */
+  }
 }

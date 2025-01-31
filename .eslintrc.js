@@ -1,3 +1,6 @@
+// TODO: Add Tailwind eslint plugin when support for Tailwind v4 is released
+// see: https://github.com/francoismassart/eslint-plugin-tailwindcss/issues/384
+
 module.exports = {
   root: true,
   extends: ["plugin:@next/next/recommended", "eslint-config-react-alexpagnotta"],
