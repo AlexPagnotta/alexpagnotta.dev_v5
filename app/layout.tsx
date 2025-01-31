@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fredoka, Nunito_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fredokaFont = Fredoka({
+  display: "swap",
   subsets: ["latin"],
+  variable: "--font-fredoka",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const nunitoSansFont = Nunito_Sans({
+  display: "swap",
   subsets: ["latin"],
+  variable: "--font-nunito-sans",
 });
 
 export const metadata: Metadata = {
@@ -23,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} theme-light`}>
+    <html lang="en" className={`${fredokaFont.variable} ${nunitoSansFont.variable} theme-light`}>
       <body>{children}</body>
     </html>
   );

@@ -81,8 +81,8 @@
   /* Typography */
 
   --font-*: initial;
-  --font-title: "Fredoka", sans-serif;
-  --font-body: "Nunito Sans", sans-serif;
+  --font-title: var(--font-fredoka), sans-serif;
+  --font-body: var(--font-nunito-sans), sans-serif;
 
   --font-weight-*: initial;
   --font-weight-light: 300;
@@ -126,11 +126,11 @@
 
   /* Others */
 
-  --rounded-*: initial;
-  --rounded-none: 0rem;
-  --rounded-md: 1.2rem;
-  --rounded-lg: 2.8rem;
-  --rounded-full: 9999px;
+  --radius-*: initial;
+  --radius-none: 0rem;
+  --radius-md: 1.2rem;
+  --radius-lg: 2.8rem;
+  --radius-full: 9999px;
 
   --shadow-*: initial;
   /* TODO: Change with real shadow, possibly a composite one */
