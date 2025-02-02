@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Fredoka, Nunito_Sans } from "next/font/google";
-import "./globals.css";
+import "./features/style/main.css";
 
 const fredokaFont = Fredoka({
   display: "swap",
