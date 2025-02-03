@@ -40,6 +40,8 @@
   --color-pink-500: var(--base-color-pink-500);
   --color-pink-700: var(--base-color-pink-700);
 
+  /* Colors / Theme */
+
   --color-theme-background: var(--base-color-theme-background);
   --color-theme-foreground: var(--base-color-theme-foreground);
   --color-theme-focus-outline: var(--base-color-theme-focus-outline);
@@ -77,6 +79,10 @@
   --spacing-192-px: 192px;
   --spacing-256-px: 256px;
   --spacing-384-px: 384px;
+
+  --spacing-container-horizontal: var(--base-spacing-container-horizontal);
+  --spacing-container-vertical: var(--base-spacing-container-vertical);
+  --spacing-container-max-width: calc(var(--base-spacing-container-max-width)+ var(--spacing-container-horizontal) * 2);
 
   /* Typography */
 
@@ -171,6 +177,12 @@
   @apply text-body-1 lg:text-body-1-desktop font-body font-regular;
 }
 
+/* Container */
+
+@utility container {
+  @apply mx-auto;
+}
+
 /** Base Styles */
 
 @layer base {
@@ -209,9 +221,6 @@
     --base-color-pink-100: hsl(324, 100%, 94%);
     --base-color-pink-500: hsl(324, 100%, 55%);
     --base-color-pink-700: hsl(324, 100%, 30%);
-
-    /* Set the base font size to 10px, useful for rem calculations */
-    font-size: calc((10 / 16) * 100%);
   }
 
   :root.theme-light {
@@ -226,6 +235,26 @@
     --base-color-theme-foreground: var(--base-color-white);
 
     --base-color-theme-focus-outline: var(--base-color-white);
+  }
+
+  /* Global variables */
+  :root {
+    --base-spacing-container-horizontal: 24px;
+    --base-spacing-container-vertical: 80px;
+    --base-spacing-container-max-width: 88rem;
+  }
+
+  @variant lg {
+    :root {
+      --base-spacing-container-horizontal: 28px;
+      --base-spacing-container-vertical: 96px;
+    }
+  }
+
+  /* Base font size */
+  :root {
+    /* Set the base font size to 10px, useful for rem calculations */
+    font-size: calc((10 / 16) * 100%);
   }
 
   /* Global Styles */

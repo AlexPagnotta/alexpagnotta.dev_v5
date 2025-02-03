@@ -11,6 +11,7 @@ module.exports = {
         "./app/**/{page,layout,not-found,error,global-error,route,template,default,robot,sitemap}.ts?(x)",
         "./middleware.ts",
         "./tailwind.config.ts",
+        "./next.config.ts",
       ],
       rules: {
         "import/no-default-export": "off",
