@@ -44,6 +44,22 @@
 
   --color-theme-background: var(--base-color-theme-background);
   --color-theme-foreground: var(--base-color-theme-foreground);
+
+  --color-theme-link-underline-hover-blue: var(--base-color-theme-link-underline-hover-blue);
+  --color-theme-link-underline-hover-green: var(--base-color-theme-link-underline-hover-green);
+  --color-theme-link-underline-hover-red: var(--base-color-theme-link-underline-hover-red);
+  --color-theme-link-underline-hover-purple: var(--base-color-theme-link-underline-hover-purple);
+  --color-theme-link-underline-hover-pink: var(--base-color-theme-link-underline-hover-pink);
+
+  --color-theme-link-highlight-grey-foreground: var(--base-color-theme-link-highlight-grey-foreground);
+  --color-theme-link-highlight-grey-background: var(--base-color-theme-link-highlight-grey-background);
+
+  --color-theme-link-highlight-blue-foreground: var(--base-color-theme-link-highlight-blue-foreground);
+  --color-theme-link-highlight-blue-background: var(--base-color-theme-link-highlight-blue-background);
+
+  --color-theme-link-highlight-green-foreground: var(--base-color-theme-link-highlight-green-foreground);
+  --color-theme-link-highlight-green-background: var(--base-color-theme-link-highlight-green-background);
+
   --color-theme-focus-outline: var(--base-color-theme-focus-outline);
 
   /* Spacing */
@@ -134,6 +150,8 @@
 
   --radius-*: initial;
   --radius-none: 0rem;
+  --radius-xs: 0.4rem;
+  --radius-sm: 0.8rem;
   --radius-md: 1.2rem;
   --radius-lg: 2.8rem;
   --radius-full: 9999px;
@@ -227,6 +245,21 @@
     --base-color-theme-background: var(--base-color-white);
     --base-color-theme-foreground: var(--base-color-black);
 
+    --base-color-theme-link-underline-hover-blue: var(--base-color-blue-500);
+    --base-color-theme-link-underline-hover-green: var(--base-color-green-500);
+    --base-color-theme-link-underline-hover-red: var(--base-color-red-500);
+    --base-color-theme-link-underline-hover-purple: var(--base-color-purple-500);
+    --base-color-theme-link-underline-hover-pink: var(--base-color-pink-500);
+
+    --base-color-theme-link-highlight-grey-foreground: var(--base-color-grey-700);
+    --base-color-theme-link-highlight-grey-background: var(--base-color-grey-100);
+
+    --base-color-theme-link-highlight-blue-foreground: var(--base-color-blue-700);
+    --base-color-theme-link-highlight-blue-background: var(--base-color-blue-100);
+
+    --base-color-theme-link-highlight-green-foreground: var(--base-color-green-700);
+    --base-color-theme-link-highlight-green-background: var(--base-color-green-100);
+
     --base-color-theme-focus-outline: var(--base-color-black);
   }
 
@@ -234,7 +267,7 @@
     --base-color-theme-background: var(--base-color-black);
     --base-color-theme-foreground: var(--base-color-white);
 
-    --base-color-theme-focus-outline: var(--base-color-white);
+    /* TODO: Add dark theme vars */
   }
 
   /* Global variables */

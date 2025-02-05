@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "~/features/style/utils";
 
 type Props = VariantProps<typeof videoStyles> & React.ComponentPropsWithoutRef<"video">;
 
-export const videoStyles = cva({
+const videoStyles = cva({
   variants: {
     rounded: {
       true: "rounded-lg",

@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 
+import { Link } from "~/features/ui/link";
+
 // Define the page props type for Next.js App Router
 type Props = {
   params: Promise<{
@@ -23,6 +25,21 @@ export default async function Homepage({ params }: Props) {
   return (
     <div className="w-full">
       <h1 className="title-1">Homepage / {contentType}</h1>
+      <div className="flex flex-col gap-4">
+        <Link href="/writing/test" underline accentColor="pink">
+          Email
+        </Link>
+
+        <Link href="/writing/test" highlight accentColor="blue" highlightOrientation="left">
+          Projects
+        </Link>
+        <Link href="/writing/test" highlight accentColor="blue" highlightOrientation="right">
+          Projects
+        </Link>
+        <Link href="/writing/test" highlight accentColor="blue">
+          Projects
+        </Link>
+      </div>
     </div>
   );
 }

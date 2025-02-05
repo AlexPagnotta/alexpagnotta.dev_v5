@@ -6,7 +6,7 @@ import { cva, type VariantProps } from "~/features/style/utils";
 
 type Props = VariantProps<typeof imageStyles> & ImageProps;
 
-export const imageStyles = cva({
+const imageStyles = cva({
   variants: {
     rounded: {
       true: "rounded-lg",
