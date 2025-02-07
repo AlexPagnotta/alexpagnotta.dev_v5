@@ -116,7 +116,7 @@
 
   --text-title-1-desktop: 3.2rem;
   --text-title-1-desktop--line-height: 1.4;
-  --text-title-1: 3.2rem;
+  --text-title-1: 2.8rem;
   --text-title-1--line-height: 1.4;
 
   --text-title-2-desktop: 2.6rem;
@@ -272,14 +272,13 @@
 
   /* Global variables */
   :root {
-    --base-spacing-container-horizontal: 24px;
-    --base-spacing-container-vertical: 80px;
     --base-spacing-container-max-width: 88rem;
+    --base-spacing-container-horizontal: 32px;
+    --base-spacing-container-vertical: 64px;
   }
 
-  @variant lg {
+  @variant md {
     :root {
-      --base-spacing-container-horizontal: 28px;
       --base-spacing-container-vertical: 96px;
     }
   }

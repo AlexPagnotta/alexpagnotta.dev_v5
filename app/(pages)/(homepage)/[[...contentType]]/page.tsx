@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import { Link } from "~/features/ui/link";
+import { cn } from "~/features/style/utils";
 
 // Define the page props type for Next.js App Router
 type Props = {
@@ -23,23 +23,33 @@ export default async function Homepage({ params }: Props) {
   if (contentType && !["writing", "work", "experiment"].includes(contentType)) return notFound();
 
   return (
-    <div className="w-full">
-      <h1 className="title-1">Homepage / {contentType}</h1>
-      <div className="flex flex-col gap-4">
-        <Link href="/writing/test" underline accentColor="pink">
-          Email
-        </Link>
+    <>
+      <main className="w-full flex flex-col gap-64 lg:flex-row lg:justify-between lg:gap-64-px ">
+        <div className="sticky top-container-vertical -z-1 h-[450px] bg-blue-100 lg:flex-1" />
 
-        <Link href="/writing/test" highlight accentColor="blue" highlightOrientation="left">
-          Projects
-        </Link>
-        <Link href="/writing/test" highlight accentColor="blue" highlightOrientation="right">
-          Projects
-        </Link>
-        <Link href="/writing/test" highlight accentColor="blue">
-          Projects
-        </Link>
-      </div>
-    </div>
+        <div className="flex flex-col gap-64 items-center bg-theme-background">
+          <div className="h-[120px] w-full top-container-vertical bg-pink-100 sticky rounded-lg lg:hidden" />
+
+          <div
+            className={cn(
+              "border border-black",
+              "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 sm:grid-flow-row-dense justify-items-center gap-20-px",
+              "w-full max-w-[36rem] sm:max-w-none sm:w-[46rem] md:w-[70rem] lg:w-[46rem]"
+            )}
+          >
+            {[...Array(20)].map((_, index) => {
+              const isLarge = index === 3;
+
+              return (
+                <div
+                  key={index}
+                  className={cn("h-[22rem] w-full bg-green-100 rounded-lg", isLarge && "sm:col-span-2")}
+                />
+              );
+            })}
+          </div>
+        </div>
+      </main>
+    </>
   );
 }
