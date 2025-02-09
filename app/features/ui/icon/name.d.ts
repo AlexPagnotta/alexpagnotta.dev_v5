@@ -7,9 +7,9 @@ export type IconName =
   | "fwa"
   | "github"
   | "linkedin"
-  | "me"
   | "motion"
   | "next"
   | "react"
+  | "remix"
   | "tailwind"
   | "wild";

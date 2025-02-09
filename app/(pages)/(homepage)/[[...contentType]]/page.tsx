@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 
+import { Header } from "~/features/homepage/header/header";
 import { cn } from "~/features/style/utils";
 
 // Define the page props type for Next.js App Router
@@ -20,14 +21,16 @@ export default async function Homepage({ params }: Props) {
   const contentType = contentTypeParam?.[0];
 
   // Redirect to 404 if content type is not one of the allowed values
-  if (contentType && !["writing", "work", "experiment"].includes(contentType)) return notFound();
+  if (contentType && !["writings", "works", "lab"].includes(contentType)) return notFound();
 
   return (
     <>
-      <main className="w-full flex flex-col gap-64 lg:flex-row lg:justify-between lg:gap-64-px ">
-        <div className="sticky top-container-vertical -z-1 h-[450px] bg-blue-100 lg:flex-1" />
+      <main className="w-full flex flex-col gap-64 lg:flex-row lg:justify-between lg:items-start lg:gap-64-px ">
+        <div className="sticky top-container-vertical">
+          <Header />
+        </div>
 
-        <div className="flex flex-col gap-64 items-center bg-theme-background">
+        <div className="flex flex-col gap-64 items-center bg-theme-background z-10 relative">
           <div className="h-[120px] w-full top-container-vertical bg-pink-100 sticky rounded-lg lg:hidden" />
 
           <div

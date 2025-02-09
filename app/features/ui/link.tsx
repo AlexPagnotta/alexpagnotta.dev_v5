@@ -82,7 +82,6 @@ const linkStyles = cva({
       true: [
         "relative w-min",
         "before:content-[''] before:absolute before:inset-[0.4rem_-0.4rem] before:z-[-1] before:rounded-xs",
-        "before:transition-transform before:duration-250 before:ease-in-out",
       ],
     },
     highlightAccentColor: {
@@ -93,7 +92,7 @@ const linkStyles = cva({
     highlightOrientation: {
       left: "before:rotate-[-2deg] hover:before:rotate-[1deg] focus-visible:before:rotate-[1deg]",
       right: "before:rotate-[2deg] hover:before:rotate-[-1deg] focus-visible:before:rotate-[-1deg]",
-      undefined: "before:rotate-[-1deg] hover:before:rotate-[2deg] focus-visible:before:rotate-[2deg]",
+      center: "before:rotate-[-1deg] hover:before:rotate-[2deg] focus-visible:before:rotate-[2deg]",
     },
   },
 });
@@ -112,7 +111,7 @@ export const Link = React.forwardRef(
           underlineAccentColor: underline ? accentColor : undefined,
           highlight,
           highlightAccentColor: highlight ? accentColor : undefined,
-          highlightOrientation: highlightOrientation,
+          highlightOrientation: highlight ? (highlightOrientation ?? "center") : undefined,
           className,
         })}
         {...rest}

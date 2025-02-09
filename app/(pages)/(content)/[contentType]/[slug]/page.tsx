@@ -14,7 +14,7 @@ export default async function Homepage({ params }: Props) {
   const slug = (await params).slug;
 
   // Redirect to 404 if content type is not one of the allowed values
-  if (contentType && !["writing", "work", "experiment"].includes(contentType)) return notFound();
+  if (contentType && !["writings", "works", "lab"].includes(contentType)) return notFound();
 
   return (
     <div className="w-full border">

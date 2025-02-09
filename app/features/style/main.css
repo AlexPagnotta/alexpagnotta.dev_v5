@@ -159,6 +159,43 @@
   --shadow-*: initial;
   /* TODO: Change with real shadow, possibly a composite one */
   --shadow-md: 0px 0px 1.6rem rgba(0, 0, 0, 0.1);
+
+  /**
+   * Animation
+   */
+  --animate-homepage-header-icon-slideshow: homepage-header-icon-slideshow 15s linear infinite;
+
+  @keyframes homepage-header-icon-slideshow {
+    0% {
+      visibility: visible;
+    }
+    19.9% {
+      visibility: visible;
+    }
+    20% {
+      visibility: hidden;
+    }
+    99.9% {
+      visibility: hidden;
+    }
+  }
+
+  --animate-homepage-header-icon-rotation: homepage-header-icon-rotation 4s linear infinite;
+
+  @keyframes homepage-header-icon-rotation {
+    0% {
+      transform: rotate(17deg);
+    }
+    49.9% {
+      transform: rotate(17deg);
+    }
+    50% {
+      transform: rotate(-17deg);
+    }
+    100% {
+      transform: rotate(-17deg);
+    }
+  }
 }
 
 /* Typography */
