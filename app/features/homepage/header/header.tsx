@@ -21,6 +21,7 @@ export const Header = () => {
               alt="Me"
               quality={80}
               sizes="32px"
+              draggable={false}
               className="absolute inset-x-0 animate-homepage-header-icon-rotation"
             />
           </span>

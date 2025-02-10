@@ -1,7 +1,10 @@
 import { notFound } from "next/navigation";
 
+import { type ContentType, isContentType } from "~/features/content/constants";
+import { getAllContent } from "~/features/content/utils.server";
 import { Header } from "~/features/homepage/header/header";
 import { cn } from "~/features/style/utils";
+import { Link } from "~/features/ui/link";
 
 // Define the page props type for Next.js App Router
 type Props = {
@@ -18,10 +21,12 @@ export default async function Homepage({ params }: Props) {
   // Since we must use a catch-all route to make the param optional
   if (contentTypeParam && contentTypeParam.length > 1) return notFound();
 
-  const contentType = contentTypeParam?.[0];
-
   // Redirect to 404 if content type is not one of the allowed values
-  if (contentType && !["writings", "works", "lab"].includes(contentType)) return notFound();
+  const contentType = contentTypeParam?.[0];
+  if (contentType && !isContentType(contentType)) return notFound();
+
+  // Get all content filtered by content type, if provided
+  const content = await getAllContent(contentType as ContentType);
 
   return (
     <>
@@ -40,14 +45,17 @@ export default async function Homepage({ params }: Props) {
               "w-full max-w-[36rem] sm:max-w-none sm:w-[46rem] md:w-[70rem] lg:w-[46rem]"
             )}
           >
-            {[...Array(20)].map((_, index) => {
+            {content.map((item, index) => {
               const isLarge = index === 3;
 
               return (
-                <div
-                  key={index}
+                <Link
+                  href={item.slug}
+                  key={item.slug}
                   className={cn("h-[22rem] w-full bg-green-100 rounded-lg", isLarge && "sm:col-span-2")}
-                />
+                >
+                  {item.metadata.title}
+                </Link>
               );
             })}
           </div>
