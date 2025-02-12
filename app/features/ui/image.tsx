@@ -1,10 +1,10 @@
-import { type ImageProps } from "next/image";
+import { type ImageProps as NextImageProps } from "next/image";
 import NextImage from "next/image";
 import React from "react";
 
 import { cva, type VariantProps } from "~/features/style/utils";
 
-type Props = VariantProps<typeof imageStyles> & ImageProps;
+type ImageProps = VariantProps<typeof imageStyles> & NextImageProps;
 
 const imageStyles = cva({
   variants: {
@@ -18,7 +18,7 @@ const imageStyles = cva({
   },
 });
 
-export const Image = React.forwardRef((props: Props, ref: React.ForwardedRef<HTMLImageElement>) => {
+export const Image = React.forwardRef((props: ImageProps, ref: React.ForwardedRef<HTMLImageElement>) => {
   const { rounded, className, ...rest } = props;
 
   return <NextImage className={imageStyles({ rounded, className })} ref={ref} {...rest} />;

@@ -51,14 +51,17 @@
   --color-theme-link-underline-hover-purple: var(--base-color-theme-link-underline-hover-purple);
   --color-theme-link-underline-hover-pink: var(--base-color-theme-link-underline-hover-pink);
 
-  --color-theme-link-highlight-grey-foreground: var(--base-color-theme-link-highlight-grey-foreground);
-  --color-theme-link-highlight-grey-background: var(--base-color-theme-link-highlight-grey-background);
-
   --color-theme-link-highlight-blue-foreground: var(--base-color-theme-link-highlight-blue-foreground);
   --color-theme-link-highlight-blue-background: var(--base-color-theme-link-highlight-blue-background);
 
   --color-theme-link-highlight-green-foreground: var(--base-color-theme-link-highlight-green-foreground);
   --color-theme-link-highlight-green-background: var(--base-color-theme-link-highlight-green-background);
+
+  --color-theme-link-highlight-purple-foreground: var(--base-color-theme-link-highlight-purple-foreground);
+  --color-theme-link-highlight-purple-background: var(--base-color-theme-link-highlight-purple-background);
+
+  --color-theme-link-highlight-pink-foreground: var(--base-color-theme-link-highlight-pink-foreground);
+  --color-theme-link-highlight-pink-background: var(--base-color-theme-link-highlight-pink-background);
 
   --color-theme-focus-outline: var(--base-color-theme-focus-outline);
 
@@ -288,14 +291,17 @@
     --base-color-theme-link-underline-hover-purple: var(--base-color-purple-500);
     --base-color-theme-link-underline-hover-pink: var(--base-color-pink-500);
 
-    --base-color-theme-link-highlight-grey-foreground: var(--base-color-grey-700);
-    --base-color-theme-link-highlight-grey-background: var(--base-color-grey-100);
-
     --base-color-theme-link-highlight-blue-foreground: var(--base-color-blue-700);
     --base-color-theme-link-highlight-blue-background: var(--base-color-blue-100);
 
     --base-color-theme-link-highlight-green-foreground: var(--base-color-green-700);
     --base-color-theme-link-highlight-green-background: var(--base-color-green-100);
+
+    --base-color-theme-link-highlight-purple-foreground: var(--base-color-purple-700);
+    --base-color-theme-link-highlight-purple-background: var(--base-color-purple-100);
+
+    --base-color-theme-link-highlight-pink-foreground: var(--base-color-pink-700);
+    --base-color-theme-link-highlight-pink-background: var(--base-color-pink-100);
 
     --base-color-theme-focus-outline: var(--base-color-black);
   }

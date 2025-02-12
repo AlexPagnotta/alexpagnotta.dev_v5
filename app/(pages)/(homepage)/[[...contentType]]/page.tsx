@@ -7,14 +7,14 @@ import { cn } from "~/features/style/utils";
 import { Link } from "~/features/ui/link";
 
 // Define the page props type for Next.js App Router
-type Props = {
+type HomepageProps = {
   params: Promise<{
     contentType?: string[];
   }>;
 };
 
 // Get the section param from the dynamic segment using App Router props
-export default async function Homepage({ params }: Props) {
+export default async function Homepage({ params }: HomepageProps) {
   const contentTypeParam = (await params).contentType;
 
   // Redirect to 404 if content type is an array of multiple values
@@ -22,17 +22,18 @@ export default async function Homepage({ params }: Props) {
   if (contentTypeParam && contentTypeParam.length > 1) return notFound();
 
   // Redirect to 404 if content type is not one of the allowed values
-  const contentType = contentTypeParam?.[0];
-  if (contentType && !isContentType(contentType)) return notFound();
+  const _contentType = contentTypeParam?.[0];
+  if (_contentType && !isContentType(_contentType)) return notFound();
 
   // Get all content filtered by content type, if provided
-  const content = await getAllContent(contentType as ContentType);
+  const contentType = _contentType as ContentType;
+  const content = await getAllContent(contentType);
 
   return (
     <>
       <main className="w-full flex flex-col gap-64 lg:flex-row lg:justify-between lg:items-start lg:gap-64-px ">
         <div className="sticky top-container-vertical">
-          <Header />
+          <Header selectedContentType={contentType} />
         </div>
 
         <div className="flex flex-col gap-64 items-center bg-theme-background z-10 relative">

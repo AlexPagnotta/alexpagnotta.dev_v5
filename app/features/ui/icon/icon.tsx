@@ -3,7 +3,7 @@ import { type SVGProps } from "react";
 import { cn } from "~/features/style/utils";
 import { type IconName } from "~/features/ui/icon/name";
 
-type Props = {
+type IconProps = {
   name: IconName;
 } & SVGProps<SVGSVGElement>;
 
@@ -17,7 +17,7 @@ const iconViewboxMap = {
   wild: "0 0 76 48",
 } as Partial<Record<IconName, string>>;
 
-export const Icon = ({ name, className, ...rest }: Props) => {
+export const Icon = ({ name, className, ...rest }: IconProps) => {
   return (
     <svg
       className={cn("inline-block text-current", className)}

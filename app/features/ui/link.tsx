@@ -42,7 +42,7 @@ export const BaseLink = React.forwardRef(
 
 BaseLink.displayName = "BaseLink";
 
-type Props = BaseLinkProps &
+type LinkProps = BaseLinkProps &
   (
     | {
         underline: true;
@@ -80,14 +80,15 @@ const linkStyles = cva({
 
     highlight: {
       true: [
-        "relative w-min",
-        "before:content-[''] before:absolute before:inset-[0.4rem_-0.4rem] before:z-[-1] before:rounded-xs",
+        "relative w-min whitespace-nowrap",
+        "before:content-[''] before:absolute before:inset-[0.4rem_-0.2rem] before:z-[-1] before:rounded-xs",
       ],
     },
     highlightAccentColor: {
-      grey: "text-theme-link-highlight-grey-foreground before:bg-theme-link-highlight-grey-background",
       blue: "text-theme-link-highlight-blue-foreground before:bg-theme-link-highlight-blue-background",
       green: "text-theme-link-highlight-green-foreground before:bg-theme-link-highlight-green-background",
+      purple: "text-theme-link-highlight-purple-foreground before:bg-theme-link-highlight-purple-background",
+      pink: "text-theme-link-highlight-pink-foreground before:bg-theme-link-highlight-pink-background",
     },
     highlightOrientation: {
       left: "before:rotate-[-2deg] hover:before:rotate-[1deg] focus-visible:before:rotate-[1deg]",
@@ -99,7 +100,7 @@ const linkStyles = cva({
 
 export const Link = React.forwardRef(
   (
-    { href, underline, accentColor, highlight, highlightOrientation, className, children, ...rest }: Props,
+    { href, underline, accentColor, highlight, highlightOrientation, className, children, ...rest }: LinkProps,
     ref: React.ForwardedRef<HTMLAnchorElement>
   ) => {
     return (

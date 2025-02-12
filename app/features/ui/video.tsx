@@ -2,7 +2,7 @@ import React from "react";
 
 import { cva, type VariantProps } from "~/features/style/utils";
 
-type Props = VariantProps<typeof videoStyles> & React.ComponentPropsWithoutRef<"video">;
+type VideoProps = VariantProps<typeof videoStyles> & React.ComponentPropsWithoutRef<"video">;
 
 const videoStyles = cva({
   variants: {
@@ -16,7 +16,7 @@ const videoStyles = cva({
   },
 });
 
-export const Video = React.forwardRef((props: Props, ref: React.ForwardedRef<HTMLVideoElement>) => {
+export const Video = React.forwardRef((props: VideoProps, ref: React.ForwardedRef<HTMLVideoElement>) => {
   const { rounded, className, ...rest } = props;
 
   return <video className={videoStyles({ rounded, className })} ref={ref} {...rest} />;
