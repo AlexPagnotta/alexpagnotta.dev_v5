@@ -4,7 +4,8 @@ import { type ContentType, isContentType } from "~/features/content/constants";
 import { getAllContent } from "~/features/content/utils.server";
 import { Header } from "~/features/homepage/header/header";
 import { cn } from "~/features/style/utils";
-import { Link } from "~/features/ui/link";
+import { Card } from "~/features/ui/card";
+import { BaseLink } from "~/features/ui/link";
 
 // Define the page props type for Next.js App Router
 type HomepageProps = {
@@ -43,16 +44,23 @@ export default async function Homepage({ params }: HomepageProps) {
           )}
         >
           {content.map((item, index) => {
-            const isLarge = index === 3;
+            const isLarge = index === 2;
 
             return (
-              <Link
-                href={item.slug}
+              <Card
                 key={item.slug}
-                className={cn("h-[22rem] w-full bg-green-100 rounded-lg p-24-px", isLarge && "sm:col-span-2")}
+                className={cn("h-[22rem] w-full", isLarge && "sm:col-span-2")}
+                alignment="top"
+                asChild
               >
-                {item.metadata.title}
-              </Link>
+                <BaseLink href={item.slug} key={item.slug}>
+                  <Card.Title>{item.metadata.title}</Card.Title>
+                  <Card.Subtitle>TODO - TODO</Card.Subtitle>
+                  <Card.Background>
+                    <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 size-[160px] bg-black/40 rounded-full" />
+                  </Card.Background>
+                </BaseLink>
+              </Card>
             );
           })}
         </div>

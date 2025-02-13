@@ -16,9 +16,7 @@ type BaseLinkProps = AnchorElementProps & NextLinkProps;
  */
 export const BaseLink = React.forwardRef(
   ({ href, newWindow, className, children, ...rest }: BaseLinkProps, ref: React.ForwardedRef<HTMLAnchorElement>) => {
-    if (!href) {
-      return children;
-    }
+    if (!href) return children;
 
     const isInternalLink = href.startsWith("/");
 
