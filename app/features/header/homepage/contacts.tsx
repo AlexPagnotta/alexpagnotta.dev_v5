@@ -2,7 +2,7 @@ import { SiteConfig } from "~/features/config/config";
 import { Icon } from "~/features/ui/icon/icon";
 import { Link } from "~/features/ui/link";
 
-export const HeaderContacts = () => {
+export const HomepageHeaderContacts = () => {
   return (
     <p className="body-2 whitespace-pre-wrap">
       If you&apos;d like to reach out, feel free to send me an{" "}

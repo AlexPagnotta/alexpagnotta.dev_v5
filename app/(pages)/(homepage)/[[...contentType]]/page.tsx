@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 
 import { type ContentType, isContentType } from "~/features/content/constants";
 import { getAllContent } from "~/features/content/utils.server";
-import { Header } from "~/features/homepage/header/header";
+import { HomepageHeader } from "~/features/header/homepage/header";
 import { cn } from "~/features/style/utils";
 import { Card } from "~/features/ui/card";
 import { BaseLink } from "~/features/ui/link";
@@ -34,7 +34,7 @@ export default async function Homepage({ params }: HomepageProps) {
     <>
       <main className="w-full flex flex-col gap-64 lg:flex-row lg:justify-between lg:items-start lg:gap-64-px ">
         <div className="lg:sticky lg:top-container-vertical">
-          <Header selectedContentType={contentType} />
+          <HomepageHeader selectedContentType={contentType} />
         </div>
 
         <div

@@ -8,7 +8,7 @@ import MeImage from "./assets/me.png";
 
 const TechIcons = ["react", "next", "remix", "tailwind", "motion"] satisfies IconName[];
 
-export const HeaderTitle = () => {
+export const HomepageHeaderTitle = () => {
   return (
     <h1 className="title-1-light text-right lg:text-left">
       <span className="whitespace-nowrap">
