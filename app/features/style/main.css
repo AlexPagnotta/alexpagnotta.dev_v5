@@ -44,6 +44,7 @@
 
   --color-theme-background: var(--base-color-theme-background);
   --color-theme-foreground: var(--base-color-theme-foreground);
+  --color-theme-foreground-muted: var(--base-color-theme-foreground-muted);
 
   --color-theme-link-underline-hover-blue: var(--base-color-theme-link-underline-hover-blue);
   --color-theme-link-underline-hover-green: var(--base-color-theme-link-underline-hover-green);
@@ -118,7 +119,8 @@
   --font-weight-*: initial;
   --font-weight-light: 300;
   --font-weight-regular: 400;
-  --font-weight-semi-bold: 500;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
   --font-weight-bold: 700;
 
   --text-*: initial;
@@ -213,6 +215,10 @@
   @apply text-title-1 lg:text-title-1-desktop font-title font-regular;
 }
 
+@utility title-1-medium {
+  @apply text-title-1 lg:text-title-1-desktop font-title font-medium;
+}
+
 @utility title-1-light {
   @apply text-title-1 lg:text-title-1-desktop font-title font-light;
 }
@@ -290,6 +296,7 @@
   :root.theme-light {
     --base-color-theme-background: var(--base-color-white);
     --base-color-theme-foreground: var(--base-color-black);
+    --base-color-theme-foreground-muted: var(--base-color-grey-700);
 
     --base-color-theme-link-underline-hover-blue: var(--base-color-blue-500);
     --base-color-theme-link-underline-hover-green: var(--base-color-green-500);

@@ -31,40 +31,36 @@ export default async function Homepage({ params }: HomepageProps) {
   const content = await getAllContent(contentType);
 
   return (
-    <>
-      <main className="w-full flex flex-col gap-64 lg:flex-row lg:justify-between lg:items-start lg:gap-64-px ">
-        <div className="lg:sticky lg:top-container-vertical">
-          <HomepageHeader selectedContentType={contentType} />
-        </div>
+    <div className="w-full flex flex-col gap-64 lg:flex-row lg:justify-between lg:items-start lg:gap-64-px ">
+      <HomepageHeader selectedContentType={contentType} className="lg:sticky lg:top-container-vertical" />
 
-        <div
-          className={cn(
-            "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 sm:grid-flow-row-dense justify-items-center gap-20-px",
-            "w-full max-w-[36rem] mx-auto sm:max-w-none sm:w-[46rem] md:w-[70rem] lg:w-[46rem]"
-          )}
-        >
-          {content.map((item, index) => {
-            const isLarge = index === 2;
+      <main
+        className={cn(
+          "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 sm:grid-flow-row-dense justify-items-center gap-20-px",
+          "w-full max-w-[36rem] mx-auto sm:max-w-none sm:w-[46rem] md:w-[70rem] lg:w-[46rem]"
+        )}
+      >
+        {content.map((item, index) => {
+          const isLarge = index === 2;
 
-            return (
-              <Card
-                key={item.slug}
-                className={cn("h-[22rem] w-full", isLarge && "sm:col-span-2")}
-                alignment="top"
-                asChild
-              >
-                <BaseLink href={item.slug} key={item.slug}>
-                  <Card.Title>{item.metadata.title}</Card.Title>
-                  <Card.Subtitle>TODO - TODO</Card.Subtitle>
-                  <Card.Background>
-                    <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 size-[160px] bg-black/40 rounded-full" />
-                  </Card.Background>
-                </BaseLink>
-              </Card>
-            );
-          })}
-        </div>
+          return (
+            <Card
+              key={item.slug}
+              className={cn("h-[22rem] w-full", isLarge && "sm:col-span-2")}
+              alignment="top"
+              asChild
+            >
+              <BaseLink href={item.slug} key={item.slug}>
+                <Card.Title>{item.metadata.title}</Card.Title>
+                <Card.Subtitle>TODO - TODO</Card.Subtitle>
+                <Card.Background>
+                  <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 size-[160px] bg-black/40 rounded-full" />
+                </Card.Background>
+              </BaseLink>
+            </Card>
+          );
+        })}
       </main>
-    </>
+    </div>
   );
 }
