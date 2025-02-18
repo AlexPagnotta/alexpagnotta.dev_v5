@@ -1,29 +1,40 @@
 import { type ComponentPropsWithoutRef } from "react";
 
+import { ContentHeaderBackNav } from "~/features/content/header/back-nav";
 import { cn, cva, type VariantProps } from "~/features/style/utils";
 
-type ContentHeaderProps = ComponentPropsWithoutRef<"div">;
-
 type CompoundContentHeader = typeof ContentHeader & {
+  Body: typeof ContentHeaderBody;
   Title: typeof ContentHeaderTitle;
   Subtitle: typeof ContentHeaderSubtitle;
   TitleAppendixWrapper: typeof ContentHeaderTitleAppendixWrapper;
 };
 
-const ContentHeader = ({ className, ...rest }: ContentHeaderProps) => {
-  return <div className={cn("flex flex-col items-end text-left", className)} {...rest} />;
+export type ContentHeaderProps = ComponentPropsWithoutRef<"header">;
+
+const ContentHeader = ({ className, children, ...rest }: ContentHeaderProps) => {
+  return (
+    <header
+      data-content-header
+      className={cn("flex flex-col sm:flex-row sm:justify-between sm:items-start gap-32 sm:gap-64-px", className)}
+      {...rest}
+    >
+      <ContentHeaderBackNav />
+      {children}
+    </header>
+  );
 };
 
-type ContentHeaderTitleProps = ComponentPropsWithoutRef<"h1">;
+const ContentHeaderBody = ({ className, ...rest }: ComponentPropsWithoutRef<"div">) => {
+  return <div className={cn("flex flex-col items-end text-right", className)} {...rest} />;
+};
 
-const ContentHeaderTitle = ({ className, ...rest }: ContentHeaderTitleProps) => {
+const ContentHeaderTitle = ({ className, ...rest }: ComponentPropsWithoutRef<"h1">) => {
   return <h1 className={cn("title-1", className)} {...rest} />;
 };
 
-type ContentHeaderSubtitleProps = ComponentPropsWithoutRef<"p">;
-
-const ContentHeaderSubtitle = ({ className, ...rest }: ContentHeaderSubtitleProps) => {
-  return <p className={cn("body-2 text-theme-foreground-muted", className)} {...rest} />;
+const ContentHeaderSubtitle = ({ className, ...rest }: ComponentPropsWithoutRef<"p">) => {
+  return <p className={cn("body-2", className)} {...rest} />;
 };
 
 type ContentHeaderTitleAppendixWrapperProps = ComponentPropsWithoutRef<"div"> &
@@ -32,7 +43,7 @@ type ContentHeaderTitleAppendixWrapperProps = ComponentPropsWithoutRef<"div"> &
   };
 
 const appendixStyles = cva({
-  base: "absolute title-1",
+  base: "absolute title-1 whitespace-nowrap",
   variants: {
     position: {
       right: "right-0 top-1/2 -translate-y-1/2 translate-x-full",
@@ -61,6 +72,7 @@ const ContentHeaderTitleAppendixWrapper = ({
 
 const CompoundContentHeader = ContentHeader as CompoundContentHeader;
 
+CompoundContentHeader.Body = ContentHeaderBody;
 CompoundContentHeader.Title = ContentHeaderTitle;
 CompoundContentHeader.Subtitle = ContentHeaderSubtitle;
 CompoundContentHeader.TitleAppendixWrapper = ContentHeaderTitleAppendixWrapper;

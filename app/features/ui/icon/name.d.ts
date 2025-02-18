@@ -3,7 +3,6 @@
 export type IconName =
   | "arrow-back"
   | "awwwards"
-  | "cca"
   | "fwa"
   | "github"
   | "linkedin"

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Fredoka, Nunito_Sans } from "next/font/google";
 
 import "~/features/style/main.css";
-import { Container } from "~/features/ui/container";
 
 const fredokaFont = Fredoka({
   display: "swap",
@@ -27,10 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fredokaFont.variable} ${nunitoSansFont.variable} theme-light`}>
-      <body>
-        <Container>{children}</Container>
-      </body>
+    <html lang="en" className={`${fredokaFont.variable} ${nunitoSansFont.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

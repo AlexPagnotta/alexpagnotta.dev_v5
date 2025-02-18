@@ -8,6 +8,7 @@ export const contentMetadata: LabContentMetadata = {
   previewTitle: "Example Experiment",
   date: "2024-01-24",
   type: ContentType.LAB,
+  stack: ["Motion", "Tailwind"],
 };
 
 export const metadata: Metadata = {

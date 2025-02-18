@@ -1,8 +1,9 @@
 import { Container } from "~/features/layout/container";
 import { ThemeWrapper } from "~/features/layout/theme-wrapper";
-export default function WritingLayout({ children }: { children: React.ReactNode }) {
+
+export default function LabLayout({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeWrapper>
+    <ThemeWrapper theme="lab">
       <Container>{children}</Container>
     </ThemeWrapper>
   );

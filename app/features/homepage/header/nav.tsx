@@ -1,5 +1,5 @@
 import { ContentType } from "~/features/content/constants";
-import { type HomepageHeaderProps } from "~/features/header/homepage/header";
+import { type HomepageHeaderProps } from "~/features/homepage/header/header";
 import { Link } from "~/features/ui/link";
 
 type HomepageHeaderBodyProps = Pick<HomepageHeaderProps, "selectedContentType">;

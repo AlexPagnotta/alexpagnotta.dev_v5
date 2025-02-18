@@ -1,6 +1,7 @@
 import * as v from "valibot";
 
 import { ContentType } from "~/features/content/constants";
+import { IconNames } from "~/features/ui/icon/constants";
 
 /**
  * Base metadata schema with common properties for all content types
@@ -25,8 +26,10 @@ const WritingContentMetadataSchema = v.object({
 const WorkContentMetadataSchema = v.object({
   ...BaseContentMetadataSchema.entries,
   type: v.literal(ContentType.WORK),
-  url: v.optional(v.string()),
-  agency: v.optional(v.string()),
+  workName: v.string(),
+  workUrl: v.optional(v.string()),
+  workAccentColor: v.picklist(["blue", "green", "red", "purple", "pink"]),
+  agencyName: v.optional(v.picklist(IconNames)),
   agencyUrl: v.optional(v.string()),
   awards: v.optional(v.array(v.string())),
 });
@@ -37,6 +40,7 @@ const WorkContentMetadataSchema = v.object({
 const LabContentMetadataSchema = v.object({
   ...BaseContentMetadataSchema.entries,
   type: v.literal(ContentType.LAB),
+  stack: v.optional(v.array(v.string())),
 });
 
 /**

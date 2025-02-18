@@ -78,7 +78,7 @@ const linkStyles = cva({
 
     highlight: {
       true: [
-        "relative w-min whitespace-nowrap",
+        "relative w-min whitespace-nowrap isolate",
         "before:content-[''] before:absolute before:inset-[0.4rem_-0.2rem] before:z-[-1] before:rounded-xs",
       ],
     },

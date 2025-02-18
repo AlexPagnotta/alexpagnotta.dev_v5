@@ -1,10 +1,9 @@
+import MeImage from "~/features/assets/icons/me.png";
 import { cn } from "~/features/style/utils";
 import { Icon } from "~/features/ui/icon/icon";
 import { type IconName } from "~/features/ui/icon/name";
 import { Image } from "~/features/ui/image";
 import { BaseLink } from "~/features/ui/link";
-
-import MeImage from "./assets/me.png";
 
 const TechIcons = ["react", "next", "remix", "tailwind", "motion"] satisfies IconName[];
 
@@ -17,7 +16,6 @@ export const HomepageHeaderTitle = () => {
           <Image
             src={MeImage}
             alt="Me"
-            quality={80}
             sizes="32px"
             draggable={false}
             className="absolute inset-x-0 animate-homepage-header-icon-rotation"

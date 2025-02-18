@@ -293,7 +293,7 @@
     --base-color-pink-700: hsl(324, 100%, 30%);
   }
 
-  :root.theme-light {
+  :root {
     --base-color-theme-background: var(--base-color-white);
     --base-color-theme-foreground: var(--base-color-black);
     --base-color-theme-foreground-muted: var(--base-color-grey-700);
@@ -323,11 +323,11 @@
     --base-color-theme-focus-outline: var(--base-color-black);
   }
 
-  :root.theme-dark {
+  [data-theme="lab"] {
     --base-color-theme-background: var(--base-color-black);
     --base-color-theme-foreground: var(--base-color-white);
 
-    /* TODO: Add dark theme vars */
+    /* TODO: Add other theme vars */
   }
 
   /* Global variables */
@@ -351,11 +351,15 @@
 
   /* Global Styles */
   html {
-    @apply bg-theme-background text-theme-foreground leading-none cursor-default h-full;
+    @apply leading-none cursor-default h-full;
   }
 
   body {
     @apply font-body antialiased body-3 overflow-x-hidden min-w-[320px] h-full;
+  }
+
+  [data-theme-wrapper] {
+    @apply h-full bg-theme-background text-theme-foreground;
   }
 
   /* Focus Outline */

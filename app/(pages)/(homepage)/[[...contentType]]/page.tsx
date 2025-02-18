@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 
 import { type ContentType, isContentType } from "~/features/content/constants";
 import { getAllContent } from "~/features/content/utils.server";
-import { HomepageHeader } from "~/features/header/homepage/header";
+import { HomepageHeader } from "~/features/homepage/header/header";
 import { cn } from "~/features/style/utils";
 import { Card } from "~/features/ui/card";
 import { BaseLink } from "~/features/ui/link";
