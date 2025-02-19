@@ -7,7 +7,8 @@ type ContainerProps = ComponentPropsWithoutRef<"div"> & {
   asChild?: boolean;
 };
 
-const containerStyles = "mx-auto py-container-vertical px-container-horizontal max-w-container-max-width min-h-full";
+const containerStyles =
+  "mx-auto py-container-vertical px-container-horizontal max-w-container-max-width-w-spacing min-h-full";
 
 export const Container = ({ asChild, className, ...rest }: ContainerProps) => {
   const Component = asChild ? Slot : "div";

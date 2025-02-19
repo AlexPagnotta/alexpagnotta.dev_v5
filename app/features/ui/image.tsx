@@ -4,7 +4,7 @@ import React from "react";
 
 import { cva, type VariantProps } from "~/features/style/utils";
 
-type ImageProps = VariantProps<typeof imageStyles> & NextImageProps;
+export type ImageProps = VariantProps<typeof imageStyles> & NextImageProps;
 
 const imageStyles = cva({
   variants: {

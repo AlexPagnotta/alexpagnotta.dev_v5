@@ -1,4 +1,3 @@
-import { ContentBodyContainer } from "~/features/content/body/container";
 import { WorkContentHeader } from "~/features/content/header/work";
 
 import MarkdownBody from "./body.mdx";
@@ -8,9 +7,7 @@ export default function ContentPage() {
   return (
     <>
       <WorkContentHeader metadata={contentMetadata} />
-      <ContentBodyContainer>
-        <MarkdownBody />
-      </ContentBodyContainer>
+      <MarkdownBody />
     </>
   );
 }

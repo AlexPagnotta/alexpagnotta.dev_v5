@@ -2,7 +2,9 @@ import React from "react";
 
 import { cva, type VariantProps } from "~/features/style/utils";
 
-type VideoProps = VariantProps<typeof videoStyles> & React.ComponentPropsWithoutRef<"video">;
+export type VideoProps = Omit<VariantProps<typeof videoStyles> & React.ComponentPropsWithoutRef<"video">, "title"> & {
+  title: string;
+};
 
 const videoStyles = cva({
   variants: {
