@@ -5,7 +5,7 @@ import { getAllContent } from "~/features/content/utils.server";
 import { HomepageHeader } from "~/features/homepage/header/header";
 import { cn } from "~/features/style/utils";
 import { Card } from "~/features/ui/card";
-import { BaseLink } from "~/features/ui/link";
+import { BaseLink } from "~/features/ui/link/link";
 
 // Define the page props type for Next.js App Router
 type HomepageProps = {

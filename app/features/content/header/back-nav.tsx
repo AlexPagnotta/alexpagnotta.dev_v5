@@ -1,5 +1,5 @@
 import { Icon } from "~/features/ui/icon/icon";
-import { Link } from "~/features/ui/link";
+import { Link } from "~/features/ui/link/link";
 
 type ContentHeaderBackNavProps = {
   href?: string;

@@ -1,6 +1,6 @@
 import { SiteConfig } from "~/features/config/config";
 import { Icon } from "~/features/ui/icon/icon";
-import { Link } from "~/features/ui/link";
+import { Link } from "~/features/ui/link/link";
 
 export const HomepageHeaderContacts = () => {
   return (

@@ -3,7 +3,7 @@ import { cn } from "~/features/style/utils";
 import { Icon } from "~/features/ui/icon/icon";
 import { type IconName } from "~/features/ui/icon/name";
 import { Image } from "~/features/ui/image";
-import { BaseLink } from "~/features/ui/link";
+import { BaseLink } from "~/features/ui/link/link";
 
 const TechIcons = ["react", "next", "remix", "tailwind", "motion"] satisfies IconName[];
 

@@ -64,6 +64,9 @@
   --color-theme-link-highlight-pink-foreground: var(--base-color-theme-link-highlight-pink-foreground);
   --color-theme-link-highlight-pink-background: var(--base-color-theme-link-highlight-pink-background);
 
+  --color-theme-link-highlight-red-foreground: var(--base-color-theme-link-highlight-red-foreground);
+  --color-theme-link-highlight-red-background: var(--base-color-theme-link-highlight-red-background);
+
   --color-theme-card-base-background: var(--base-color-theme-card-base-background);
   --color-theme-card-base-title-foreground: var(--base-color-theme-card-base-title-foreground);
   --color-theme-card-base-subtitle-foreground: var(--base-color-theme-card-base-subtitle-foreground);
@@ -313,6 +316,9 @@
 
     --base-color-theme-link-highlight-pink-foreground: var(--base-color-pink-700);
     --base-color-theme-link-highlight-pink-background: var(--base-color-pink-100);
+
+    --base-color-theme-link-highlight-red-foreground: var(--base-color-red-700);
+    --base-color-theme-link-highlight-red-background: var(--base-color-red-100);
 
     --base-color-theme-card-base-background: var(--base-color-grey-100);
     --base-color-theme-card-base-title-foreground: var(--base-color-black);

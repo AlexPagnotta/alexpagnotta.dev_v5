@@ -3,7 +3,7 @@ import { ContentHeader, type ContentHeaderProps } from "~/features/content/heade
 import type { WorkContentMetadata } from "~/features/content/metadata.server";
 import { Icon } from "~/features/ui/icon/icon";
 import { Image } from "~/features/ui/image";
-import { BaseLink, Link } from "~/features/ui/link";
+import { BaseLink, Link } from "~/features/ui/link/link";
 import { TextEnricher } from "~/features/ui/text-enricher";
 
 type WorkContentHeaderProps = ContentHeaderProps & {

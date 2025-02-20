@@ -3,6 +3,8 @@ import NextLink from "next/link";
 import React from "react";
 
 import { cva } from "~/features/style/utils";
+import { type AccentColor } from "~/features/ui/link/constants";
+import { getRandomAccentColor } from "~/features/ui/link/utils.server";
 
 type AnchorElementProps = React.ComponentPropsWithoutRef<"a"> & {
   newWindow?: boolean;
@@ -45,13 +47,13 @@ type LinkProps = BaseLinkProps &
     | {
         underline: true;
         highlight?: false;
-        accentColor?: VariantProps<typeof linkStyles>["underlineAccentColor"];
+        accentColor?: VariantProps<typeof linkStyles>["underlineAccentColor"] | "random";
         highlightOrientation?: never;
       }
     | {
         highlight: true;
         underline?: false;
-        accentColor: VariantProps<typeof linkStyles>["highlightAccentColor"];
+        accentColor: VariantProps<typeof linkStyles>["highlightAccentColor"] | "random";
         highlightOrientation?: VariantProps<typeof linkStyles>["highlightOrientation"];
       }
     | { underline?: false; highlight?: false; accentColor?: never; highlightOrientation?: never }
@@ -74,7 +76,7 @@ const linkStyles = cva({
       red: "hover:text-theme-link-underline-hover-red focus-visible:text-theme-link-underline-hover-red",
       purple: "hover:text-theme-link-underline-hover-purple focus-visible:text-theme-link-underline-hover-purple",
       pink: "hover:text-theme-link-underline-hover-pink focus-visible:text-theme-link-underline-hover-pink",
-    },
+    } satisfies Record<AccentColor, string>,
 
     highlight: {
       true: [
@@ -85,9 +87,10 @@ const linkStyles = cva({
     highlightAccentColor: {
       blue: "text-theme-link-highlight-blue-foreground before:bg-theme-link-highlight-blue-background",
       green: "text-theme-link-highlight-green-foreground before:bg-theme-link-highlight-green-background",
+      red: "text-theme-link-highlight-red-foreground before:bg-theme-link-highlight-red-background",
       purple: "text-theme-link-highlight-purple-foreground before:bg-theme-link-highlight-purple-background",
       pink: "text-theme-link-highlight-pink-foreground before:bg-theme-link-highlight-pink-background",
-    },
+    } satisfies Record<AccentColor, string>,
     highlightOrientation: {
       left: "before:rotate-[-2deg] hover:before:rotate-[1deg] focus-visible:before:rotate-[1deg]",
       right: "before:rotate-[2deg] hover:before:rotate-[-1deg] focus-visible:before:rotate-[-1deg]",
@@ -101,15 +104,17 @@ export const Link = React.forwardRef(
     { href, underline, accentColor, highlight, highlightOrientation, className, children, ...rest }: LinkProps,
     ref: React.ForwardedRef<HTMLAnchorElement>
   ) => {
+    const _accentColor = accentColor === "random" ? getRandomAccentColor() : accentColor;
+
     return (
       <BaseLink
         href={href}
         ref={ref}
         className={linkStyles({
           underline,
-          underlineAccentColor: underline ? accentColor : undefined,
+          underlineAccentColor: underline ? _accentColor : undefined,
           highlight,
-          highlightAccentColor: highlight ? accentColor : undefined,
+          highlightAccentColor: highlight ? _accentColor : undefined,
           highlightOrientation: highlight ? (highlightOrientation ?? "center") : undefined,
           className,
         })}
