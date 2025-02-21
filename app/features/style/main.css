@@ -125,6 +125,10 @@
 
   --spacing-content-body-container-max-width: var(--base-spacing-content-body-container-max-width);
 
+  /* Breakpoints */
+
+  --breakpoint-container-header-appendix: 75rem; /* 1200px, not sure why 10px base font is not working here */
+
   /* Typography */
 
   --font-*: initial;

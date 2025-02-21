@@ -1,7 +1,7 @@
 import { type ComponentPropsWithoutRef } from "react";
 
 import { ContentHeaderBackNav } from "~/features/content/header/back-nav";
-import { cn, cva, type VariantProps } from "~/features/style/utils";
+import { cn } from "~/features/style/utils";
 
 type CompoundContentHeader = typeof ContentHeader & {
   Body: typeof ContentHeaderBody;
@@ -19,7 +19,7 @@ const ContentHeader = ({ className, children, ...rest }: ContentHeaderProps) => 
       className={cn("flex flex-col sm:flex-row sm:justify-between sm:items-start gap-32 sm:gap-64-px", className)}
       {...rest}
     >
-      <ContentHeaderBackNav />
+      <ContentHeaderBackNav className="shrink-0" />
       {children}
     </header>
   );
@@ -37,35 +37,29 @@ const ContentHeaderSubtitle = ({ className, ...rest }: ComponentPropsWithoutRef<
   return <p className={cn("body-2", className)} {...rest} />;
 };
 
-type ContentHeaderTitleAppendixWrapperProps = ComponentPropsWithoutRef<"div"> &
-  VariantProps<typeof appendixStyles> & {
-    appendix: React.ReactNode;
-  };
-
-const appendixStyles = cva({
-  base: "absolute title-1 whitespace-nowrap",
-  variants: {
-    position: {
-      right: "right-0 top-1/2 -translate-y-1/2 translate-x-full",
-      top: "right-0 top-0 -translate-y-full",
-    },
-  },
-  defaultVariants: {
-    position: "right",
-  },
-});
+type ContentHeaderTitleAppendixWrapperProps = ComponentPropsWithoutRef<"div"> & {
+  appendix: React.ReactNode;
+};
 
 const ContentHeaderTitleAppendixWrapper = ({
   className,
   children,
   appendix,
-  position,
   ...rest
 }: ContentHeaderTitleAppendixWrapperProps) => {
   return (
     <div className="relative" {...rest}>
       {children}
-      <div className={cn(appendixStyles({ position, className }))}>{appendix}</div>
+      <div
+        className={cn(
+          "absolute title-1 whitespace-nowrap",
+          "right-0 top-0 -translate-y-full",
+          "container-header-appendix:top-1/2 container-header-appendix:-translate-y-1/2 container-header-appendix:translate-x-full",
+          className
+        )}
+      >
+        {appendix}
+      </div>
     </div>
   );
 };

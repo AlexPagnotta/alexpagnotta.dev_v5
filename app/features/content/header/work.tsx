@@ -1,6 +1,7 @@
 import CCAImage from "~/features/assets/icons/cca.png";
 import { ContentHeader, type ContentHeaderProps } from "~/features/content/header/header";
 import type { WorkContentMetadata } from "~/features/content/metadata.server";
+import { cn } from "~/features/style/utils";
 import { Icon } from "~/features/ui/icon/icon";
 import { Image } from "~/features/ui/image";
 import { BaseLink, Link } from "~/features/ui/link/link";
@@ -61,7 +62,12 @@ const HeaderAppendixWrapper = ({ agencyName, agencyUrl, children }: HeaderAppend
 
   return (
     <ContentHeader.TitleAppendixWrapper
-      className="flex items-center"
+      className={cn(
+        "flex items-center",
+        "origin-bottom-right",
+        "rotate-6 scale-75 container-header-appendix:rotate-0 container-header-appendix:scale-100",
+        "mt-8 container-header-appendix:mt-0"
+      )}
       appendix={<>&nbsp;x {agencyUrl ? <BaseLink href={agencyUrl}>{agencyIcon}</BaseLink> : agencyIcon}</>}
     >
       {children}
