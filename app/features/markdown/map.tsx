@@ -17,7 +17,7 @@ export const MdxComponentsMapper: MDXComponents = {
   strong: (props: ComponentPropsWithoutRef<"strong">) => <strong className="font-semibold" {...props} />,
   a: (props: ComponentPropsWithoutRef<"a">) => <Link underline accentColor="random" {...props} />,
   wrapper: (props: ComponentPropsWithoutRef<"div">) => (
-    <main className="mt-48" {...props}>
+    <main className="mt-64" {...props}>
       <article className="max-w-content-body-container-max-width ml-auto space-y-16 body-2 text-justify">
         {props.children}
       </article>
