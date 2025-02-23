@@ -59,5 +59,13 @@ export const getAllContent = async (contentType?: ContentType) => {
 
   const content = await Promise.all(files.map(getContentMetadataFromFile));
 
-  return content.filter((item): item is NonNullable<typeof item> => item !== undefined);
+  const filteredContent = content.filter((item): item is NonNullable<typeof item> => item !== undefined);
+
+  // Sort by date (newest first), if same date, sort by title (alphabetically)
+  return filteredContent.sort((a, b) => {
+    const dateComparison = new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime();
+    if (dateComparison !== 0) return dateComparison;
+
+    return a.metadata.title.localeCompare(b.metadata.title);
+  });
 };

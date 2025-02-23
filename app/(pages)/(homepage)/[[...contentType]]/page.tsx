@@ -1,11 +1,12 @@
 import { notFound } from "next/navigation";
 
+import { ContentCardsMapper } from "~/(pages)/(content)/cards-mapper";
+import { ContentCard } from "~/features/content/card/card";
+import { getCardSubtitleFromMetadata } from "~/features/content/card/utils";
 import { type ContentType, isContentType } from "~/features/content/constants";
 import { getAllContent } from "~/features/content/utils.server";
 import { HomepageHeader } from "~/features/homepage/header/header";
 import { cn } from "~/features/style/utils";
-import { Card } from "~/features/ui/card";
-import { BaseLink } from "~/features/ui/link/link";
 
 // Define the page props type for Next.js App Router
 type HomepageProps = {
@@ -40,24 +41,16 @@ export default async function Homepage({ params }: HomepageProps) {
           "w-full max-w-[36rem] mx-auto sm:max-w-none sm:w-[46rem] md:w-[70rem] lg:w-[46rem]"
         )}
       >
-        {content.map((item, index) => {
-          const isLarge = index === 2;
+        {content.map((item) => {
+          const CardComponent = ContentCardsMapper[item.slug];
 
-          return (
-            <Card
-              key={item.slug}
-              className={cn("h-[22rem] w-full", isLarge && "sm:col-span-2")}
-              alignment="top"
-              asChild
-            >
-              <BaseLink href={item.slug} key={item.slug}>
-                <Card.Title>{item.metadata.title}</Card.Title>
-                <Card.Subtitle>TODO - TODO</Card.Subtitle>
-                <Card.Background>
-                  <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 size-[160px] bg-black/40 rounded-full" />
-                </Card.Background>
-              </BaseLink>
-            </Card>
+          return CardComponent ? (
+            <CardComponent key={item.slug} slug={item.slug} />
+          ) : (
+            <ContentCard key={item.slug} slug={item.slug} alignment="top">
+              <ContentCard.Title>{item.metadata.previewTitle}</ContentCard.Title>
+              <ContentCard.Subtitle>{getCardSubtitleFromMetadata(item.metadata)}</ContentCard.Subtitle>
+            </ContentCard>
           );
         })}
       </main>

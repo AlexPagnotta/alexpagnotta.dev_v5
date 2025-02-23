@@ -3,7 +3,7 @@ import { type ComponentPropsWithoutRef } from "react";
 
 import { type VariantProps, cn, cva } from "~/features/style/utils";
 
-type CardProps = ComponentPropsWithoutRef<"div"> &
+export type CardProps = ComponentPropsWithoutRef<"div"> &
   VariantProps<typeof cardStyles> & {
     asChild?: boolean;
   };

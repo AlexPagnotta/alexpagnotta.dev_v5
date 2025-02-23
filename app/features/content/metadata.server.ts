@@ -18,6 +18,7 @@ const BaseContentMetadataSchema = v.object({
 const WritingContentMetadataSchema = v.object({
   ...BaseContentMetadataSchema.entries,
   type: v.literal(ContentType.WRITING),
+  category: v.picklist(["Personal", "Dev"]),
 });
 
 /**
@@ -40,6 +41,7 @@ const WorkContentMetadataSchema = v.object({
 const LabContentMetadataSchema = v.object({
   ...BaseContentMetadataSchema.entries,
   type: v.literal(ContentType.LAB),
+  category: v.picklist(["3D", "Animation"]),
   stack: v.optional(v.array(v.string())),
 });
 

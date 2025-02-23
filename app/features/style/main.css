@@ -342,7 +342,7 @@
 
     --base-color-theme-card-base-background: var(--base-color-grey-100);
     --base-color-theme-card-base-title-foreground: var(--base-color-black);
-    --base-color-theme-card-base-subtitle-foreground: var(--base-color-grey-700);
+    --base-color-theme-card-base-subtitle-foreground: var(--base-color-grey-500);
 
     --base-color-theme-focus-outline: var(--base-color-black);
   }

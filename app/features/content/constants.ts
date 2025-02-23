@@ -12,3 +12,12 @@ export enum ContentType {
 export const isContentType = (value: string): value is ContentType => {
   return Object.values(ContentType).includes(value as ContentType);
 };
+
+/**
+ * Display name for each content type
+ */
+export const ContentTypeDisplayNameMap = {
+  [ContentType.WRITING]: "Writing",
+  [ContentType.WORK]: "Project",
+  [ContentType.LAB]: "Experiment",
+} as const;

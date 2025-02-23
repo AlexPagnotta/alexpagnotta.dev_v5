@@ -4,14 +4,14 @@ import { ContentType } from "~/features/content/constants";
 import type { WritingContentMetadata } from "~/features/content/metadata.server";
 
 export const contentMetadata: WritingContentMetadata = {
-  title: "Example Writing",
-  previewTitle: "Example Writing",
-  date: "2024-01-13",
+  title: "Let me share something about me",
+  previewTitle: "About Me",
+  date: "2025-02-23",
   type: ContentType.WRITING,
   category: "Personal",
 };
 
 export const metadata: Metadata = {
   title: contentMetadata.title,
-  description: "Example Writing",
+  description: "A small introduction about me",
 };
