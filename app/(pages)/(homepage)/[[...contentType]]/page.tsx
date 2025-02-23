@@ -41,11 +41,19 @@ export default async function Homepage({ params }: HomepageProps) {
           "w-full max-w-[36rem] mx-auto sm:max-w-none sm:w-[46rem] md:w-[70rem] lg:w-[46rem]"
         )}
       >
-        {content.map((item) => {
+        {content.map((item, index) => {
           const CardComponent = ContentCardsMapper[item.slug];
 
+          const aboveFold = index < 10;
+
           return CardComponent ? (
-            <CardComponent key={item.slug} slug={item.slug} />
+            <CardComponent
+              key={item.slug}
+              aboveFold={aboveFold}
+              cardProps={{
+                slug: item.slug,
+              }}
+            />
           ) : (
             <ContentCard key={item.slug} slug={item.slug} alignment="top">
               <ContentCard.Title>{item.metadata.previewTitle}</ContentCard.Title>

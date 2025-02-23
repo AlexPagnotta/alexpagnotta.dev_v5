@@ -2,7 +2,7 @@ import { cn } from "~/features/style/utils";
 import { Card, type CardProps } from "~/features/ui/card";
 import { BaseLink } from "~/features/ui/link/link";
 
-export type ContentCardProps = Omit<CardProps, "asChild"> & {
+export type BaseContentCardProps = Omit<CardProps, "asChild"> & {
   slug: string;
 };
 
@@ -12,7 +12,7 @@ type CompoundContentCard = typeof CompundContentCard & {
   Background: typeof Card.Background;
 };
 
-const CompundContentCard = ({ slug, className, children, ...rest }: ContentCardProps) => {
+const CompundContentCard = ({ slug, className, children, ...rest }: BaseContentCardProps) => {
   return (
     <Card className={cn("w-full h-[22rem]", className)} asChild {...rest}>
       <BaseLink href={slug}>{children}</BaseLink>

@@ -5,7 +5,7 @@ import { TestExperimentCard } from "~/(pages)/(content)/lab/test-experiment/card
 import { TestProjectCard } from "~/(pages)/(content)/works/test-project/card";
 import { AboutMeWritingCard } from "~/(pages)/(content)/writings/about-me/card";
 import { TestWritingCard } from "~/(pages)/(content)/writings/test-writing/card";
-import { type ContentCardProps } from "~/features/content/card/card";
+import { type ContentCardProps } from "~/features/content/card/types";
 
 /**
  * This is the mapper for the cards that are displayed on the homepage

@@ -15,7 +15,7 @@ type CompoundCard = typeof Card & {
 };
 
 const cardStyles = cva({
-  base: ["flex p-24-px relative isolate", "bg-theme-card-base-background rounded-lg"],
+  base: ["flex px-24-px py-16-px relative isolate", "bg-theme-card-base-background rounded-lg"],
   variants: {
     alignment: {
       top: "flex-col",
