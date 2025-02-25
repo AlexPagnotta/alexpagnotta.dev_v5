@@ -1,4 +1,4 @@
-import { FullContainer } from "~/features/markdown/full-container";
+import { MarkdownFullContainer } from "~/features/markdown/full-container";
 import { Image, type ImageProps } from "~/features/ui/image";
 
 type MarkdownImageProps = Pick<ImageProps, "alt" | "src"> & {
@@ -24,9 +24,9 @@ export const MarkdownImage = ({ alt, showCaption, wide, ...rest }: MarkdownImage
 
   if (wide) {
     return (
-      <FullContainer className="[&>figure]:mx-auto [&>figure]:max-w-container-max-width-w-spacing [&>figure]:px-container-horizontal">
+      <MarkdownFullContainer className="[&>figure]:mx-auto [&>figure]:max-w-container-max-width-w-spacing [&>figure]:px-container-horizontal">
         {Component}
-      </FullContainer>
+      </MarkdownFullContainer>
     );
   }
 

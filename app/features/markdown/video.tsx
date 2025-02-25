@@ -1,4 +1,4 @@
-import { FullContainer } from "~/features/markdown/full-container";
+import { MarkdownFullContainer } from "~/features/markdown/full-container";
 import { Video, type VideoProps } from "~/features/ui/video";
 
 type MarkdownVideoProps = Pick<VideoProps, "title" | "src" | "autoPlay" | "controls" | "loop" | "muted"> & {
@@ -18,9 +18,9 @@ export const MarkdownVideo = ({ wide, title, showCaption, ...rest }: MarkdownVid
 
   if (wide) {
     return (
-      <FullContainer className="[&>figure]:mx-auto [&>figure]:max-w-container-max-width-w-spacing [&>figure]:px-container-horizontal">
+      <MarkdownFullContainer className="[&>figure]:mx-auto [&>figure]:max-w-container-max-width-w-spacing [&>figure]:px-container-horizontal">
         {Component}
-      </FullContainer>
+      </MarkdownFullContainer>
     );
   }
 

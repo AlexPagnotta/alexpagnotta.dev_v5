@@ -1,1 +1,15 @@
+import { MarkdownBento } from "~/features/markdown/bento";
+import { Image } from "~/features/ui/image";
+import OH1Image from "./assets/oh-1.jpg";
+import OH2Image from "./assets/oh-2.jpg";
+
 This is a body
+
+<MarkdownBento>
+  <MarkdownBento.ImageItem large spacing src={OH1Image} alt="Overheard 1" className="bg-[#FFD3CC]" />
+  <MarkdownBento.ImageItem src={OH2Image} alt="Overheard 2" />
+  <MarkdownBento.Item />
+  <MarkdownBento.Item large />
+  <MarkdownBento.Item large />
+  <MarkdownBento.Item />
+</MarkdownBento>

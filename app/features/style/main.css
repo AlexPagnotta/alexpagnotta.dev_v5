@@ -79,6 +79,20 @@
   --color-theme-card-base-title-foreground: var(--base-color-theme-card-base-title-foreground);
   --color-theme-card-base-subtitle-foreground: var(--base-color-theme-card-base-subtitle-foreground);
 
+  --color-theme-card-duolingo-background: var(--base-color-theme-card-duolingo-background);
+  --color-theme-card-duolingo-title-foreground: var(--base-color-theme-card-duolingo-title-foreground);
+  --color-theme-card-duolingo-subtitle-foreground: var(--base-color-theme-card-duolingo-subtitle-foreground);
+
+  --color-theme-card-ikea-background: var(--base-color-theme-card-ikea-background);
+  --color-theme-card-ikea-title-foreground: var(--base-color-theme-card-ikea-title-foreground);
+  --color-theme-card-ikea-subtitle-foreground: var(--base-color-theme-card-ikea-subtitle-foreground);
+
+  --color-theme-card-overheard-background: var(--base-color-theme-card-overheard-background);
+  --color-theme-card-overheard-title-foreground: var(--base-color-theme-card-overheard-title-foreground);
+  --color-theme-card-overheard-subtitle-foreground: var(--base-color-theme-card-overheard-subtitle-foreground);
+
+  --color-theme-bento-item-background: var(--base-color-theme-bento-item-background);
+
   --color-theme-focus-outline: var(--base-color-theme-focus-outline);
 
   /* Spacing */
@@ -344,6 +358,20 @@
     --base-color-theme-card-base-title-foreground: var(--base-color-black);
     --base-color-theme-card-base-subtitle-foreground: var(--base-color-grey-500);
 
+    --base-color-theme-card-duolingo-background: var(--base-color-light-blue-100);
+    --base-color-theme-card-duolingo-title-foreground: var(--base-color-light-blue-700);
+    --base-color-theme-card-duolingo-subtitle-foreground: var(--base-color-light-blue-700);
+
+    --base-color-theme-card-ikea-background: var(--base-color-yellow-100);
+    --base-color-theme-card-ikea-title-foreground: var(--base-color-yellow-700);
+    --base-color-theme-card-ikea-subtitle-foreground: var(--base-color-yellow-700);
+
+    --base-color-theme-card-overheard-background: var(--base-color-green-100);
+    --base-color-theme-card-overheard-title-foreground: var(--base-color-green-700);
+    --base-color-theme-card-overheard-subtitle-foreground: var(--base-color-green-700);
+
+    --base-color-theme-bento-item-background: var(--base-color-grey-100);
+
     --base-color-theme-focus-outline: var(--base-color-black);
   }
 
@@ -372,6 +400,8 @@
 
     --base-color-theme-link-highlight-red-foreground: var(--base-color-red-100);
     --base-color-theme-link-highlight-red-background: var(--base-color-red-700);
+
+    --base-color-theme-focus-outline: var(--base-color-white);
   }
 
   /* Global variables */

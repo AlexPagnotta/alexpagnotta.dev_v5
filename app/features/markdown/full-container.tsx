@@ -3,14 +3,14 @@ import { type ComponentPropsWithoutRef } from "react";
 
 import { cn } from "~/features/style/utils";
 
-type FullContainerProps = ComponentPropsWithoutRef<"div"> & {
+type MarkdownFullContainerProps = ComponentPropsWithoutRef<"div"> & {
   asChild?: boolean;
 };
 
 /**
  * A container that takes expands the bounds of the content body container to fullscreen
  */
-export const FullContainer = ({ asChild, className, ...rest }: FullContainerProps) => {
+export const MarkdownFullContainer = ({ asChild, className, ...rest }: MarkdownFullContainerProps) => {
   const Component = asChild ? Slot : "div";
 
   return (
