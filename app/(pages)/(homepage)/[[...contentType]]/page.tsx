@@ -92,12 +92,12 @@ const DefaultLabContentCard = ({ slug, metadata }: { slug: string; metadata: Lab
           "before:shadow-[0px_0px_40px_30px_var(--color-theme-card-default-lab-background)]"
         )}
       >
-        <ContentCard.Title className="text-theme-card-default-lab-title-foreground">
-          {metadata.previewTitle}
-        </ContentCard.Title>
         <ContentCard.Subtitle className="text-theme-card-default-lab-subtitle-foreground">
           {getCardSubtitleFromMetadata(metadata)}
         </ContentCard.Subtitle>
+        <ContentCard.Title className="text-theme-card-default-lab-title-foreground">
+          {metadata.previewTitle}
+        </ContentCard.Title>
       </div>
 
       <ContentCard.Background>

@@ -8,8 +8,8 @@ type MarkdownVideoProps = Pick<VideoProps, "title" | "src" | "autoPlay" | "contr
 
 export const MarkdownVideo = ({ wide, title, showCaption, ...rest }: MarkdownVideoProps) => {
   const Component = (
-    <figure className="flex flex-col gap-16 my-48 w-full">
-      <Video rounded title={title} playsInline {...rest} />
+    <figure className="flex flex-col gap-16 my-48 w-full aspect-video">
+      <Video rounded title={title} playsInline className="size-full object-cover bg-black" {...rest} />
       {showCaption && (
         <figcaption className="text-right body-1 text-theme-foreground-muted pr-[2.8rem]">{title}</figcaption>
       )}
