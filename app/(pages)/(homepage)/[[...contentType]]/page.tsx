@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import { ContentCardsMapper } from "~/(pages)/(content)/cards-mapper";
 import { ContentCard } from "~/features/content/card/card";
 import { getCardSubtitleFromMetadata } from "~/features/content/card/utils";
-import { type ContentType, isContentType } from "~/features/content/constants";
+import { ContentType, isContentType } from "~/features/content/constants";
+import { type ContentMetadata, type LabContentMetadata } from "~/features/content/metadata.server";
 import { getAllContent } from "~/features/content/utils.server";
 import { HomepageHeader } from "~/features/homepage/header/header";
 import { cn } from "~/features/style/utils";
@@ -46,22 +47,69 @@ export default async function Homepage({ params }: HomepageProps) {
 
           const aboveFold = index < 10;
 
-          return CardComponent ? (
-            <CardComponent
-              key={item.slug}
-              aboveFold={aboveFold}
-              cardProps={{
-                slug: item.slug,
-              }}
-            />
-          ) : (
-            <ContentCard key={item.slug} slug={item.slug} alignment="top">
-              <ContentCard.Title>{item.metadata.previewTitle}</ContentCard.Title>
-              <ContentCard.Subtitle>{getCardSubtitleFromMetadata(item.metadata)}</ContentCard.Subtitle>
-            </ContentCard>
-          );
+          const hasCustomContentCard = !!CardComponent;
+
+          if (hasCustomContentCard) {
+            return (
+              <CardComponent
+                key={item.slug}
+                aboveFold={aboveFold}
+                cardProps={{
+                  slug: item.slug,
+                }}
+              />
+            );
+          }
+
+          if (item.metadata.type === ContentType.LAB) {
+            return <DefaultLabContentCard key={item.slug} slug={item.slug} metadata={item.metadata} />;
+          }
+
+          return <DefaultContentCard key={item.slug} slug={item.slug} metadata={item.metadata} />;
         })}
       </main>
     </div>
   );
 }
+
+const DefaultContentCard = ({ slug, metadata }: { slug: string; metadata: ContentMetadata }) => {
+  return (
+    <ContentCard slug={slug} alignment="top">
+      <ContentCard.Title>{metadata.previewTitle}</ContentCard.Title>
+      <ContentCard.Subtitle>{getCardSubtitleFromMetadata(metadata)}</ContentCard.Subtitle>
+    </ContentCard>
+  );
+};
+
+const DefaultLabContentCard = ({ slug, metadata }: { slug: string; metadata: LabContentMetadata }) => {
+  return (
+    <ContentCard slug={slug} alignment="bottom" className="bg-theme-card-default-lab-background overflow-hidden">
+      <div
+        className={cn(
+          "relative isolate",
+          "before:absolute before:content-[''] before:top-0 before:left-0 before:right-[calc(var(--spacing-card-horizontal)*-1)] before:bottom-[calc(var(--spacing-card-vertical)*-1)] before:-z-10",
+          "before:bg-theme-card-default-lab-background",
+          "before:shadow-[0px_0px_40px_30px_var(--color-theme-card-default-lab-background)]"
+        )}
+      >
+        <ContentCard.Title className="text-theme-card-default-lab-title-foreground">
+          {metadata.previewTitle}
+        </ContentCard.Title>
+        <ContentCard.Subtitle className="text-theme-card-default-lab-subtitle-foreground">
+          {getCardSubtitleFromMetadata(metadata)}
+        </ContentCard.Subtitle>
+      </div>
+
+      <ContentCard.Background>
+        <div
+          className={cn(
+            "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+            "size-[150%] rotate-12",
+            "bg-[linear-gradient(to_right,var(--color-theme-card-default-lab-background-grid)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-theme-card-default-lab-background-grid)_1px,transparent_1px)]",
+            "bg-[length:40px_40px] bg-repeat"
+          )}
+        />
+      </ContentCard.Background>
+    </ContentCard>
+  );
+};

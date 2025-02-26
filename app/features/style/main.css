@@ -79,6 +79,11 @@
   --color-theme-card-base-title-foreground: var(--base-color-theme-card-base-title-foreground);
   --color-theme-card-base-subtitle-foreground: var(--base-color-theme-card-base-subtitle-foreground);
 
+  --color-theme-card-default-lab-background: var(--base-color-theme-card-default-lab-background);
+  --color-theme-card-default-lab-title-foreground: var(--base-color-theme-card-default-lab-title-foreground);
+  --color-theme-card-default-lab-subtitle-foreground: var(--base-color-theme-card-default-lab-subtitle-foreground);
+  --color-theme-card-default-lab-background-grid: var(--base-color-theme-card-default-lab-background-grid);
+
   --color-theme-card-duolingo-background: var(--base-color-theme-card-duolingo-background);
   --color-theme-card-duolingo-title-foreground: var(--base-color-theme-card-duolingo-title-foreground);
   --color-theme-card-duolingo-subtitle-foreground: var(--base-color-theme-card-duolingo-subtitle-foreground);
@@ -357,6 +362,11 @@
     --base-color-theme-card-base-background: var(--base-color-grey-100);
     --base-color-theme-card-base-title-foreground: var(--base-color-black);
     --base-color-theme-card-base-subtitle-foreground: var(--base-color-grey-500);
+
+    --base-color-theme-card-default-lab-background: var(--base-color-black);
+    --base-color-theme-card-default-lab-title-foreground: var(--base-color-white);
+    --base-color-theme-card-default-lab-subtitle-foreground: var(--base-color-grey-200);
+    --base-color-theme-card-default-lab-background-grid: var(--base-color-grey-700);
 
     --base-color-theme-card-duolingo-background: var(--base-color-light-blue-100);
     --base-color-theme-card-duolingo-title-foreground: var(--base-color-light-blue-700);

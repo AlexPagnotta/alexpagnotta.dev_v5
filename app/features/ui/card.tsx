@@ -15,22 +15,30 @@ type CompoundCard = typeof Card & {
 };
 
 const cardStyles = cva({
-  base: ["flex px-24-px py-16-px relative isolate", "bg-theme-card-base-background rounded-lg"],
+  base: [
+    "flex relative isolate",
+    "bg-theme-card-base-background rounded-lg",
+    "[--spacing-card-horizontal:24px] [--spacing-card-vertical:16px]",
+  ],
   variants: {
     alignment: {
       top: "flex-col",
-      bottom: "flex-col-reverse justify-[end] text-end",
+      bottom: "flex-col-reverse justify-[end] items-end text-end",
+    },
+    spacing: {
+      true: "px-[var(--spacing-card-horizontal)] py-[var(--spacing-card-vertical)]",
     },
   },
   defaultVariants: {
     alignment: "top",
+    spacing: true,
   },
 });
 
-const Card = ({ className, alignment, asChild, ...rest }: CardProps) => {
+const Card = ({ className, alignment, spacing, asChild, ...rest }: CardProps) => {
   const Component = asChild ? Slot : "div";
 
-  return <Component className={cn(cardStyles({ alignment }), className)} {...rest} />;
+  return <Component className={cn(cardStyles({ alignment, spacing }), className)} {...rest} />;
 };
 
 type CardTitleProps = ComponentPropsWithoutRef<"h2">;
