@@ -19,7 +19,7 @@ export const MarkdownFullContainer = ({ asChild, className, ...rest }: MarkdownF
         "[--c-w:var(--base-spacing-container-max-width)]",
         "[--c-w-w-s:var(--base-spacing-container-max-width-w-spacing)]",
         "[--c-s-h:var(--base-spacing-container-horizontal)]",
-        "[--c-b-w:var(--base-spacing-content-body-container-max-width)]",
+        "[--c-b-w:var(--base-spacing-content-body-container-sm-max-width)]",
 
         "relative w-screen",
         "ml-[calc((min(calc(100vw-var(--c-s-h)),calc(var(--c-w)+var(--c-s-h)))-min(calc(100vw-var(--c-s-h)*2),var(--c-b-w)))*-1)]",

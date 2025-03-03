@@ -14,10 +14,10 @@ type CompoundMarkdownBento = typeof MarkdownBento & {
 
 const MarkdownBento = ({ children, className }: MarkdownBentoProps) => {
   return (
-    <MarkdownFullContainer className={className}>
+    <MarkdownFullContainer className={cn("my-48", className)}>
       <div
         className={cn(
-          "mx-auto my-48 max-w-content-body-container-max-width md:max-w-container-max-width-w-spacing px-container-horizontal",
+          "mx-auto max-w-content-body-container-sm-max-width md:max-w-container-max-width-w-spacing px-container-horizontal",
           "grid grid-cols-1 md:grid-cols-3 grid-flow-row-dense gap-20-px"
         )}
       >

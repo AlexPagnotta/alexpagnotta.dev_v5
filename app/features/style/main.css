@@ -142,7 +142,9 @@
   --spacing-container-max-width: var(--base-spacing-container-max-width);
   --spacing-container-max-width-w-spacing: var(--base-spacing-container-max-width-w-spacing);
 
-  --spacing-content-body-container-max-width: var(--base-spacing-content-body-container-max-width);
+  --spacing-content-body-container-sm-max-width: var(--base-spacing-content-body-container-sm-max-width);
+  --spacing-content-body-container-md-max-width: var(--base-spacing-content-body-container-md-max-width);
+  --spacing-content-body-container-lg-max-width: var(--base-spacing-content-body-container-lg-max-width);
 
   /* Breakpoints */
 
@@ -427,7 +429,9 @@
     --base-spacing-container-horizontal: 32px;
     --base-spacing-container-vertical: 64px;
 
-    --base-spacing-content-body-container-max-width: 56rem;
+    --base-spacing-content-body-container-sm-max-width: 56rem;
+    --base-spacing-content-body-container-md-max-width: 72rem;
+    --base-spacing-content-body-container-lg-max-width: var(--base-spacing-container-max-width);
   }
 
   @variant md {
