@@ -98,6 +98,12 @@
 
   --color-theme-bento-item-background: var(--base-color-theme-bento-item-background);
 
+  --color-theme-floating-content-wavy-line-blue: var(--base-color-theme-floating-content-wavy-line-blue);
+  --color-theme-floating-content-wavy-line-green: var(--base-color-theme-floating-content-wavy-line-green);
+  --color-theme-floating-content-wavy-line-red: var(--base-color-theme-floating-content-wavy-line-red);
+  --color-theme-floating-content-wavy-line-purple: var(--base-color-theme-floating-content-wavy-line-purple);
+  --color-theme-floating-content-wavy-line-pink: var(--base-color-theme-floating-content-wavy-line-pink);
+
   --color-theme-focus-outline: var(--base-color-theme-focus-outline);
 
   /* Spacing */
@@ -291,6 +297,26 @@
   @apply text-body-1 lg:text-body-1-desktop font-body font-regular;
 }
 
+/** Squiggle Border */
+
+/* Generated using https://css-generators.com/wavy-shapes/ */
+@utility wavy-border {
+  background-color: currentColor;
+  min-height: 8px;
+
+  --mask: radial-gradient(
+        8.68px at 50% calc(100% + 4.8px),
+        #0000 calc(99% - 2px),
+        #000 calc(101% - 2px) 99%,
+        #0000 101%
+      )
+      calc(50% - 12px) calc(50% - 4px + 0.5px) / 24px 8px repeat-x,
+    radial-gradient(8.68px at 50% -4.8px, #0000 calc(99% - 2px), #000 calc(101% - 2px) 99%, #0000 101%) 50%
+      calc(50% + 4px) / 24px 8px repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}
+
 /** Base Styles */
 
 @layer base {
@@ -387,6 +413,12 @@
     --base-color-theme-card-overheard-subtitle-foreground: var(--base-color-green-700);
 
     --base-color-theme-bento-item-background: var(--base-color-grey-100);
+
+    --base-color-theme-floating-content-wavy-line-blue: var(--base-color-blue-500);
+    --base-color-theme-floating-content-wavy-line-green: var(--base-color-green-500);
+    --base-color-theme-floating-content-wavy-line-red: var(--base-color-red-500);
+    --base-color-theme-floating-content-wavy-line-purple: var(--base-color-purple-500);
+    --base-color-theme-floating-content-wavy-line-pink: var(--base-color-pink-500);
 
     --base-color-theme-focus-outline: var(--base-color-black);
   }

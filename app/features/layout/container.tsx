@@ -13,5 +13,5 @@ const containerStyles =
 export const Container = ({ asChild, className, ...rest }: ContainerProps) => {
   const Component = asChild ? Slot : "div";
 
-  return <Component className={cn(containerStyles, className)} {...rest} />;
+  return <Component data-layout-container className={cn(containerStyles, className)} {...rest} />;
 };

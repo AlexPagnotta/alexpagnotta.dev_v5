@@ -59,7 +59,7 @@ type LinkProps = BaseLinkProps &
     | { underline?: false; highlight?: false; accentColor?: never; highlightOrientation?: never }
   );
 
-const linkStyles = cva({
+export const linkStyles = cva({
   base: "inline-flex",
   variants: {
     underline: {
