@@ -1,6 +1,6 @@
 import { ContentHeader, type ContentHeaderProps } from "~/features/content/header/header";
 import { formatContentHeaderDate } from "~/features/content/header/utils";
-import { type WritingContentMetadata } from "~/features/content/metadata.server";
+import { type WritingContentMetadata } from "~/features/content/metadata/metadata.server";
 
 type WritingContentHeaderProps = ContentHeaderProps & {
   metadata: WritingContentMetadata;

@@ -1,6 +1,6 @@
 import { ContentType, ContentTypeDisplayNameMap } from "~/features/content/constants";
 
-import { type ContentMetadata } from "../metadata.server";
+import { type ContentMetadata } from "../metadata/metadata.server";
 
 /**
  * Get the subtitle for a content card based on the metadata

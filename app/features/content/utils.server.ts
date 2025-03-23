@@ -4,7 +4,7 @@ import { glob } from "fast-glob";
 import * as v from "valibot";
 
 import { type ContentType } from "~/features/content/constants";
-import { ContentMetadataSchema } from "~/features/content/metadata.server";
+import { ContentMetadataSchema } from "~/features/content/metadata/metadata.server";
 
 const METADATA_FILE_NAME = "metadata.ts";
 

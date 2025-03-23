@@ -9,6 +9,7 @@ import { IconNames } from "~/features/ui/icon/constants";
 const BaseContentMetadataSchema = v.object({
   title: v.string(),
   previewTitle: v.string(),
+  description: v.string(),
   date: v.string(),
 });
 

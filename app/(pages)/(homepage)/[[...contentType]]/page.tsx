@@ -4,7 +4,7 @@ import { ContentCardsMapper } from "~/(pages)/(content)/cards-mapper";
 import { ContentCard } from "~/features/content/card/card";
 import { getCardSubtitleFromMetadata } from "~/features/content/card/utils";
 import { ContentType, isContentType } from "~/features/content/constants";
-import { type ContentMetadata, type LabContentMetadata } from "~/features/content/metadata.server";
+import { type ContentMetadata, type LabContentMetadata } from "~/features/content/metadata/metadata.server";
 import { getAllContent } from "~/features/content/utils.server";
 import { HomepageHeader } from "~/features/homepage/header/header";
 import { cn } from "~/features/style/utils";

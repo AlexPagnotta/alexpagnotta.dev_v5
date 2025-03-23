@@ -1,5 +1,5 @@
 import { ContentHeader, type ContentHeaderProps } from "~/features/content/header/header";
-import type { LabContentMetadata } from "~/features/content/metadata.server";
+import type { LabContentMetadata } from "~/features/content/metadata/metadata.server";
 import { Icon } from "~/features/ui/icon/icon";
 import { TextEnricher } from "~/features/ui/text-enricher";
 

@@ -5,6 +5,9 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
  */
 export const SiteConfig = {
   baseUrl: BASE_URL,
+  name: "Alex Pagnotta",
+  title: "Alex Pagnotta",
+  description: "Alex Pagnotta, Software Developer",
   email: "ap.alex.pagnotta@gmail.com",
   github: "https://github.com/AlexPagnotta",
   linkedin: "https://www.linkedin.com/in/alex-pagnotta/",

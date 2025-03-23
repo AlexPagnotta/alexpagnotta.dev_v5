@@ -1,6 +1,6 @@
 import CCAImage from "~/features/assets/icons/cca.png";
 import { ContentHeader, type ContentHeaderProps } from "~/features/content/header/header";
-import type { WorkContentMetadata } from "~/features/content/metadata.server";
+import type { WorkContentMetadata } from "~/features/content/metadata/metadata.server";
 import { cn } from "~/features/style/utils";
 import { Icon } from "~/features/ui/icon/icon";
 import { Image } from "~/features/ui/image";
