@@ -8,6 +8,7 @@ export type ContentCardProps = {
    * Whether the card is above the fold, if true, image loading will be prioritized, for example
    */
   aboveFold?: boolean;
+
   /**
    * Additional props for the card component
    */
