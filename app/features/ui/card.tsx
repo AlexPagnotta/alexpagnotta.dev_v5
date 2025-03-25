@@ -17,8 +17,9 @@ type CompoundCard = typeof Card & {
 const cardStyles = cva({
   base: [
     "flex relative isolate",
-    "bg-theme-card-base-background rounded-lg",
+    "bg-theme-card-base-background hover:bg-theme-card-base-hover-background rounded-lg",
     "[--spacing-card-horizontal:24px] [--spacing-card-vertical:16px]",
+    "transition-colors duration-200",
   ],
   variants: {
     alignment: {

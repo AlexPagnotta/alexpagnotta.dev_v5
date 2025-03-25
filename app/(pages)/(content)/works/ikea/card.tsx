@@ -10,7 +10,10 @@ import { contentMetadata } from "./metadata";
 
 export const IkeaProjectCard = ({ aboveFold, cardProps: { className, ...rest } }: ContentCardProps) => {
   return (
-    <ContentCard className={cn("bg-theme-card-ikea-background @container", className)} {...rest}>
+    <ContentCard
+      className={cn("bg-theme-card-ikea-background  hover:bg-theme-card-ikea-hover-background @container", className)}
+      {...rest}
+    >
       <ContentCard.Title className="text-theme-card-ikea-title-foreground">
         {contentMetadata.previewTitle}
       </ContentCard.Title>

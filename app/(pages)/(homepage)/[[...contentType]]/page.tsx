@@ -83,13 +83,23 @@ const DefaultContentCard = ({ slug, metadata }: { slug: string; metadata: Conten
 
 const DefaultLabContentCard = ({ slug, metadata }: { slug: string; metadata: LabContentMetadata }) => {
   return (
-    <ContentCard slug={slug} alignment="bottom" className="bg-theme-card-default-lab-background overflow-hidden">
+    <ContentCard
+      slug={slug}
+      alignment="bottom"
+      className={cn(
+        "overflow-hidden",
+        "[--card-background-color:var(--color-theme-card-default-lab-background)]",
+        "hover:[--card-background-color:var(--color-theme-card-default-lab-hover-background)]",
+        "bg-[var(--card-background-color)] hover:bg-[var(--card-background-color)]"
+      )}
+    >
       <div
         className={cn(
           "relative isolate",
           "before:absolute before:content-[''] before:top-0 before:left-0 before:right-[calc(var(--spacing-card-horizontal)*-1)] before:bottom-[calc(var(--spacing-card-vertical)*-1)] before:-z-10",
-          "before:bg-theme-card-default-lab-background",
-          "before:shadow-[0px_0px_40px_30px_var(--color-theme-card-default-lab-background)]"
+          "before:bg-[var(--card-background-color)]",
+          "before:shadow-[0px_0px_40px_30px_var(--card-background-color)]",
+          "before:transition-[colors_shadow] before:duration-200"
         )}
       >
         <ContentCard.Subtitle className="text-theme-card-default-lab-subtitle-foreground">

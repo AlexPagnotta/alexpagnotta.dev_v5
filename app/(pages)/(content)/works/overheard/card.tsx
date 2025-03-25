@@ -17,7 +17,13 @@ const cardImageStyles = [
 
 export const OverheardProjectCard = ({ aboveFold, cardProps: { className, ...rest } }: ContentCardProps) => {
   return (
-    <ContentCard className={cn("bg-theme-card-overheard-background group @container", className)} {...rest}>
+    <ContentCard
+      className={cn(
+        "bg-theme-card-overheard-background hover:bg-theme-card-overheard-hover-background group @container",
+        className
+      )}
+      {...rest}
+    >
       <ContentCard.Title className="text-theme-card-overheard-title-foreground">
         {contentMetadata.previewTitle}
       </ContentCard.Title>

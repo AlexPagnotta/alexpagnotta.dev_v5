@@ -10,7 +10,13 @@ import { contentMetadata } from "./metadata";
 
 export const DuolingoProjectCard = ({ aboveFold, cardProps: { className, ...rest } }: ContentCardProps) => {
   return (
-    <ContentCard className={cn("bg-theme-card-duolingo-background @container", className)} {...rest}>
+    <ContentCard
+      className={cn(
+        "bg-theme-card-duolingo-background hover:bg-theme-card-duolingo-hover-background @container",
+        className
+      )}
+      {...rest}
+    >
       <ContentCard.Title className="text-theme-card-duolingo-title-foreground">
         {contentMetadata.previewTitle}
       </ContentCard.Title>
