@@ -1,4 +1,4 @@
-import { ContentCard } from "~/features/content/card/card";
+import { ContentCard, ContentCardSubtitle, ContentCardTitle } from "~/features/content/card/card";
 import { getCardSubtitleFromMetadata } from "~/features/content/card/utils";
 import { type ContentMetadata } from "~/features/content/metadata/metadata.server";
 
@@ -10,8 +10,8 @@ type DefaultContentCardProps = {
 export const DefaultContentCard = ({ slug, metadata }: DefaultContentCardProps) => {
   return (
     <ContentCard slug={slug} alignment="top">
-      <ContentCard.Title>{metadata.previewTitle}</ContentCard.Title>
-      <ContentCard.Subtitle>{getCardSubtitleFromMetadata(metadata)}</ContentCard.Subtitle>
+      <ContentCardTitle>{metadata.previewTitle}</ContentCardTitle>
+      <ContentCardSubtitle>{getCardSubtitleFromMetadata(metadata)}</ContentCardSubtitle>
     </ContentCard>
   );
 };

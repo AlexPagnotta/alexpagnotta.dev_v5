@@ -1,5 +1,5 @@
 import { Slot } from "@radix-ui/react-slot";
-import { type ComponentPropsWithoutRef } from "react";
+import { forwardRef, type ComponentPropsWithoutRef } from "react";
 
 import { type VariantProps, cn, cva } from "~/features/style/utils";
 
@@ -36,11 +36,13 @@ const cardStyles = cva({
   },
 });
 
-const Card = ({ className, alignment, spacing, asChild, ...rest }: CardProps) => {
+const Card = forwardRef<HTMLDivElement, CardProps>(({ className, alignment, spacing, asChild, ...rest }, ref) => {
   const Component = asChild ? Slot : "div";
 
-  return <Component className={cn(cardStyles({ alignment, spacing }), className)} {...rest} />;
-};
+  return <Component ref={ref} className={cn(cardStyles({ alignment, spacing }), className)} {...rest} />;
+});
+
+Card.displayName = "Card";
 
 type CardTitleProps = ComponentPropsWithoutRef<"h2">;
 

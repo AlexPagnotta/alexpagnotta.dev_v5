@@ -1,4 +1,4 @@
-import { ContentCard } from "~/features/content/card/card";
+import { ContentCard, ContentCardSubtitle, ContentCardTitle } from "~/features/content/card/card";
 import { type ContentCardProps } from "~/features/content/card/types";
 import { getCardSubtitleFromMetadata } from "~/features/content/card/utils";
 
@@ -7,8 +7,8 @@ import { contentMetadata } from "./metadata";
 export const TestProjectCard = ({ cardProps }: ContentCardProps) => {
   return (
     <ContentCard {...cardProps}>
-      <ContentCard.Title>{contentMetadata.previewTitle}</ContentCard.Title>
-      <ContentCard.Subtitle>{getCardSubtitleFromMetadata(contentMetadata)}</ContentCard.Subtitle>
+      <ContentCardTitle>{contentMetadata.previewTitle}</ContentCardTitle>
+      <ContentCardSubtitle>{getCardSubtitleFromMetadata(contentMetadata)}</ContentCardSubtitle>
     </ContentCard>
   );
 };

@@ -1,4 +1,9 @@
-import { ContentCard } from "~/features/content/card/card";
+import {
+  ContentCard,
+  ContentCardBackground,
+  ContentCardSubtitle,
+  ContentCardTitle,
+} from "~/features/content/card/card";
 import { getCardSubtitleFromMetadata } from "~/features/content/card/utils";
 import { type LabContentMetadata } from "~/features/content/metadata/metadata.server";
 import { cn } from "~/features/style/utils";
@@ -17,7 +22,9 @@ export const DefaultLabContentCard = ({ slug, metadata }: DefaultContentCardProp
         "overflow-hidden",
         "[--card-background-color:var(--color-theme-card-default-lab-background)]",
         "hover:[--card-background-color:var(--color-theme-card-default-lab-hover-background)]",
-        "bg-[var(--card-background-color)] hover:bg-[var(--card-background-color)]"
+        "data-[highlighted]:[--card-background-color:var(--color-theme-card-default-lab-hover-background)]",
+        "bg-[var(--card-background-color)]",
+        "hover:bg-[var(--card-background-color)] data-[highlighted]:bg-[var(--card-background-color)]"
       )}
     >
       <div
@@ -29,15 +36,15 @@ export const DefaultLabContentCard = ({ slug, metadata }: DefaultContentCardProp
           "before:transition-[colors_shadow] before:duration-200"
         )}
       >
-        <ContentCard.Subtitle className="text-theme-card-default-lab-subtitle-foreground">
+        <ContentCardSubtitle className="text-theme-card-default-lab-subtitle-foreground">
           {getCardSubtitleFromMetadata(metadata)}
-        </ContentCard.Subtitle>
-        <ContentCard.Title className="text-theme-card-default-lab-title-foreground">
+        </ContentCardSubtitle>
+        <ContentCardTitle className="text-theme-card-default-lab-title-foreground">
           {metadata.previewTitle}
-        </ContentCard.Title>
+        </ContentCardTitle>
       </div>
 
-      <ContentCard.Background>
+      <ContentCardBackground>
         <div
           className={cn(
             "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
@@ -46,7 +53,7 @@ export const DefaultLabContentCard = ({ slug, metadata }: DefaultContentCardProp
             "bg-[length:40px_40px] bg-repeat"
           )}
         />
-      </ContentCard.Background>
+      </ContentCardBackground>
     </ContentCard>
   );
 };

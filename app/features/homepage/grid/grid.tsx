@@ -34,6 +34,7 @@ export const HomepageGrid = ({ items }: HomepageGridProps) => {
               aboveFold={aboveFold}
               cardProps={{
                 slug: item.slug,
+                isLast: index === items.length - 1,
               }}
             />
           );
