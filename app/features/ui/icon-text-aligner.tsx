@@ -1,7 +1,7 @@
 import { type ComponentPropsWithoutRef } from "react";
 
 import { cn } from "~/features/style/utils";
-import { Icon, type IconProps } from "~/features/ui/icon/icon";
+import { Icon, type IconProps } from "~/features/ui/icon/icon-component";
 import { Image, type ImageProps } from "~/features/ui/image";
 
 type CompoundIconTextAligner = typeof IconTextAligner & {

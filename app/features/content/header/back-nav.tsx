@@ -1,5 +1,5 @@
 import { cn } from "~/features/style/utils";
-import { Icon } from "~/features/ui/icon/icon";
+import { Icon } from "~/features/ui/icon/icon-component";
 import { Link } from "~/features/ui/link/link";
 
 type ContentHeaderBackNavProps = {

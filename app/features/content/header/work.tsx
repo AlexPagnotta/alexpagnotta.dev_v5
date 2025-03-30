@@ -2,7 +2,7 @@ import CCAImage from "~/features/assets/icons/cca.png";
 import { ContentHeader, type ContentHeaderProps } from "~/features/content/header/header";
 import type { WorkContentMetadata } from "~/features/content/metadata/metadata.server";
 import { cn } from "~/features/style/utils";
-import { Icon } from "~/features/ui/icon/icon";
+import { Icon } from "~/features/ui/icon/icon-component";
 import { Image } from "~/features/ui/image";
 import { BaseLink, Link } from "~/features/ui/link/link";
 import { TextEnricher } from "~/features/ui/text-enricher";
