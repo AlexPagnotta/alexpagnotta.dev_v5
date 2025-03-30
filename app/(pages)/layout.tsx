@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { type Viewport, type Metadata } from "next";
 import { Fredoka, Nunito_Sans } from "next/font/google";
 
@@ -69,7 +70,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${fredokaFont.variable} ${nunitoSansFont.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
