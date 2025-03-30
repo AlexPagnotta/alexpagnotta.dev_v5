@@ -3,7 +3,7 @@ import { type SVGProps } from "react";
 import { cn } from "~/features/style/utils";
 import { type IconName } from "~/features/ui/icon/name";
 
-type IconProps = {
+export type IconProps = {
   name: IconName;
 } & SVGProps<SVGSVGElement>;
 

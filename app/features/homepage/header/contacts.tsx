@@ -1,6 +1,6 @@
 import { SiteConfig } from "~/features/config/config";
-import { Icon } from "~/features/ui/icon/icon";
-import { Link } from "~/features/ui/link/link";
+import { IconTextAligner } from "~/features/ui/icon-text-aligner";
+import { BaseLink, Link } from "~/features/ui/link/link";
 
 export const HomepageHeaderContacts = () => {
   return (
@@ -10,20 +10,18 @@ export const HomepageHeaderContacts = () => {
         email
       </Link>
       , or a message on{" "}
-      <Link
-        href={SiteConfig.linkedin}
-        className="relative w-24 h-12 inline-flex justify-center align-baseline items-center"
-      >
-        <Icon name="linkedin" className="absolute inset-x-0 rotate-[-8deg] hover:rotate-[8deg]" />
-      </Link>
+      <BaseLink href={SiteConfig.linkedin}>
+        <IconTextAligner className="w-24">
+          <IconTextAligner.Icon name="linkedin" className="rotate-[-8deg] hover:rotate-[8deg]" />
+        </IconTextAligner>
+      </BaseLink>
       .{"\n"}
       If you want to know more about my work, have a look at my{" "}
-      <Link
-        href={SiteConfig.github}
-        className="relative w-24 h-12 inline-flex justify-center align-baseline items-center"
-      >
-        <Icon name="github" className="absolute inset-x-0 rotate-[8deg] hover:rotate-[-8deg]" />
-      </Link>{" "}
+      <BaseLink href={SiteConfig.github}>
+        <IconTextAligner className="w-24">
+          <IconTextAligner.Icon name="github" className=" rotate-[8deg] hover:rotate-[-8deg] text-theme-icon-github" />
+        </IconTextAligner>
+      </BaseLink>{" "}
       or view my{" "}
       <Link href={SiteConfig.cv} underline accentColor="pink">
         CV
