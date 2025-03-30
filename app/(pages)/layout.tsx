@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { type Viewport, type Metadata } from "next";
 import { Fredoka, Nunito_Sans } from "next/font/google";
 
@@ -73,6 +74,7 @@ export default function RootLayout({
       <body>
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
