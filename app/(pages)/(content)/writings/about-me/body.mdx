@@ -1,1 +1,27 @@
-This is the about me page.
+import { Link, BaseLink } from "~/features/ui/link/link";
+import { MeFaceIcon, MilchickFaceIcon } from "./components/text-icons";
+import { GodzillaFloatingContent } from "./components/godzilla-floating-content";
+import { MarkdownFooter } from "~/features/markdown/footer/footer";
+import { MarkdownBlockquote } from "~/features/markdown/blockquote/blockquote";
+
+As you might already know (my name is everywhere on this website), I'm <b>Alex Pagnotta</b> <MeFaceIcon />, a senior frontend developer living in <Link underline accentColor="random" href="https://maps.app.goo.gl/gCzPwwewmfva5LSeA">this beautiful part</Link> of Italy.
+
+I've been in software development for several years now, starting as a backend developer before moving to frontend development for the past 6 years, specializing in React and modern frameworks like Next.js, Remix, and Solid.
+
+I'm currently working at <BaseLink href="https://www.wild.as">WILD</BaseLink>, where I collaborate with an amazing team to build innovative and beatifully crafted digital products, for a great variety of clients, like <Link underline accentColor="green" href="/works/duolingo">Duolingo</Link>, <Link underline accentColor="red" href="/works/brawl-stars">Brawl Stars</Link>, <Link underline accentColor="blue" href="/works/ikea">Ikea</Link> and <Link underline accentColor="purple" href="/works">many others</Link>.
+
+On the personal side, I like reading, mostly science fiction and science related books (Astronomy, Physics, etc.), I also love spending time to finetune my coffee setup, and buy new plants to replace the ones that inevitably decide to leave me.\
+On a side note, I'm a big fan of the japanese culture, and I have a quite unexplicable love for <GodzillaFloatingContent>Godzilla</GodzillaFloatingContent>, I even have a tattoo, well not this one, a cuter one, on my arm.
+
+Now that you know me, you may be wondering what this website is about. Well, let's say that is first and foremost my dev portfolio, a place to showcase my work and my skills, but it's also a place to share my thoughts, my ideas, and in general everything that I'm interested in.
+
+I guess that's it, I tried to be concise, and avoid any linkedin-like self-promotion, but in case you want that, I will append an AI generated paragrpah about how good of a developer I am, in linkedin style, as if it was written by Mr. Milchick <MilchickFaceIcon /> from Severance,
+
+<MarkdownBlockquote accentColor="light-blue">
+  It is with boundless professional exuberance that I present Alex Pagnotta, an exemplary purveyor of frontend
+  architectural brilliance. His meticulous orchestration of digital experiences demonstrates an unwavering commitment to
+  perpetual refinement and user-centric excellence. A true paragon of web development virtue, whose craftsmanship
+  elevates the very fabric of our digital landscape.
+</MarkdownBlockquote>
+
+<MarkdownFooter />

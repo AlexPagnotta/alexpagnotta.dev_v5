@@ -105,6 +105,27 @@
 
   --color-theme-bento-item-background: var(--base-color-theme-bento-item-background);
 
+  --color-theme-blockquote-light-blue-background: var(--base-color-theme-blockquote-light-blue-background);
+  --color-theme-blockquote-light-blue-foreground: var(--base-color-theme-blockquote-light-blue-foreground);
+
+  --color-theme-blockquote-blue-background: var(--base-color-theme-blockquote-blue-background);
+  --color-theme-blockquote-blue-foreground: var(--base-color-theme-blockquote-blue-foreground);
+
+  --color-theme-blockquote-green-background: var(--base-color-theme-blockquote-green-background);
+  --color-theme-blockquote-green-foreground: var(--base-color-theme-blockquote-green-foreground);
+
+  --color-theme-blockquote-red-background: var(--base-color-theme-blockquote-red-background);
+  --color-theme-blockquote-red-foreground: var(--base-color-theme-blockquote-red-foreground);
+
+  --color-theme-blockquote-purple-background: var(--base-color-theme-blockquote-purple-background);
+  --color-theme-blockquote-purple-foreground: var(--base-color-theme-blockquote-purple-foreground);
+
+  --color-theme-blockquote-pink-background: var(--base-color-theme-blockquote-pink-background);
+  --color-theme-blockquote-pink-foreground: var(--base-color-theme-blockquote-pink-foreground);
+
+  --color-theme-blockquote-yellow-background: var(--base-color-theme-blockquote-yellow-background);
+  --color-theme-blockquote-yellow-foreground: var(--base-color-theme-blockquote-yellow-foreground);
+
   --color-theme-floating-content-wavy-line-blue: var(--base-color-theme-floating-content-wavy-line-blue);
   --color-theme-floating-content-wavy-line-green: var(--base-color-theme-floating-content-wavy-line-green);
   --color-theme-floating-content-wavy-line-red: var(--base-color-theme-floating-content-wavy-line-red);
@@ -302,6 +323,10 @@
   @apply text-body-2 lg:text-body-2-desktop font-body font-semi-bold;
 }
 
+@utility body-2-italic {
+  @apply text-body-2 lg:text-body-2-desktop font-body font-regular italic;
+}
+
 @utility body-1 {
   @apply text-body-1 lg:text-body-1-desktop font-body font-regular;
 }
@@ -390,7 +415,7 @@
     --base-color-theme-foreground-muted: var(--base-color-grey-700);
 
     --base-color-theme-link-underline-hover-blue: var(--base-color-blue-500);
-    --base-color-theme-link-underline-hover-green: var(--base-color-green-500);
+    --base-color-theme-link-underline-hover-green: var(--base-color-green-700);
     --base-color-theme-link-underline-hover-red: var(--base-color-red-500);
     --base-color-theme-link-underline-hover-purple: var(--base-color-purple-500);
     --base-color-theme-link-underline-hover-pink: var(--base-color-pink-500);
@@ -438,6 +463,27 @@
 
     --base-color-theme-bento-item-background: var(--base-color-grey-100);
 
+    --base-color-theme-blockquote-light-blue-background: var(--base-color-light-blue-100);
+    --base-color-theme-blockquote-light-blue-foreground: var(--base-color-light-blue-700);
+
+    --base-color-theme-blockquote-blue-background: var(--base-color-blue-100);
+    --base-color-theme-blockquote-blue-foreground: var(--base-color-blue-700);
+
+    --base-color-theme-blockquote-green-background: var(--base-color-green-100);
+    --base-color-theme-blockquote-green-foreground: var(--base-color-green-700);
+
+    --base-color-theme-blockquote-red-background: var(--base-color-red-100);
+    --base-color-theme-blockquote-red-foreground: var(--base-color-red-700);
+
+    --base-color-theme-blockquote-purple-background: var(--base-color-purple-100);
+    --base-color-theme-blockquote-purple-foreground: var(--base-color-purple-700);
+
+    --base-color-theme-blockquote-pink-background: var(--base-color-pink-100);
+    --base-color-theme-blockquote-pink-foreground: var(--base-color-pink-700);
+
+    --base-color-theme-blockquote-yellow-background: var(--base-color-yellow-100);
+    --base-color-theme-blockquote-yellow-foreground: var(--base-color-yellow-700);
+
     --base-color-theme-floating-content-wavy-line-blue: var(--base-color-blue-500);
     --base-color-theme-floating-content-wavy-line-green: var(--base-color-green-500);
     --base-color-theme-floating-content-wavy-line-red: var(--base-color-red-500);
@@ -459,7 +505,7 @@
     --base-color-theme-link-underline-hover-red: var(--base-color-red-200);
     --base-color-theme-link-underline-hover-purple: var(--base-color-purple-200);
     --base-color-theme-link-underline-hover-pink: var(--base-color-pink-200);
-
+    --base-color-theme-link-underline-hover-yellow: var(--base-color-yellow-200);
     --base-color-theme-link-highlight-blue-foreground: var(--base-color-blue-100);
     --base-color-theme-link-highlight-blue-background: var(--base-color-blue-700);
 

@@ -11,6 +11,7 @@ const IconNamesRecord: Record<IconName, null> = {
   linkedin: null,
   motion: null,
   next: null,
+  quote: null,
   react: null,
   remix: null,
   tailwind: null,

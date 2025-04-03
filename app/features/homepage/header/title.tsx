@@ -1,6 +1,5 @@
 import MeImage from "~/features/assets/icons/me.png";
 import { cn } from "~/features/style/utils";
-import { Icon } from "~/features/ui/icon/icon-component";
 import { type IconName } from "~/features/ui/icon/name";
 import { IconTextAligner } from "~/features/ui/icon-text-aligner";
 import { BaseLink } from "~/features/ui/link/link";

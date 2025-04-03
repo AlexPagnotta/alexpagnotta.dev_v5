@@ -3,8 +3,8 @@ import NextLink from "next/link";
 import React from "react";
 
 import { cva } from "~/features/style/utils";
-import { type AccentColor } from "~/features/ui/link/constants";
-import { getRandomAccentColor } from "~/features/ui/link/utils.server";
+import { type LinkAccentColor } from "~/features/ui/link/constants";
+import { getRandomLinkAccentColor } from "~/features/ui/link/utils.server";
 
 type AnchorElementProps = React.ComponentPropsWithoutRef<"a"> & {
   newWindow?: boolean;
@@ -76,7 +76,7 @@ export const linkStyles = cva({
       red: "hover:text-theme-link-underline-hover-red focus-visible:text-theme-link-underline-hover-red",
       purple: "hover:text-theme-link-underline-hover-purple focus-visible:text-theme-link-underline-hover-purple",
       pink: "hover:text-theme-link-underline-hover-pink focus-visible:text-theme-link-underline-hover-pink",
-    } satisfies Record<AccentColor, string>,
+    } satisfies Record<LinkAccentColor, string>,
 
     highlight: {
       true: [
@@ -90,7 +90,7 @@ export const linkStyles = cva({
       red: "text-theme-link-highlight-red-foreground before:bg-theme-link-highlight-red-background",
       purple: "text-theme-link-highlight-purple-foreground before:bg-theme-link-highlight-purple-background",
       pink: "text-theme-link-highlight-pink-foreground before:bg-theme-link-highlight-pink-background",
-    } satisfies Record<AccentColor, string>,
+    } satisfies Record<LinkAccentColor, string>,
     highlightOrientation: {
       left: "before:rotate-[-2deg] hover:before:rotate-[1deg] focus-visible:before:rotate-[1deg]",
       right: "before:rotate-[2deg] hover:before:rotate-[-1deg] focus-visible:before:rotate-[-1deg]",
@@ -104,7 +104,7 @@ export const Link = React.forwardRef(
     { href, underline, accentColor, highlight, highlightOrientation, className, children, ...rest }: LinkProps,
     ref: React.ForwardedRef<HTMLAnchorElement>
   ) => {
-    const _accentColor = accentColor === "random" ? getRandomAccentColor() : accentColor;
+    const _accentColor = accentColor === "random" ? getRandomLinkAccentColor() : accentColor;
 
     return (
       <BaseLink

@@ -38,7 +38,7 @@ const MarkdownSliderItemImage = ({ alt, src, className }: MarkdownSliderImageIte
       alt={alt}
       placeholder="blur"
       sizes="(max-width: 640px) 100vw, 720px"
-      className={cn("shrink-0 min-w-0 h-[20rem] sm:h-[32rem] md:h-[40rem] w-auto rounded-lg select-none", className)}
+      className={cn("shrink-0 min-w-0 h-[20rem] sm:h-[32rem] md:h-[34rem] w-auto rounded-lg select-none", className)}
     />
   );
 };

@@ -8,6 +8,7 @@ export type IconName =
   | "linkedin"
   | "motion"
   | "next"
+  | "quote"
   | "react"
   | "remix"
   | "tailwind"

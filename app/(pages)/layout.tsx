@@ -17,6 +17,7 @@ const nunitoSansFont = Nunito_Sans({
   display: "swap",
   subsets: ["latin"],
   variable: "--font-nunito-sans",
+  style: ["normal", "italic"],
 });
 
 export const viewport: Viewport = {
