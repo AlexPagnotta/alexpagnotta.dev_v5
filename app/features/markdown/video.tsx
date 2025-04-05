@@ -5,12 +5,13 @@ import { Video, type VideoProps } from "~/features/ui/video";
 type MarkdownVideoProps = Pick<VideoProps, "title" | "src" | "autoPlay" | "controls" | "loop" | "muted"> & {
   wide?: boolean;
   showCaption?: boolean;
+  className?: string;
 };
 
-export const MarkdownVideo = ({ wide, title, showCaption, ...rest }: MarkdownVideoProps) => {
+export const MarkdownVideo = ({ wide, title, showCaption, className, ...rest }: MarkdownVideoProps) => {
   const Component = (
-    <figure className={cn("flex flex-col gap-16 w-full aspect-video", !wide && "my-48")}>
-      <Video title={title} playsInline className="size-full object-cover bg-black rounded-lg" {...rest} />
+    <figure className={cn("flex flex-col gap-16 w-full aspect-video", !wide && "my-48", className)}>
+      <Video title={title} playsInline className="size-full object-cover rounded-lg" {...rest} />
       {showCaption && (
         <figcaption className="text-right body-1 text-theme-foreground-muted pr-[2.8rem]">{title}</figcaption>
       )}

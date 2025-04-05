@@ -1,6 +1,7 @@
 import { MarkdownFullContainer } from "~/features/markdown/full-container";
 import { cn, cva, type VariantProps } from "~/features/style/utils";
 import { Image, type ImageProps } from "~/features/ui/image";
+import { Video, type VideoProps } from "~/features/ui/video";
 
 type MarkdownBentoProps = {
   children: React.ReactNode;
@@ -10,6 +11,7 @@ type MarkdownBentoProps = {
 type CompoundMarkdownBento = typeof MarkdownBento & {
   Item: typeof MarkdownBentoItem;
   ImageItem: typeof MarkdownBentoImageItem;
+  VideoItem: typeof MarkdownBentoVideoItem;
 };
 
 const MarkdownBento = ({ children, className }: MarkdownBentoProps) => {
@@ -70,8 +72,30 @@ const MarkdownBentoImageItem = ({ alt, src, large, spacing, ...rest }: MarkdownB
   );
 };
 
+type MarkdownBentoVideoItemProps = Omit<MarkdownBentoItemProps, "children"> &
+  Pick<VideoProps, "title" | "src" | "poster">;
+
+const MarkdownBentoVideoItem = ({ title, src, poster, spacing, ...rest }: MarkdownBentoVideoItemProps) => {
+  return (
+    <MarkdownBentoItem spacing={spacing} {...rest}>
+      <Video
+        src={src}
+        title={title}
+        poster={poster}
+        autoPlay
+        muted
+        loop
+        playsInline
+        className={cn("size-full object-cover", spacing && "rounded-md overflow-hidden")}
+      />
+    </MarkdownBentoItem>
+  );
+};
+
 const CompountMarkdownBento = MarkdownBento as CompoundMarkdownBento;
 
 CompountMarkdownBento.Item = MarkdownBentoItem;
 CompountMarkdownBento.ImageItem = MarkdownBentoImageItem;
+CompountMarkdownBento.VideoItem = MarkdownBentoVideoItem;
+
 export { CompountMarkdownBento as MarkdownBento };

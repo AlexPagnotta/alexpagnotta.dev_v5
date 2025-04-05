@@ -2,14 +2,14 @@ import { ContentType } from "~/features/content/constants";
 import type { WorkContentMetadata } from "~/features/content/metadata/metadata.server";
 
 export const contentMetadata: WorkContentMetadata = {
-  title: "TODO for Duolingo",
+  title: "A small microsite for Duolingo",
   previewTitle: "Duolingo",
-  description: "TODO for Duolingo",
+  description: "Duolingo Fowl Language",
   date: "2022-11-28",
   type: ContentType.WORK,
   workUrl: "https://fowllanguage.duolingo.com/",
   workName: "Duolingo",
-  workAccentColor: "green",
+  workAccentColor: "blue",
   agencyName: "wild",
   agencyUrl: "https://wild.as",
   awards: [],

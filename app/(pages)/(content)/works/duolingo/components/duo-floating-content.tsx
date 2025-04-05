@@ -5,20 +5,14 @@ import {
 } from "~/features/markdown/floating-content/floating-content";
 import { Image } from "~/features/ui/image";
 
-import GodzillaImage from "../assets/godzilla.png";
+import DuoImage from "../assets/duo.svg";
 
-export const GodzillaFloatingContent = ({ children }: { children: React.ReactNode }) => {
+export const DuoFloatingContent = ({ children }: { children: React.ReactNode }) => {
   return (
-    <MarkdownFloatingContent accentColor="red">
+    <MarkdownFloatingContent accentColor="blue">
       <MarkdownFloatingContentTrigger>{children}</MarkdownFloatingContentTrigger>
       <MarkdownFloatingContentContent>
-        <Image
-          src={GodzillaImage}
-          alt="Godzilla"
-          priority
-          sizes="(max-width: 768px) 100px, 140px"
-          className="w-[100px] md:w-[140px] h-auto"
-        />
+        <Image src={DuoImage} alt="Duo" priority className="w-[100px] md:w-[140px] h-auto" />
       </MarkdownFloatingContentContent>
     </MarkdownFloatingContent>
   );
