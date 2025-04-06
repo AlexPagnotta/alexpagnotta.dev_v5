@@ -81,7 +81,7 @@ const HeaderAwardsSubtitle = ({ awards }: Pick<WorkContentMetadata, "awards">) =
   const dict = {
     "{Awwwards}": <Icon name="awwwards" className="h-[2.8rem]" />,
     "{FWA}": <Icon name="fwa" className="h-[2.8rem]" />,
-    "{CCA}": <Image src={CCAImage} alt="CCA" className="h-[3.2rem] w-auto" sizes="32px" />,
+    "{CCA}": <Image src={CCAImage} alt="CCA" priority className="h-[3.2rem] w-auto" sizes="32px" />,
   };
 
   return (

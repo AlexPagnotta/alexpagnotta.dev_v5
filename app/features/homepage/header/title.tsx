@@ -16,7 +16,6 @@ export const HomepageHeaderTitle = () => {
             src={MeImage}
             alt="Me"
             sizes="32px"
-            draggable={false}
             className="animate-homepage-header-icon-rotation"
           />
         </IconTextAligner>

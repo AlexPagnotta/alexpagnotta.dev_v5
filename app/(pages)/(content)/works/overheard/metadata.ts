@@ -2,9 +2,9 @@ import { ContentType } from "~/features/content/constants";
 import type { WorkContentMetadata } from "~/features/content/metadata/metadata.server";
 
 export const contentMetadata: WorkContentMetadata = {
-  title: "TODO for Overheard",
+  title: "A flashy new website for Overheard",
   previewTitle: "Overheard",
-  description: "TODO for Overheard",
+  description: "A flashy new website for Overheard",
   date: "2022-09-01",
   type: ContentType.WORK,
   workUrl: "https://overheardhq.com/",
@@ -12,5 +12,5 @@ export const contentMetadata: WorkContentMetadata = {
   workAccentColor: "pink",
   agencyName: "wild",
   agencyUrl: "https://wild.as",
-  awards: [],
+  awards: ["CCA {CCA} Silver Award"],
 };

@@ -4,7 +4,7 @@ import type { WorkContentMetadata } from "~/features/content/metadata/metadata.s
 export const contentMetadata: WorkContentMetadata = {
   title: "A small microsite for Duolingo",
   previewTitle: "Duolingo",
-  description: "Duolingo Fowl Language",
+  description: "Duolingo Fowl Language Website",
   date: "2022-11-28",
   type: ContentType.WORK,
   workUrl: "https://fowllanguage.duolingo.com/",

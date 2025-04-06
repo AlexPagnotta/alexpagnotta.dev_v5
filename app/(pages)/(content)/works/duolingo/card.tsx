@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import {
   ContentCard,
   ContentCardBackground,
@@ -9,6 +7,7 @@ import {
 import { type ContentCardProps } from "~/features/content/card/types";
 import { getCardSubtitleFromMetadata } from "~/features/content/card/utils";
 import { cn } from "~/features/style/utils";
+import { Image } from "~/features/ui/image";
 
 import CardImage from "./assets/card-image.svg";
 import { contentMetadata } from "./metadata";
