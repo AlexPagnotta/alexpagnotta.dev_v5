@@ -2,11 +2,12 @@ import { ContentType } from "~/features/content/constants";
 import type { WorkContentMetadata } from "~/features/content/metadata/metadata.server";
 
 export const contentMetadata: WorkContentMetadata = {
-  title: "TODO for Ikea",
+  title: "An immersive experience for Ikea",
   previewTitle: "IKEA",
-  description: "TODO for Ikea",
+  description: `Ikea "Favoritos"`,
   date: "2023-07-23",
   type: ContentType.WORK,
+  workUrl: "https://thefwa.com/cases/ikea-favoritos",
   workName: "Ikea",
   workAccentColor: "blue",
   agencyName: "wild",
