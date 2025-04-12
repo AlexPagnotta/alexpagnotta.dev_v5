@@ -547,7 +547,7 @@
     --base-color-theme-selection-yellow-background: var(--base-color-yellow-100);
     --base-color-theme-selection-yellow-foreground: var(--base-color-yellow-700);
 
-    --base-color-theme-focus-outline: var(--base-color-black);
+    --base-color-theme-focus-outline: var(--base-color-blue-500);
 
     --base-color-theme-scrollbar-background: var(--base-color-white);
     --base-color-theme-scrollbar-foreground: var(--base-color-blue-120);
@@ -585,7 +585,7 @@
 
     --base-color-theme-icon-github: var(--base-color-purple-100);
 
-    --base-color-theme-focus-outline: var(--base-color-white);
+    --base-color-theme-focus-outline: var(--base-color-purple-200);
 
     --base-color-theme-selection-light-blue-background: var(--base-color-light-blue-200);
     --base-color-theme-selection-light-blue-foreground: var(--base-color-light-blue-700);
@@ -674,7 +674,7 @@
 
   /* Custom style for keyboard interaction focus */
   :focus-visible {
-    @apply outline-hidden ring-4 ring-theme-focus-outline; /* TODO: Temp, replace with better style */
+    @apply outline-hidden ring-2 ring-offset-4 ring-offset-theme-background ring-theme-focus-outline rounded-xs;
   }
 
   /* Selection Style */
