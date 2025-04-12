@@ -175,6 +175,7 @@ const wavyBorderStyles = cva({
   base: ["wavy-border flex-1 mx-16-px"],
   variants: {
     color: {
+      "light-blue": "text-theme-floating-content-wavy-line-light-blue",
       blue: "text-theme-floating-content-wavy-line-blue",
       green: "text-theme-floating-content-wavy-line-green",
       red: "text-theme-floating-content-wavy-line-red",

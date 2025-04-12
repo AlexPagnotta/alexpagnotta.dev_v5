@@ -2,9 +2,11 @@ import { type VariantProps } from "cva";
 import NextLink from "next/link";
 import React from "react";
 
+import { type AccentColors } from "~/features/constants/colors";
 import { cva } from "~/features/style/utils";
-import { type LinkAccentColor } from "~/features/ui/link/constants";
 import { getRandomLinkAccentColor } from "~/features/ui/link/utils.server";
+
+type LinkAccentColor = Exclude<(typeof AccentColors)[number], "yellow">;
 
 type AnchorElementProps = React.ComponentPropsWithoutRef<"a"> & {
   newWindow?: boolean;
@@ -42,7 +44,7 @@ export const BaseLink = React.forwardRef(
 
 BaseLink.displayName = "BaseLink";
 
-type LinkProps = BaseLinkProps &
+export type LinkProps = BaseLinkProps &
   (
     | {
         underline: true;
@@ -71,6 +73,8 @@ export const linkStyles = cva({
       false: "no-underline",
     },
     underlineAccentColor: {
+      "light-blue":
+        "hover:text-theme-link-underline-hover-light-blue focus-visible:text-theme-link-underline-hover-light-blue",
       blue: "hover:text-theme-link-underline-hover-blue focus-visible:text-theme-link-underline-hover-blue",
       green: "hover:text-theme-link-underline-hover-green focus-visible:text-theme-link-underline-hover-green",
       red: "hover:text-theme-link-underline-hover-red focus-visible:text-theme-link-underline-hover-red",
@@ -85,6 +89,8 @@ export const linkStyles = cva({
       ],
     },
     highlightAccentColor: {
+      "light-blue":
+        "text-theme-link-highlight-light-blue-foreground before:bg-theme-link-highlight-light-blue-background",
       blue: "text-theme-link-highlight-blue-foreground before:bg-theme-link-highlight-blue-background",
       green: "text-theme-link-highlight-green-foreground before:bg-theme-link-highlight-green-background",
       red: "text-theme-link-highlight-red-foreground before:bg-theme-link-highlight-red-background",

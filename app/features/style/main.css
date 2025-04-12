@@ -56,11 +56,15 @@
   --color-theme-foreground: var(--base-color-theme-foreground);
   --color-theme-foreground-muted: var(--base-color-theme-foreground-muted);
 
+  --color-theme-link-underline-hover-light-blue: var(--base-color-theme-link-underline-hover-light-blue);
   --color-theme-link-underline-hover-blue: var(--base-color-theme-link-underline-hover-blue);
   --color-theme-link-underline-hover-green: var(--base-color-theme-link-underline-hover-green);
   --color-theme-link-underline-hover-red: var(--base-color-theme-link-underline-hover-red);
   --color-theme-link-underline-hover-purple: var(--base-color-theme-link-underline-hover-purple);
   --color-theme-link-underline-hover-pink: var(--base-color-theme-link-underline-hover-pink);
+
+  --color-theme-link-highlight-light-blue-foreground: var(--base-color-theme-link-highlight-light-blue-foreground);
+  --color-theme-link-highlight-light-blue-background: var(--base-color-theme-link-highlight-light-blue-background);
 
   --color-theme-link-highlight-blue-foreground: var(--base-color-theme-link-highlight-blue-foreground);
   --color-theme-link-highlight-blue-background: var(--base-color-theme-link-highlight-blue-background);
@@ -126,6 +130,7 @@
   --color-theme-blockquote-yellow-background: var(--base-color-theme-blockquote-yellow-background);
   --color-theme-blockquote-yellow-foreground: var(--base-color-theme-blockquote-yellow-foreground);
 
+  --color-theme-floating-content-wavy-line-light-blue: var(--base-color-theme-floating-content-wavy-line-light-blue);
   --color-theme-floating-content-wavy-line-blue: var(--base-color-theme-floating-content-wavy-line-blue);
   --color-theme-floating-content-wavy-line-green: var(--base-color-theme-floating-content-wavy-line-green);
   --color-theme-floating-content-wavy-line-red: var(--base-color-theme-floating-content-wavy-line-red);
@@ -135,6 +140,27 @@
   --color-theme-icon-github: var(--base-color-theme-icon-github);
 
   --color-theme-focus-outline: var(--base-color-theme-focus-outline);
+
+  --color-theme-selection-light-blue-background: var(--base-color-theme-selection-light-blue-background);
+  --color-theme-selection-light-blue-foreground: var(--base-color-theme-selection-light-blue-foreground);
+
+  --color-theme-selection-blue-background: var(--base-color-theme-selection-blue-background);
+  --color-theme-selection-blue-foreground: var(--base-color-theme-selection-blue-foreground);
+
+  --color-theme-selection-green-background: var(--base-color-theme-selection-green-background);
+  --color-theme-selection-green-foreground: var(--base-color-theme-selection-green-foreground);
+
+  --color-theme-selection-red-background: var(--base-color-theme-selection-red-background);
+  --color-theme-selection-red-foreground: var(--base-color-theme-selection-red-foreground);
+
+  --color-theme-selection-purple-background: var(--base-color-theme-selection-purple-background);
+  --color-theme-selection-purple-foreground: var(--base-color-theme-selection-purple-foreground);
+
+  --color-theme-selection-pink-background: var(--base-color-theme-selection-pink-background);
+  --color-theme-selection-pink-foreground: var(--base-color-theme-selection-pink-foreground);
+
+  --color-theme-selection-yellow-background: var(--base-color-theme-selection-yellow-background);
+  --color-theme-selection-yellow-foreground: var(--base-color-theme-selection-yellow-foreground);
 
   /* Spacing */
 
@@ -414,11 +440,15 @@
     --base-color-theme-foreground: var(--base-color-black);
     --base-color-theme-foreground-muted: var(--base-color-grey-700);
 
+    --base-color-theme-link-underline-hover-light-blue: var(--base-color-light-blue-500);
     --base-color-theme-link-underline-hover-blue: var(--base-color-blue-500);
     --base-color-theme-link-underline-hover-green: var(--base-color-green-700);
     --base-color-theme-link-underline-hover-red: var(--base-color-red-500);
     --base-color-theme-link-underline-hover-purple: var(--base-color-purple-500);
     --base-color-theme-link-underline-hover-pink: var(--base-color-pink-500);
+
+    --base-color-theme-link-highlight-light-blue-foreground: var(--base-color-light-blue-700);
+    --base-color-theme-link-highlight-light-blue-background: var(--base-color-light-blue-100);
 
     --base-color-theme-link-highlight-blue-foreground: var(--base-color-blue-700);
     --base-color-theme-link-highlight-blue-background: var(--base-color-blue-100);
@@ -484,6 +514,7 @@
     --base-color-theme-blockquote-yellow-background: var(--base-color-yellow-100);
     --base-color-theme-blockquote-yellow-foreground: var(--base-color-yellow-700);
 
+    --base-color-theme-floating-content-wavy-line-light-blue: var(--base-color-light-blue-500);
     --base-color-theme-floating-content-wavy-line-blue: var(--base-color-blue-500);
     --base-color-theme-floating-content-wavy-line-green: var(--base-color-green-500);
     --base-color-theme-floating-content-wavy-line-red: var(--base-color-red-500);
@@ -491,6 +522,27 @@
     --base-color-theme-floating-content-wavy-line-pink: var(--base-color-pink-500);
 
     --base-color-theme-icon-github: var(--base-color-purple-500);
+
+    --base-color-theme-selection-light-blue-background: var(--base-color-light-blue-500);
+    --base-color-theme-selection-light-blue-foreground: var(--base-color-white);
+
+    --base-color-theme-selection-blue-background: var(--base-color-blue-500);
+    --base-color-theme-selection-blue-foreground: var(--base-color-white);
+
+    --base-color-theme-selection-green-background: var(--base-color-green-500);
+    --base-color-theme-selection-green-foreground: var(--base-color-white);
+
+    --base-color-theme-selection-red-background: var(--base-color-red-500);
+    --base-color-theme-selection-red-foreground: var(--base-color-white);
+
+    --base-color-theme-selection-purple-background: var(--base-color-purple-500);
+    --base-color-theme-selection-purple-foreground: var(--base-color-white);
+
+    --base-color-theme-selection-pink-background: var(--base-color-pink-500);
+    --base-color-theme-selection-pink-foreground: var(--base-color-white);
+
+    --base-color-theme-selection-yellow-background: var(--base-color-yellow-500);
+    --base-color-theme-selection-yellow-foreground: var(--base-color-white);
 
     --base-color-theme-focus-outline: var(--base-color-black);
   }
@@ -500,12 +552,16 @@
     --base-color-theme-foreground: var(--base-color-white);
     --base-color-theme-foreground-muted: var(--base-color-grey-200);
 
+    --base-color-theme-link-underline-hover-light-blue: var(--base-color-light-blue-200);
     --base-color-theme-link-underline-hover-blue: var(--base-color-blue-200);
     --base-color-theme-link-underline-hover-green: var(--base-color-green-200);
     --base-color-theme-link-underline-hover-red: var(--base-color-red-200);
     --base-color-theme-link-underline-hover-purple: var(--base-color-purple-200);
     --base-color-theme-link-underline-hover-pink: var(--base-color-pink-200);
-    --base-color-theme-link-underline-hover-yellow: var(--base-color-yellow-200);
+
+    --base-color-theme-link-highlight-light-blue-foreground: var(--base-color-light-blue-100);
+    --base-color-theme-link-highlight-light-blue-background: var(--base-color-light-blue-700);
+
     --base-color-theme-link-highlight-blue-foreground: var(--base-color-blue-100);
     --base-color-theme-link-highlight-blue-background: var(--base-color-blue-700);
 
@@ -589,5 +645,10 @@
   /* Custom style for keyboard interaction focus */
   :focus-visible {
     @apply outline-hidden ring-4 ring-theme-focus-outline; /* TODO: Temp, replace with better style */
+  }
+
+  /* Selection Style */
+  ::selection {
+    @apply bg-theme-selection-blue-background text-theme-selection-blue-foreground;
   }
 }

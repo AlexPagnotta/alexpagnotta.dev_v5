@@ -5,21 +5,24 @@ import { cn } from "~/features/style/utils";
 import { Icon } from "~/features/ui/icon/icon-component";
 import { Image } from "~/features/ui/image";
 import { BaseLink, Link } from "~/features/ui/link/link";
+import { getLinkAccentColorFromAccentColor } from "~/features/ui/link/utils";
 import { TextEnricher } from "~/features/ui/text-enricher";
 
-type WorkContentHeaderProps = ContentHeaderProps & {
+type WorkContentHeaderProps = Omit<ContentHeaderProps, "accentColor"> & {
   metadata: WorkContentMetadata;
 };
 
 export const WorkContentHeader = ({
-  metadata: { title, workName, workAccentColor, workUrl, agencyName, agencyUrl, awards },
+  metadata: { title, workName, accentColor, workUrl, agencyName, agencyUrl, awards },
   ...rest
 }: WorkContentHeaderProps) => {
+  const contentHeaderAccentColor = getLinkAccentColorFromAccentColor(accentColor) ?? "random";
+
   return (
-    <ContentHeader {...rest}>
+    <ContentHeader {...rest} accentColor={contentHeaderAccentColor}>
       <ContentHeader.Body className="gap-20">
         <HeaderAppendixWrapper agencyName={agencyName} agencyUrl={agencyUrl}>
-          <HeaderTitle title={title} workName={workName} workAccentColor={workAccentColor} workUrl={workUrl} />
+          <HeaderTitle title={title} workName={workName} workUrl={workUrl} accentColor={accentColor} />
         </HeaderAppendixWrapper>
         <HeaderAwardsSubtitle awards={awards} />
       </ContentHeader.Body>
@@ -30,16 +33,18 @@ export const WorkContentHeader = ({
 const HeaderTitle = ({
   title,
   workName,
-  workAccentColor,
+  accentColor,
   workUrl,
-}: Pick<WorkContentMetadata, "title" | "workName" | "workAccentColor" | "workUrl">) => {
+}: Pick<WorkContentMetadata, "title" | "workName" | "accentColor" | "workUrl">) => {
+  const linkAccentColor = getLinkAccentColorFromAccentColor(accentColor) ?? "random";
+
   return (
     <ContentHeader.Title>
       <TextEnricher
         mode="replace"
         dict={{
           [workName]: (
-            <Link href={workUrl} underline accentColor={workAccentColor}>
+            <Link href={workUrl} underline accentColor={linkAccentColor}>
               {workName}
             </Link>
           ),

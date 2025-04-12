@@ -10,16 +10,17 @@ type CompoundContentHeader = typeof ContentHeader & {
   TitleAppendixWrapper: typeof ContentHeaderTitleAppendixWrapper;
 };
 
-export type ContentHeaderProps = ComponentPropsWithoutRef<"header">;
+export type ContentHeaderProps = ComponentPropsWithoutRef<"header"> &
+  Pick<ComponentPropsWithoutRef<typeof ContentHeaderBackNav>, "accentColor">;
 
-const ContentHeader = ({ className, children, ...rest }: ContentHeaderProps) => {
+const ContentHeader = ({ className, children, accentColor, ...rest }: ContentHeaderProps) => {
   return (
     <header
       data-content-header
       className={cn("flex flex-col sm:flex-row sm:justify-between sm:items-start gap-32 sm:gap-64-px", className)}
       {...rest}
     >
-      <ContentHeaderBackNav className="shrink-0" />
+      <ContentHeaderBackNav className="shrink-0" accentColor={accentColor} />
       {children}
     </header>
   );

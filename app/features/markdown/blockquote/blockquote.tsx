@@ -1,5 +1,6 @@
 import { type ComponentPropsWithoutRef } from "react";
 
+import { type AccentColors } from "~/features/constants/colors";
 import { getRandomMarkdownBlockquoteAccentColor } from "~/features/markdown/blockquote/utils.server";
 import { cn, cva, type VariantProps } from "~/features/style/utils";
 import { Icon } from "~/features/ui/icon/icon-component";
@@ -20,7 +21,7 @@ const blockquoteStyles = cva({
       purple: "bg-theme-blockquote-purple-background text-theme-blockquote-purple-foreground",
       pink: "bg-theme-blockquote-pink-background text-theme-blockquote-pink-foreground",
       yellow: "bg-theme-blockquote-yellow-background text-theme-blockquote-yellow-foreground",
-    },
+    } satisfies Record<(typeof AccentColors)[number], string>,
   },
 });
 
@@ -28,7 +29,7 @@ export const MarkdownBlockquote = ({ className, children, accentColor, ...rest }
   const _accentColor = accentColor === "random" ? getRandomMarkdownBlockquoteAccentColor() : accentColor;
 
   return (
-    <blockquote className={cn(blockquoteStyles({ accentColor: _accentColor }), className)} {...rest}>
+    <blockquote className={blockquoteStyles({ accentColor: _accentColor, className })} {...rest}>
       <Icon
         name="quote"
         className={cn(

@@ -1,8 +1,8 @@
 import * as v from "valibot";
 
+import { AccentColors } from "~/features/constants/colors";
 import { ContentType } from "~/features/content/constants";
 import { IconNames } from "~/features/ui/icon/constants";
-
 /**
  * Base metadata schema with common properties for all content types
  */
@@ -11,6 +11,7 @@ const BaseContentMetadataSchema = v.object({
   previewTitle: v.string(),
   description: v.string(),
   date: v.string(),
+  accentColor: v.picklist(AccentColors),
 });
 
 /**
@@ -30,7 +31,6 @@ const WorkContentMetadataSchema = v.object({
   type: v.literal(ContentType.WORK),
   workName: v.string(),
   workUrl: v.optional(v.string()),
-  workAccentColor: v.picklist(["blue", "green", "red", "purple", "pink"]),
   agencyName: v.optional(v.picklist(IconNames)),
   agencyUrl: v.optional(v.string()),
   awards: v.optional(v.array(v.string())),

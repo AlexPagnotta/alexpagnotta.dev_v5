@@ -1,6 +1,8 @@
-export type LinkAccentColor = (typeof linkAccentColors)[number];
+import { AccentColors } from "~/features/constants/colors";
 
 /**
  * Array of accent colors for the Link component
  */
-export const linkAccentColors = ["blue", "green", "red", "purple", "pink"] as const;
+export const LinkAccentColors = AccentColors.filter(
+  (color): color is Exclude<typeof color, "yellow"> => color !== "yellow"
+);

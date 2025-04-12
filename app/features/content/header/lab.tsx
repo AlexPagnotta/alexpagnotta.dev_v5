@@ -1,15 +1,18 @@
 import { ContentHeader, type ContentHeaderProps } from "~/features/content/header/header";
 import type { LabContentMetadata } from "~/features/content/metadata/metadata.server";
 import { Icon } from "~/features/ui/icon/icon-component";
+import { getLinkAccentColorFromAccentColor } from "~/features/ui/link/utils";
 import { TextEnricher } from "~/features/ui/text-enricher";
 
-type LabContentHeaderProps = ContentHeaderProps & {
+type LabContentHeaderProps = Omit<ContentHeaderProps, "accentColor"> & {
   metadata: LabContentMetadata;
 };
 
-export const LabContentHeader = ({ metadata: { title, stack }, ...rest }: LabContentHeaderProps) => {
+export const LabContentHeader = ({ metadata: { title, stack, accentColor }, ...rest }: LabContentHeaderProps) => {
+  const contentHeaderAccentColor = getLinkAccentColorFromAccentColor(accentColor) ?? "random";
+
   return (
-    <ContentHeader {...rest}>
+    <ContentHeader {...rest} accentColor={contentHeaderAccentColor}>
       <ContentHeader.Body className="gap-16">
         <ContentHeader.Title>{title}</ContentHeader.Title>
         <HeaderStackSubtitle stack={stack} />
