@@ -6,7 +6,7 @@ export const contentMetadata = {
   previewTitle: "About Me",
   description: "A small introduction about myself",
   date: "1997-11-04",
-  accentColor: "blue",
+  accentColor: "red",
   type: ContentType.WRITING,
   category: "Personal",
 } satisfies WritingContentMetadata;

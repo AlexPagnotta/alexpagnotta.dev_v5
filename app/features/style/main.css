@@ -162,6 +162,9 @@
   --color-theme-selection-yellow-background: var(--base-color-theme-selection-yellow-background);
   --color-theme-selection-yellow-foreground: var(--base-color-theme-selection-yellow-foreground);
 
+  --color-theme-scrollbar-background: var(--base-color-theme-scrollbar-background);
+  --color-theme-scrollbar-foreground: var(--base-color-theme-scrollbar-foreground);
+
   /* Spacing */
 
   --spacing-*: initial;
@@ -523,28 +526,31 @@
 
     --base-color-theme-icon-github: var(--base-color-purple-500);
 
-    --base-color-theme-selection-light-blue-background: var(--base-color-light-blue-500);
-    --base-color-theme-selection-light-blue-foreground: var(--base-color-white);
+    --base-color-theme-selection-light-blue-background: var(--base-color-light-blue-100);
+    --base-color-theme-selection-light-blue-foreground: var(--base-color-light-blue-700);
 
-    --base-color-theme-selection-blue-background: var(--base-color-blue-500);
-    --base-color-theme-selection-blue-foreground: var(--base-color-white);
+    --base-color-theme-selection-blue-background: var(--base-color-blue-100);
+    --base-color-theme-selection-blue-foreground: var(--base-color-blue-700);
 
-    --base-color-theme-selection-green-background: var(--base-color-green-500);
-    --base-color-theme-selection-green-foreground: var(--base-color-white);
+    --base-color-theme-selection-green-background: var(--base-color-green-100);
+    --base-color-theme-selection-green-foreground: var(--base-color-green-700);
 
-    --base-color-theme-selection-red-background: var(--base-color-red-500);
-    --base-color-theme-selection-red-foreground: var(--base-color-white);
+    --base-color-theme-selection-red-background: var(--base-color-red-100);
+    --base-color-theme-selection-red-foreground: var(--base-color-red-700);
 
-    --base-color-theme-selection-purple-background: var(--base-color-purple-500);
-    --base-color-theme-selection-purple-foreground: var(--base-color-white);
+    --base-color-theme-selection-purple-background: var(--base-color-purple-100);
+    --base-color-theme-selection-purple-foreground: var(--base-color-purple-700);
 
-    --base-color-theme-selection-pink-background: var(--base-color-pink-500);
-    --base-color-theme-selection-pink-foreground: var(--base-color-white);
+    --base-color-theme-selection-pink-background: var(--base-color-pink-100);
+    --base-color-theme-selection-pink-foreground: var(--base-color-pink-700);
 
-    --base-color-theme-selection-yellow-background: var(--base-color-yellow-500);
-    --base-color-theme-selection-yellow-foreground: var(--base-color-white);
+    --base-color-theme-selection-yellow-background: var(--base-color-yellow-100);
+    --base-color-theme-selection-yellow-foreground: var(--base-color-yellow-700);
 
     --base-color-theme-focus-outline: var(--base-color-black);
+
+    --base-color-theme-scrollbar-background: var(--base-color-white);
+    --base-color-theme-scrollbar-foreground: var(--base-color-blue-120);
   }
 
   [data-theme="lab"] {
@@ -580,6 +586,30 @@
     --base-color-theme-icon-github: var(--base-color-purple-100);
 
     --base-color-theme-focus-outline: var(--base-color-white);
+
+    --base-color-theme-selection-light-blue-background: var(--base-color-light-blue-200);
+    --base-color-theme-selection-light-blue-foreground: var(--base-color-light-blue-700);
+
+    --base-color-theme-selection-blue-background: var(--base-color-blue-700);
+    --base-color-theme-selection-blue-foreground: var(--base-color-blue-100);
+
+    --base-color-theme-selection-green-background: var(--base-color-green-700);
+    --base-color-theme-selection-green-foreground: var(--base-color-green-100);
+
+    --base-color-theme-selection-red-background: var(--base-color-red-700);
+    --base-color-theme-selection-red-foreground: var(--base-color-red-100);
+
+    --base-color-theme-selection-purple-background: var(--base-color-purple-700);
+    --base-color-theme-selection-purple-foreground: var(--base-color-purple-100);
+
+    --base-color-theme-selection-pink-background: var(--base-color-pink-700);
+    --base-color-theme-selection-pink-foreground: var(--base-color-pink-100);
+
+    --base-color-theme-selection-yellow-background: var(--base-color-yellow-700);
+    --base-color-theme-selection-yellow-foreground: var(--base-color-yellow-100);
+
+    --base-color-theme-scrollbar-background: var(--base-color-black);
+    --base-color-theme-scrollbar-foreground: var(--base-color-purple-200);
   }
 
   /* Global variables */
@@ -618,7 +648,7 @@
   }
 
   [data-theme-wrapper] {
-    @apply h-full bg-theme-background text-theme-foreground relative isolate;
+    @apply h-full bg-theme-background text-theme-foreground relative isolate overflow-auto;
   }
 
   /* Custom cursor */
@@ -650,5 +680,28 @@
   /* Selection Style */
   ::selection {
     @apply bg-theme-selection-blue-background text-theme-selection-blue-foreground;
+  }
+
+  /* Custom Scrollbar */
+
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: var(--base-color-theme-scrollbar-foreground) var(--base-color-theme-scrollbar-background);
+  }
+
+  ::-webkit-scrollbar {
+    width: 16px; /* Wider scrollbar */
+    height: 16px; /* For horizontal scrollbars */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--base-color-theme-scrollbar-background);
+    border-radius: 0px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--base-color-theme-scrollbar-foreground);
+    border: 4px solid var(--base-color-theme-scrollbar-background);
+    border-radius: var(--radius-full);
   }
 }
