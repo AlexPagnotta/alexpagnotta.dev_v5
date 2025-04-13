@@ -33,7 +33,7 @@
     "@vercel/speed-insights": "^1.2.0",
     "embla-carousel-react": "^8.5.2",
     "fast-glob": "^3.3.3",
-    "motion": "^12.6.2",
+    "motion": "^12.6.5",
     "next": "15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

@@ -26,7 +26,9 @@ export const AboutMeWritingCard = ({ aboveFold, cardProps: { className, ...rest 
           className={cn(
             "size-[180px] absolute right-0 bottom-[-20px] -rotate-6",
             "@sm:size-[220px] @sm:right-[-10px] @sm:bottom-[-40px]",
-            "@md:bottom-[-20px] @md:right-[0px]"
+            "@md:bottom-[-20px] @md:right-[0px]",
+            "group-data-[highlighted]:-rotate-[10deg] group-data-[highlighted]:scale-110",
+            "transition-transform duration-200"
           )}
         />
       </ContentCardBackground>

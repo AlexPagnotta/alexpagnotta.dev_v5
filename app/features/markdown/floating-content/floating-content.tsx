@@ -30,7 +30,7 @@ enum FloatingContentMode {
   ALWAYS_VISIBLE = "always-visible",
 }
 
-type FloatingContentContextType =
+type FloatingContentContextState =
   | (ReturnType<typeof useFloating> & {
       mode: FloatingContentMode | undefined;
       isContentOpen: boolean;
@@ -38,7 +38,7 @@ type FloatingContentContextType =
       getFloatingProps: UseInteractionsReturn["getFloatingProps"];
     } & Pick<MarkdownFloatingContentProps, "accentColor">)
   | null;
-const FloatingContentContext = createContext<FloatingContentContextType>(null);
+const FloatingContentContext = createContext<FloatingContentContextState>(null);
 
 const useFloatingContent = () => {
   const context = useContext(FloatingContentContext);

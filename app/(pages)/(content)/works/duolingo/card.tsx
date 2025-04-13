@@ -16,8 +16,8 @@ export const DuolingoProjectCard = ({ aboveFold, cardProps: { className, ...rest
   return (
     <ContentCard
       className={cn(
-        "@container",
-        "bg-theme-card-duolingo-background ",
+        "@container group",
+        "bg-theme-card-duolingo-background",
         "hover:bg-theme-card-duolingo-hover-background data-[highlighted]:bg-theme-card-duolingo-hover-background",
         className
       )}
@@ -34,7 +34,12 @@ export const DuolingoProjectCard = ({ aboveFold, cardProps: { className, ...rest
           src={CardImage}
           alt="Duolingo mascot"
           priority={aboveFold}
-          className={cn("w-[160px] h-auto absolute right-[-5px] bottom-[-70px] rotate-16", "@sm:w-[180px]")}
+          className={cn(
+            "w-[160px] h-auto absolute right-[-10px] bottom-[-70px] @sm:w-[180px]",
+            "rotate-12",
+            "group-data-[highlighted]:rotate-16 group-data-[highlighted]:scale-110",
+            "transition-transform duration-200"
+          )}
         />
       </ContentCardBackground>
     </ContentCard>

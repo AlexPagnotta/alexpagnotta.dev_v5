@@ -1,17 +1,22 @@
 "use client";
 
 import { useInView } from "motion/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 import { cn, cva, type VariantProps } from "~/features/style/utils";
 import { Card, type CardProps } from "~/features/ui/card";
 import { BaseLink } from "~/features/ui/link/link";
 import { useBreakpoint, useIsTouchDevice } from "~/features/utils/breakpoint";
 
-export type BaseContentCardProps = Omit<CardProps, "asChild"> &
+type ContentCardState = {
+  isHighlighted: boolean;
+};
+
+export type BaseContentCardProps = Omit<CardProps, "asChild" | "children"> &
   VariantProps<typeof contentCardStyles> & {
     slug: string;
     isLast?: boolean;
+    children?: React.ReactNode | ((props: ContentCardState) => React.ReactNode);
   };
 
 const contentCardStyles = cva({
@@ -30,6 +35,8 @@ const contentCardStyles = cva({
 const ContentCard = ({ slug, size, isLast, className, children, ...rest }: BaseContentCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
+  const [isHovered, setIsHovered] = useState(false);
+
   const isAboveSm = useBreakpoint("sm", {
     initializeWithValue: false,
   });
@@ -43,21 +50,24 @@ const ContentCard = ({ slug, size, isLast, className, children, ...rest }: BaseC
     amount: 0,
   });
 
-  // Add a data attribute to the card when it's in view and on mobile
-  const highlightedProps = isInView && isTouchDevice && !isAboveSm ? { "data-highlighted": true } : {};
+  const isHighlighted = isHovered || (isInView && isTouchDevice && !isAboveSm);
+
+  const highlightedProps = isHighlighted ? { "data-highlighted": true } : {};
 
   return (
     <Card
       className={contentCardStyles({
         size,
-        className: cn("data-[highlighted]:bg-theme-card-base-hover-background", className),
+        className: cn("group data-[highlighted]:bg-theme-card-base-hover-background", className),
       })}
       {...highlightedProps}
       ref={cardRef}
       asChild
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       {...rest}
     >
-      <BaseLink href={slug}>{children}</BaseLink>
+      <BaseLink href={slug}>{typeof children === "function" ? children({ isHighlighted }) : children}</BaseLink>
     </Card>
   );
 };

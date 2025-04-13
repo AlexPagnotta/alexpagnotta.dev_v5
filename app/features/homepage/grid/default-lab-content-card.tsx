@@ -50,7 +50,9 @@ export const DefaultLabContentCard = ({ slug, metadata }: DefaultContentCardProp
             "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
             "size-[150%] rotate-12",
             "bg-[linear-gradient(to_right,var(--color-theme-card-default-lab-background-grid)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-theme-card-default-lab-background-grid)_1px,transparent_1px)]",
-            "bg-[length:40px_40px] bg-repeat"
+            "bg-[length:40px_40px] bg-repeat",
+            "group-data-[highlighted]:rotate-8 group-data-[highlighted]:scale-110",
+            "transition-transform duration-200"
           )}
         />
       </ContentCardBackground>

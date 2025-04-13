@@ -16,7 +16,7 @@ export const IkeaProjectCard = ({ aboveFold, cardProps: { className, ...rest } }
   return (
     <ContentCard
       className={cn(
-        "@container",
+        "@container group",
         "bg-theme-card-ikea-background",
         "hover:bg-theme-card-ikea-hover-background data-[highlighted]:bg-theme-card-ikea-hover-background",
         className
@@ -37,7 +37,9 @@ export const IkeaProjectCard = ({ aboveFold, cardProps: { className, ...rest } }
           priority={aboveFold}
           className={cn(
             "size-[185px] absolute right-[-30px] bottom-[-55px] rotate-4",
-            "@sm:size-[210px] @sm:right-[-20px] @sm:bottom-[-55px]"
+            "@sm:size-[210px] @sm:right-[-20px] @sm:bottom-[-55px]",
+            "group-data-[highlighted]:rotate-8 group-data-[highlighted]:scale-110",
+            "transition-transform duration-200"
           )}
         />
       </ContentCardBackground>

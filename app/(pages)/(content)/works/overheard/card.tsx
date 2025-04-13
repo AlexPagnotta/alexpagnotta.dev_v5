@@ -17,6 +17,8 @@ const cardImageStyles = [
   "h-auto absolute rotate-[28deg]",
   "w-[110px] right-[20px] bottom-[-70px]",
   "@sm:w-[130px] @sm:right-[40px] @sm:bottom-[-80px]",
+  "group-data-[highlighted]:opacity-100 group-data-[highlighted]:rotate-[26deg] group-data-[highlighted]:scale-105",
+  "transition-[opacity_transform] duration-200",
 ];
 
 export const OverheardProjectCard = ({ aboveFold, cardProps: { className, ...rest } }: ContentCardProps) => {
@@ -42,25 +44,9 @@ export const OverheardProjectCard = ({ aboveFold, cardProps: { className, ...res
           alt="Old Nokia phone with Overheard logo on screen"
           sizes="130px"
           priority={aboveFold}
-          className={cn(
-            cardImageStyles,
-            "opacity-100",
-            "group-hover:opacity-0",
-            "group-focus-visible:opacity-0",
-            "group-data-[highlighted]:opacity-0"
-          )}
+          className={cn(cardImageStyles)}
         />
-        <Image
-          src={CardImageScreenOn}
-          alt=""
-          sizes="130px"
-          className={cn(
-            cardImageStyles,
-            "opacity-0 group-hover:opacity-100",
-            "group-data-[highlighted]:opacity-100",
-            "group-focus-visible:opacity-100"
-          )}
-        />
+        <Image src={CardImageScreenOn} alt="" sizes="130px" className={cn(cardImageStyles, "opacity-0")} />
       </ContentCardBackground>
     </ContentCard>
   );
