@@ -1,10 +1,10 @@
 import { Container } from "~/features/layout/container";
-import { ThemeWrapper } from "~/features/layout/theme-wrapper";
+import { ContentThemeWrapper } from "~/features/themes/content-theme-wrapper";
 
 export default function WritingLayout({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeWrapper>
+    <ContentThemeWrapper>
       <Container>{children}</Container>
-    </ThemeWrapper>
+    </ContentThemeWrapper>
   );
 }

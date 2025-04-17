@@ -6,8 +6,9 @@ import { useSelectedLayoutSegments } from "next/navigation";
 import { ContentBackground } from "~/features/content/background/background";
 import { LabDemoFullWrapper } from "~/features/lab/demo-full-wrapper";
 import { Container } from "~/features/layout/container";
-import { ThemeWrapper } from "~/features/layout/theme-wrapper";
 import { cn } from "~/features/style/utils";
+import { ContentTheme } from "~/features/themes/constants";
+import { ContentThemeWrapper } from "~/features/themes/content-theme-wrapper";
 
 export default function LabLayout({ children }: { children: React.ReactNode }) {
   const segments = useSelectedLayoutSegments();
@@ -25,7 +26,7 @@ export default function LabLayout({ children }: { children: React.ReactNode }) {
  */
 const LabBaseLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <ThemeWrapper theme="lab">
+    <ContentThemeWrapper theme={ContentTheme.LAB}>
       <ContentBackground>
         <div
           className={cn(
@@ -37,7 +38,7 @@ const LabBaseLayout = ({ children }: { children: React.ReactNode }) => {
         />
       </ContentBackground>
       <Container className="[&_article]:text-center [&_article]:mx-auto">{children}</Container>
-    </ThemeWrapper>
+    </ContentThemeWrapper>
   );
 };
 

@@ -9,5 +9,5 @@ export const contentMetadata = {
   accentColor: "purple",
   type: ContentType.LAB,
   category: "Animation",
-  stack: ["Motion", "use-gesture"],
+  stack: ["Motion", "use-gesture 🖐️"],
 } satisfies LabContentMetadata;

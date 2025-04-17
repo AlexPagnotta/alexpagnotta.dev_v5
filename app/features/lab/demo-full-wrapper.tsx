@@ -1,5 +1,7 @@
 import MeImage from "~/features/assets/icons/me-memoji.png";
 import { cn } from "~/features/style/utils";
+import { ContentTheme } from "~/features/themes/constants";
+import { ContentThemeWrapper } from "~/features/themes/content-theme-wrapper";
 import { Button } from "~/features/ui/button";
 import { Image } from "~/features/ui/image";
 import { BaseLink } from "~/features/ui/link/link";
@@ -16,7 +18,7 @@ export const LabDemoFullWrapper = ({ backHref, children, className }: LabDemoFul
   }
 
   return (
-    <>
+    <ContentThemeWrapper theme={ContentTheme.LAB}>
       {children}
       <div className={cn("absolute top-0 inset-x-0 pt-32 px-32", className)}>
         <Button icon size="lg" asChild aria-label="Back to site">
@@ -25,6 +27,6 @@ export const LabDemoFullWrapper = ({ backHref, children, className }: LabDemoFul
           </BaseLink>
         </Button>
       </div>
-    </>
+    </ContentThemeWrapper>
   );
 };
