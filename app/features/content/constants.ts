@@ -10,5 +10,5 @@ export enum ContentType {
 export const ContentTypeDisplayNameMap = {
   [ContentType.WRITING]: "Writing",
   [ContentType.WORK]: "Project",
-  [ContentType.LAB]: "Experiment",
+  [ContentType.LAB]: "Lab",
 } as const;

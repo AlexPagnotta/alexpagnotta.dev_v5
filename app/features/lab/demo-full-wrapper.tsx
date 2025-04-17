@@ -1,0 +1,30 @@
+import MeImage from "~/features/assets/icons/me-memoji.png";
+import { cn } from "~/features/style/utils";
+import { Button } from "~/features/ui/button";
+import { Image } from "~/features/ui/image";
+import { BaseLink } from "~/features/ui/link/link";
+
+type LabDemoFullWrapperProps = {
+  backHref: string;
+  children: React.ReactNode;
+  className?: string;
+};
+
+export const LabDemoFullWrapper = ({ backHref, children, className }: LabDemoFullWrapperProps) => {
+  if (!backHref) {
+    return children;
+  }
+
+  return (
+    <>
+      {children}
+      <div className={cn("absolute top-0 inset-x-0 pt-32 px-32", className)}>
+        <Button icon size="lg" asChild aria-label="Back to site">
+          <BaseLink href={backHref}>
+            <Image src={MeImage} alt="Me" sizes="24px" />
+          </BaseLink>
+        </Button>
+      </div>
+    </>
+  );
+};

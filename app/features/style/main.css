@@ -56,6 +56,10 @@
   --color-theme-foreground: var(--base-color-theme-foreground);
   --color-theme-foreground-muted: var(--base-color-theme-foreground-muted);
 
+  --color-theme-button-primary-background: var(--base-color-theme-button-primary-background);
+  --color-theme-button-primary-foreground: var(--base-color-theme-button-primary-foreground);
+  --color-theme-button-primary-hover-background: var(--base-color-theme-button-primary-hover-background);
+
   --color-theme-link-underline-hover-light-blue: var(--base-color-theme-link-underline-hover-light-blue);
   --color-theme-link-underline-hover-blue: var(--base-color-theme-link-underline-hover-blue);
   --color-theme-link-underline-hover-green: var(--base-color-theme-link-underline-hover-green);
@@ -177,8 +181,11 @@
   --spacing-16: 1.6rem;
   --spacing-20: 2rem;
   --spacing-24: 2.4rem;
+  --spacing-28: 2.8rem;
   --spacing-32: 3.2rem;
+  --spacing-40: 4rem;
   --spacing-48: 4.8rem;
+  --spacing-56: 5.6rem;
   --spacing-64: 6.4rem;
   --spacing-96: 9.6rem;
   --spacing-128: 12.8rem;
@@ -192,8 +199,11 @@
   --spacing-16-px: 16px;
   --spacing-20-px: 20px;
   --spacing-24-px: 24px;
+  --spacing-28-px: 28px;
   --spacing-32-px: 32px;
+  --spacing-40-px: 40px;
   --spacing-48-px: 48px;
+  --spacing-56-px: 56px;
   --spacing-64-px: 64px;
   --spacing-96-px: 96px;
   --spacing-128-px: 128px;
@@ -443,6 +453,10 @@
     --base-color-theme-foreground: var(--base-color-black);
     --base-color-theme-foreground-muted: var(--base-color-grey-700);
 
+    --base-color-theme-button-primary-background: var(--base-color-black);
+    --base-color-theme-button-primary-foreground: var(--base-color-white);
+    --base-color-theme-button-primary-hover-background: var(--base-color-grey-900);
+
     --base-color-theme-link-underline-hover-light-blue: var(--base-color-light-blue-500);
     --base-color-theme-link-underline-hover-blue: var(--base-color-blue-500);
     --base-color-theme-link-underline-hover-green: var(--base-color-green-700);
@@ -557,6 +571,10 @@
     --base-color-theme-background: var(--base-color-black);
     --base-color-theme-foreground: var(--base-color-white);
     --base-color-theme-foreground-muted: var(--base-color-grey-200);
+
+    --base-color-theme-button-primary-background: var(--base-color-white);
+    --base-color-theme-button-primary-foreground: var(--base-color-black);
+    --base-color-theme-button-primary-hover-background: var(--base-color-grey-120);
 
     --base-color-theme-link-underline-hover-light-blue: var(--base-color-light-blue-200);
     --base-color-theme-link-underline-hover-blue: var(--base-color-blue-200);

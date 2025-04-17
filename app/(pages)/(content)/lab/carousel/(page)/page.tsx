@@ -3,8 +3,9 @@ import { ContentJsonLDScript } from "~/features/content/metadata/json-ld";
 import { generatePageMetadata } from "~/features/content/metadata/utils";
 import { ContentWrapper } from "~/features/content/wrapper";
 
+import { contentMetadata } from "../metadata";
+
 import MarkdownBody from "./body.mdx";
-import { contentMetadata } from "./metadata";
 
 export const metadata = generatePageMetadata(contentMetadata);
 

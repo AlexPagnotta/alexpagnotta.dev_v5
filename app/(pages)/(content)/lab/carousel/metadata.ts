@@ -2,12 +2,12 @@ import { ContentType } from "~/features/content/constants";
 import type { LabContentMetadata } from "~/features/content/metadata/metadata.server";
 
 export const contentMetadata = {
-  title: "Carousel",
+  title: "An infinite virtualized carousel",
   previewTitle: "Carousel",
-  description: "Carousel",
+  description: "Implementation of an infinite virtualized carousel using framer motion and use-gesture",
   date: "2024-01-24",
-  accentColor: "blue",
+  accentColor: "purple",
   type: ContentType.LAB,
-  category: "3D",
-  stack: ["Motion", "Tailwind"],
+  category: "Animation",
+  stack: ["Motion", "use-gesture"],
 } satisfies LabContentMetadata;

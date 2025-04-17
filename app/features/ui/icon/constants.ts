@@ -6,6 +6,7 @@ import { type IconName } from "~/features/ui/icon/name";
 const IconNamesRecord: Record<IconName, null> = {
   "arrow-back": null,
   awwwards: null,
+  "full-screen": null,
   fwa: null,
   github: null,
   linkedin: null,
