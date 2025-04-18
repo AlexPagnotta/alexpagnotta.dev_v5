@@ -1,16 +1,6 @@
 import { useMediaQuery } from "usehooks-ts";
 
-/**
- * NOTE: Keep this in sync with twilwind config
- * @see https://tailwindcss.com/docs/responsive-design#overview
- */
-const screens = {
-  sm: "40rem",
-  md: "52rem",
-  lg: "64rem",
-  xl: "80rem",
-  "2xl": "96rem",
-};
+import { screens } from "~/features/utils/breakpoints/constants";
 
 type UseMediaQueryOptions = Parameters<typeof useMediaQuery>[1];
 
@@ -21,7 +11,7 @@ type UseMediaQueryOptions = Parameters<typeof useMediaQuery>[1];
  * @returns Whether the screen size is greater than or equal to the breakpoint
  */
 export const useBreakpoint = (screen: keyof typeof screens, options?: UseMediaQueryOptions) => {
-  return useMediaQuery(`(min-width: ${screens[screen]})`, options);
+  return useMediaQuery(`(min-width: ${screens[screen]}rem)`, options);
 };
 
 /**

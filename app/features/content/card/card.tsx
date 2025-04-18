@@ -6,7 +6,7 @@ import { useRef, useState } from "react";
 import { cn, cva, type VariantProps } from "~/features/style/utils";
 import { Card, type CardProps } from "~/features/ui/card";
 import { BaseLink } from "~/features/ui/link/link";
-import { useBreakpoint, useIsTouchDevice } from "~/features/utils/breakpoint";
+import { useBreakpoint, useIsTouchDevice } from "~/features/utils/breakpoints/use-breakpoint";
 
 type ContentCardState = {
   isHighlighted: boolean;

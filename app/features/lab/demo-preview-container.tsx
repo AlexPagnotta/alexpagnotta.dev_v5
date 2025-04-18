@@ -21,6 +21,8 @@ export const LabDemoPreviewContainer = ({ href, children, className }: LabDemoPr
         className
       )}
     >
+      <div className="size-full overflow-hidden rounded-lg isolate">{children}</div>
+
       {href && (
         <Button
           icon
@@ -34,7 +36,6 @@ export const LabDemoPreviewContainer = ({ href, children, className }: LabDemoPr
           </BaseLink>
         </Button>
       )}
-      <div className="size-full overflow-hidden rounded-lg">{children}</div>
     </div>
   );
 };
