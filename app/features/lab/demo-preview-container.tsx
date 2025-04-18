@@ -9,6 +9,9 @@ type LabDemoPreviewContainerProps = {
   className?: string;
 };
 
+/**
+ * Container to showcase a lab demo preview, with optional link to full screen page
+ */
 export const LabDemoPreviewContainer = ({ href, children, className }: LabDemoPreviewContainerProps) => {
   return (
     <div
