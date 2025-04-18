@@ -111,6 +111,12 @@
   --color-theme-card-overheard-subtitle-foreground: var(--base-color-theme-card-overheard-subtitle-foreground);
   --color-theme-card-overheard-hover-background: var(--base-color-theme-card-overheard-hover-background);
 
+  --color-theme-card-carousel-background: var(--base-color-theme-card-carousel-background);
+  --color-theme-card-carousel-title-foreground: var(--base-color-theme-card-carousel-title-foreground);
+  --color-theme-card-carousel-subtitle-foreground: var(--base-color-theme-card-carousel-subtitle-foreground);
+  --color-theme-card-carousel-background-cards: var(--base-color-theme-card-carousel-background-cards);
+  --color-theme-card-carousel-hover-background: var(--base-color-theme-card-carousel-hover-background);
+
   --color-theme-bento-item-background: var(--base-color-theme-bento-item-background);
 
   --color-theme-blockquote-light-blue-background: var(--base-color-theme-blockquote-light-blue-background);
@@ -511,6 +517,12 @@
     --base-color-theme-card-overheard-title-foreground: var(--base-color-green-700);
     --base-color-theme-card-overheard-subtitle-foreground: var(--base-color-green-700);
     --base-color-theme-card-overheard-hover-background: var(--base-color-green-120);
+
+    --base-color-theme-card-carousel-background: var(--base-color-grey-900);
+    --base-color-theme-card-carousel-title-foreground: var(--base-color-white);
+    --base-color-theme-card-carousel-subtitle-foreground: var(--base-color-grey-200);
+    --base-color-theme-card-carousel-background-cards: var(--base-color-grey-700);
+    --base-color-theme-card-carousel-hover-background: var(--base-color-grey-920);
 
     --base-color-theme-bento-item-background: var(--base-color-grey-100);
 

@@ -1,3 +1,4 @@
+import { SiteConfig } from "~/features/config/config";
 import { ContentType } from "~/features/content/constants";
 import type { LabContentMetadata } from "~/features/content/metadata/metadata.server";
 
@@ -10,4 +11,5 @@ export const contentMetadata = {
   type: ContentType.LAB,
   category: "Animation",
   stack: ["Motion", "use-gesture 🖐️"],
+  githubUrl: `${SiteConfig.projectGithub}/blob/main/app/(pages)/(content)/lab/carousel/carousel-demo/demo.tsx`,
 } satisfies LabContentMetadata;

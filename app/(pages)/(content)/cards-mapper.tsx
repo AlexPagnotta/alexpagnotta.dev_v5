@@ -1,6 +1,7 @@
 // import dynamic from "next/dynamic";
 import { type ComponentType } from "react";
 
+import { CarouselLabCard } from "~/(pages)/(content)/lab/carousel/card";
 import { TestExperimentCard } from "~/(pages)/(content)/lab/test-experiment/card";
 import { DuolingoProjectCard } from "~/(pages)/(content)/works/duolingo/card";
 import { IkeaProjectCard } from "~/(pages)/(content)/works/ikea/card";
@@ -23,6 +24,7 @@ export const ContentCardsMapper: Record<string, ComponentType<ContentCardProps>>
   "/writings/test-writing": TestWritingCard,
   "/works/test-project": TestProjectCard,
   "/lab/test-experiment": TestExperimentCard,
+  "/lab/carousel": CarouselLabCard,
 
   // Below the fold cards should be imported dynamically
   // "/something": dynamic(() => import("~/(pages)/(content)/something/card").then((mod) => mod.SomethingCard)),

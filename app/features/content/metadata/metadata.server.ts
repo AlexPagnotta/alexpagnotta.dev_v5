@@ -44,6 +44,7 @@ const LabContentMetadataSchema = v.object({
   type: v.literal(ContentType.LAB),
   category: v.picklist(["3D", "Animation"]),
   stack: v.optional(v.array(v.string())),
+  githubUrl: v.optional(v.string()),
 });
 
 /**

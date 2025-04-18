@@ -10,6 +10,7 @@ export const SiteConfig = {
   description: "Alex Pagnotta, Software Developer",
   email: "ap.alex.pagnotta@gmail.com",
   github: "https://github.com/AlexPagnotta",
+  projectGithub: "https://github.com/AlexPagnotta/alexpagnotta.dev_v5/",
   linkedin: "https://www.linkedin.com/in/alex-pagnotta/",
   cv: `${BASE_URL}/documents/cv-alex-pagnotta.pdf`,
 };
