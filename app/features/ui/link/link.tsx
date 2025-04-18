@@ -28,7 +28,7 @@ export const BaseLink = React.forwardRef(
 
     if (isInternalLink) {
       return (
-        <NextLink href={href} className={className} {...rest} ref={ref}>
+        <NextLink href={href} className={className} {...rest} {...newWindowAttrs} ref={ref}>
           {children}
         </NextLink>
       );

@@ -1,8 +1,17 @@
 import { IconTextAligner } from "~/features/ui/icon-text-aligner";
-import { BaseLink } from "~/features/ui/link/link";
+import { BaseLink, Link } from "~/features/ui/link/link";
 import { contentMetadata } from "../metadata";
 
-TODO Implementing an infinite carousel using virtualization enhances performance and user experience by efficiently managing DOM elements to display only the visible items. In this approach, instead of rendering all items in the carousel at once, the system dynamically loads and unloads items based on the user’s scroll position.
+I've recently had to implement an infinite carousel for a project, with some specific requirements: it had to handle a large number of items,
+maintaining a consistent spacing between the items despite having different item sizes, and and above all, it had to be performant.
+
+It was quite challenging to implement, and I came across some interesting problems, so I wanted to share my solution in case it helps others.
+
+I built it primarily using <i>Motion (ex Framer Motion)</i> as the main animation library, coupled with <i>use-gesture</i> for handling drag and scroll interactions. While Motion provides these capabilities,
+I found use-gesture to be more flexible and also more performant for this specific use case.
+
+One of the key features of this implementation is that the carousel is <i>virtualized</i> - it only renders items that currently visible in the viewport (check out the <Link href="/lab/carousel/demo?debug" underline accentColor="purple" newWindow>debug mode</Link> for a visual demonstration).
+This approach ensures that the carousel is performant even with a large number of items.
 
 If you want to have a look at the code, check the files on <BaseLink href={contentMetadata.githubUrl}><IconTextAligner className="w-32"><IconTextAligner.Icon name="github" className="rotate-[8deg] hover:rotate-[-8deg] text-theme-icon-github" /></IconTextAligner></BaseLink>,  
 or try it out on the demo below.

@@ -3,10 +3,11 @@
 
 import { snap } from "@popmotion/popcorn";
 import { useGesture } from "@use-gesture/react";
-import { Leva, useControls } from "leva";
+import { Leva } from "leva";
 import { interpolate, motion, useAnimationFrame, useSpring, useTransform, wrap, type MotionValue } from "motion/react";
-import { memo, useEffect, useRef, useState, type RefObject } from "react";
+import { memo, useRef, useState, type RefObject } from "react";
 
+import { useDebugMode } from "~/(pages)/(content)/lab/carousel/carousel-demo/use-debug-mode";
 import { useDisableOverscroll } from "~/(pages)/(content)/lab/carousel/carousel-demo/use-disable-overscroll";
 import { useLabDemo } from "~/features/lab/use-demo";
 import { cn, cva } from "~/features/style/utils";
@@ -20,16 +21,7 @@ export const LabDemo = () => {
   const { type } = useLabDemo();
   const isFullPageDemo = type === "full-page";
 
-  const [{ debug }, setControls] = useControls(() => ({
-    debug: {
-      value: false,
-      label: "Enable Debug Mode",
-    },
-  }));
-  useEffect(() => {
-    // Reset on each mount
-    setControls({ debug: false });
-  }, [setControls]);
+  const isDebugMode = useDebugMode();
 
   // Disable overscroll behavior to avoid page bounce on scroll
   useDisableOverscroll({ enabled: isFullPageDemo });
@@ -51,7 +43,7 @@ export const LabDemo = () => {
   const breakpointOptions = Options.breakpoint[isAboveMd ? "md" : "sm"];
 
   // Zoom out UI on debug mode, to visualize adding and removal of items
-  const currentOptions = !debug
+  const currentOptions = !isDebugMode
     ? breakpointOptions
     : {
         itemWidth: breakpointOptions.itemWidth / 2,
@@ -123,7 +115,7 @@ export const LabDemo = () => {
 
       // User interacts with the carousel, drag or scroll
       if (userInteraction.current) {
-        if (debug) console.log("DEBUG: User Interaction");
+        if (isDebugMode) console.log("DEBUG: User Interaction");
         isSnapping.current = false;
         setMotionValue(offsetXValue, currentXOffset.current + centerOffset);
       }
@@ -133,11 +125,11 @@ export const LabDemo = () => {
         if (!isResizing) {
           // Avoid snapping multiple times
           if (isSnapping.current) return;
-          if (debug) console.log("DEBUG: Snapping");
+          if (isDebugMode) console.log("DEBUG: Snapping");
           isSnapping.current = true;
         }
 
-        if (isResizing && debug) console.log("DEBUG: Window Resizing");
+        if (isResizing && isDebugMode) console.log("DEBUG: Window Resizing");
 
         const distance = snap(itemWidthWithGap)(currentXOffset.current);
         setMotionValue(offsetXValue, distance + centerOffset, isFirstLoop.current || isResizing);
@@ -212,9 +204,9 @@ export const LabDemo = () => {
       />
 
       <div className="w-full h-full flex justify-center items-center overflow-hidden bg-black">
-        <div className={cn("bg-grey-700 flex items-center", debug ? "w-[50%] h-[50%]" : "w-full h-full")}>
+        <div className={cn("bg-grey-700 flex items-center", isDebugMode ? "w-[50%] h-[50%]" : "w-full h-full")}>
           <div
-            className={cn("relative grid w-full touch-none", debug && "outline-dashed outline-white/80")}
+            className={cn("relative grid w-full touch-none", isDebugMode && "outline-dashed outline-white/80")}
             ref={containerRef}
             style={{ visibility: "hidden" }}
           >
@@ -227,7 +219,7 @@ export const LabDemo = () => {
                 offsetValue={offsetXValue}
                 containerRef={containerRef}
                 currentOptions={currentOptions}
-                debug={debug}
+                isDebugMode={isDebugMode}
               />
             ))}
           </div>
@@ -241,7 +233,7 @@ type ItemProps = Item & {
   offsetValue: MotionValue<number>;
   containerRef: RefObject<HTMLDivElement | null>;
   currentOptions: OptionItem;
-  debug?: boolean;
+  isDebugMode?: boolean;
 };
 
 const ItemCardStyles = cva({
@@ -264,7 +256,7 @@ const ItemCardStyles = cva({
   },
 });
 
-const Item = memo(({ id, color, index, offsetValue, containerRef, currentOptions, debug }: ItemProps) => {
+const Item = memo(({ id, color, index, offsetValue, containerRef, currentOptions, isDebugMode }: ItemProps) => {
   // Items are rendered inside a container with the min width, so we use that as the base width for calculations
   const minItemWidth = currentOptions.itemWidth * currentOptions.itemsScale.sm;
   const minItemWidthWithGap = minItemWidth + currentOptions.itemGap;
@@ -323,11 +315,14 @@ const Item = memo(({ id, color, index, offsetValue, containerRef, currentOptions
     <motion.div
       className={cn(
         "relative col-start-1 row-start-1 will-change-transform flex justify-center select-none",
-        debug && "outline outline-yellow-500"
+        isDebugMode && "outline outline-yellow-500"
       )}
       style={{ x: spacerXOffset, width: minItemWidth }}
     >
-      <motion.div className={ItemCardStyles({ color, debug })} style={{ scale, width: currentOptions.itemWidth }}>
+      <motion.div
+        className={ItemCardStyles({ color, debug: isDebugMode })}
+        style={{ scale, width: currentOptions.itemWidth }}
+      >
         <span className="title-1 text-grey-700">{id}</span>
       </motion.div>
     </motion.div>
