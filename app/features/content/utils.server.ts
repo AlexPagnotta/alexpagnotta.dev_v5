@@ -52,17 +52,22 @@ const getContentMetadataFromFile = async (filePath: string) => {
 /**
  * Get content metadata for all content files
  * @param contentType Filter based on content type, if not provided, all files will be returned
+ * @param includeUnpublished Whether to include unpublished content
  * @returns All content metadata
  */
-export const getAllContent = async (contentType?: ContentType) => {
+export const getAllContent = async (contentType?: ContentType, includeUnpublished = false) => {
   const files = await getContentMetadataFilesPaths(contentType);
 
   const content = await Promise.all(files.map(getContentMetadataFromFile));
 
   const filteredContent = content.filter((item): item is NonNullable<typeof item> => item !== undefined);
 
+  const publishedContent = includeUnpublished
+    ? filteredContent
+    : filteredContent.filter((item) => !item.metadata.unpublished);
+
   // Sort by date (newest first), if same date, sort by title (alphabetically)
-  return filteredContent.sort((a, b) => {
+  return publishedContent.sort((a, b) => {
     const dateComparison = new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime();
     if (dateComparison !== 0) return dateComparison;
 

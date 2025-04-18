@@ -13,4 +13,5 @@ export const contentMetadata = {
   agencyName: "wild",
   agencyUrl: "https://example.com",
   awards: ["CCA {CCA} Silver Award", "{Awwwards} Honorable Mention", "{FWA} Site of the Day"],
+  unpublished: true,
 } satisfies WorkContentMetadata;

@@ -3,6 +3,7 @@ import * as v from "valibot";
 import { AccentColors } from "~/features/constants/colors";
 import { ContentType } from "~/features/content/constants";
 import { IconNames } from "~/features/ui/icon/constants";
+
 /**
  * Base metadata schema with common properties for all content types
  */
@@ -12,6 +13,7 @@ const BaseContentMetadataSchema = v.object({
   description: v.string(),
   date: v.string(),
   accentColor: v.picklist(AccentColors),
+  unpublished: v.optional(v.boolean()),
 });
 
 /**

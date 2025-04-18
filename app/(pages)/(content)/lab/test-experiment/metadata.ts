@@ -10,4 +10,5 @@ export const contentMetadata = {
   type: ContentType.LAB,
   category: "3D",
   stack: ["Motion", "Tailwind"],
+  unpublished: true,
 } satisfies LabContentMetadata;

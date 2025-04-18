@@ -9,4 +9,5 @@ export const contentMetadata = {
   accentColor: "blue",
   type: ContentType.WRITING,
   category: "Personal",
+  unpublished: true,
 } satisfies WritingContentMetadata;
