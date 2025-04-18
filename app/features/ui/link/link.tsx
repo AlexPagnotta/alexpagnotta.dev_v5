@@ -74,12 +74,14 @@ export const linkStyles = cva({
     },
     underlineAccentColor: {
       "light-blue":
-        "hover:text-theme-link-underline-hover-light-blue focus-visible:text-theme-link-underline-hover-light-blue",
-      blue: "hover:text-theme-link-underline-hover-blue focus-visible:text-theme-link-underline-hover-blue",
-      green: "hover:text-theme-link-underline-hover-green focus-visible:text-theme-link-underline-hover-green",
-      red: "hover:text-theme-link-underline-hover-red focus-visible:text-theme-link-underline-hover-red",
-      purple: "hover:text-theme-link-underline-hover-purple focus-visible:text-theme-link-underline-hover-purple",
-      pink: "hover:text-theme-link-underline-hover-pink focus-visible:text-theme-link-underline-hover-pink",
+        "hover:text-theme-link-underline-hover-light-blue focus-visible:text-theme-link-underline-hover-light-blue active:text-theme-link-underline-hover-light-blue",
+      blue: "hover:text-theme-link-underline-hover-blue focus-visible:text-theme-link-underline-hover-blue active:text-theme-link-underline-hover-blue",
+      green:
+        "hover:text-theme-link-underline-hover-green focus-visible:text-theme-link-underline-hover-green active:text-theme-link-underline-hover-green",
+      red: "hover:text-theme-link-underline-hover-red focus-visible:text-theme-link-underline-hover-red active:text-theme-link-underline-hover-red",
+      purple:
+        "hover:text-theme-link-underline-hover-purple focus-visible:text-theme-link-underline-hover-purple active:text-theme-link-underline-hover-purple",
+      pink: "hover:text-theme-link-underline-hover-pink focus-visible:text-theme-link-underline-hover-pink active:text-theme-link-underline-hover-pink",
     } satisfies Record<LinkAccentColor, string>,
 
     highlight: {
@@ -98,9 +100,11 @@ export const linkStyles = cva({
       pink: "text-theme-link-highlight-pink-foreground before:bg-theme-link-highlight-pink-background",
     } satisfies Record<LinkAccentColor, string>,
     highlightOrientation: {
-      left: "before:rotate-[-2deg] hover:before:rotate-[1deg] focus-visible:before:rotate-[1deg]",
-      right: "before:rotate-[2deg] hover:before:rotate-[-1deg] focus-visible:before:rotate-[-1deg]",
-      center: "before:rotate-[-1deg] hover:before:rotate-[2deg] focus-visible:before:rotate-[2deg]",
+      left: "before:rotate-[-2deg] hover:before:rotate-[1deg] focus-visible:before:rotate-[1deg] active:before:rotate-[2deg]",
+      right:
+        "before:rotate-[2deg] hover:before:rotate-[-1deg] focus-visible:before:rotate-[-1deg] active:before:rotate-[-2deg]",
+      center:
+        "before:rotate-[-1deg] hover:before:rotate-[2deg] focus-visible:before:rotate-[2deg] active:before:rotate-[1deg]",
     },
   },
 });

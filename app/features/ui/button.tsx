@@ -18,7 +18,7 @@ export const buttonStyles = cva({
     variant: {
       primary: [
         "bg-theme-button-primary-background text-theme-button-primary-foreground",
-        "hover:bg-theme-button-primary-hover-background",
+        "hover:bg-theme-button-primary-hover-background active:bg-theme-button-primary-active-background",
       ],
     },
     size: {
@@ -27,7 +27,7 @@ export const buttonStyles = cva({
     },
     type: {
       default: "",
-      icon: "rounded-full hover:[&>svg]:rotate-16 hover:[&>img]:rotate-16",
+      icon: "rounded-full hover:[&>svg]:rotate-16 hover:[&>img]:rotate-16 active:[&>svg]:rotate-16 active:[&>img]:rotate-16",
     },
   },
 
