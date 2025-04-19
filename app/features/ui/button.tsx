@@ -2,8 +2,20 @@ import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "cva";
 import React from "react";
 
+import { type AccentColor } from "~/features/utils/colors/contants";
+
 export type ButtonProps = React.ComponentPropsWithoutRef<"button"> &
-  Omit<VariantProps<typeof buttonStyles>, "type"> & {
+  Omit<VariantProps<typeof buttonStyles>, "type" | "accentColor" | "variant"> &
+  (
+    | {
+        variant: "primary"; // secondary, tertiary, etc.
+        accentColor?: never;
+      }
+    | {
+        variant: "accent";
+        accentColor: NonNullable<VariantProps<typeof buttonStyles>["accentColor"]>;
+      }
+  ) & {
     icon?: boolean;
     asChild?: boolean;
   };
@@ -18,8 +30,9 @@ export const buttonStyles = cva({
     variant: {
       primary: [
         "bg-theme-button-primary-background text-theme-button-primary-foreground",
-        "hover:bg-theme-button-primary-hover-background active:bg-theme-button-primary-active-background",
+        "hover:bg-theme-button-primary-hover-background active:bg-theme-button-primary-hover-background",
       ],
+      accent: [],
     },
     size: {
       md: "",
@@ -29,6 +42,36 @@ export const buttonStyles = cva({
       default: "",
       icon: "rounded-full hover:[&>svg]:rotate-16 hover:[&>img]:rotate-16 active:[&>svg]:rotate-16 active:[&>img]:rotate-16",
     },
+    accentColor: {
+      "light-blue": [
+        "text-theme-button-accent-light-blue-foreground bg-theme-button-accent-light-blue-background",
+        "hover:bg-theme-button-accent-light-blue-hover-background active:bg-theme-button-accent-light-blue-hover-background",
+      ],
+      blue: [
+        "text-theme-button-accent-blue-foreground bg-theme-button-accent-blue-background",
+        "hover:bg-theme-button-accent-blue-hover-background active:bg-theme-button-accent-blue-hover-background",
+      ],
+      green: [
+        "text-theme-button-accent-green-foreground bg-theme-button-accent-green-background",
+        "hover:bg-theme-button-accent-green-hover-background active:bg-theme-button-accent-green-hover-background",
+      ],
+      red: [
+        "text-theme-button-accent-red-foreground bg-theme-button-accent-red-background",
+        "hover:bg-theme-button-accent-red-hover-background active:bg-theme-button-accent-red-hover-background",
+      ],
+      purple: [
+        "text-theme-button-accent-purple-foreground bg-theme-button-accent-purple-background",
+        "hover:bg-theme-button-accent-purple-hover-background active:bg-theme-button-accent-purple-hover-background",
+      ],
+      pink: [
+        "text-theme-button-accent-pink-foreground bg-theme-button-accent-pink-background",
+        "hover:bg-theme-button-accent-pink-hover-background active:bg-theme-button-accent-pink-hover-background",
+      ],
+      yellow: [
+        "text-theme-button-accent-yellow-foreground bg-theme-button-accent-yellow-background",
+        "hover:bg-theme-button-accent-yellow-hover-background active:bg-theme-button-accent-yellow-hover-background",
+      ],
+    } satisfies Record<AccentColor[number], string[]>,
   },
 
   compoundVariants: [
@@ -45,14 +88,16 @@ export const buttonStyles = cva({
   ],
 
   defaultVariants: {
-    variant: "primary",
     size: "md",
     type: "default",
   },
 });
 
 export const Button = React.forwardRef(
-  ({ variant, size, icon, asChild, className, ...rest }: ButtonProps, ref: React.ForwardedRef<HTMLButtonElement>) => {
+  (
+    { variant, size, icon, accentColor, asChild, className, ...rest }: ButtonProps,
+    ref: React.ForwardedRef<HTMLButtonElement>
+  ) => {
     const Component = asChild ? Slot : "button";
 
     const type = icon ? "icon" : "default";
@@ -61,7 +106,19 @@ export const Button = React.forwardRef(
     if (type === "default")
       throw new Error("Not Implemented: Only secondary variant and icon buttons are supported at this time.");
 
-    return <Component className={buttonStyles({ variant, size, type, className })} {...rest} ref={ref} />;
+    return (
+      <Component
+        className={buttonStyles({
+          variant,
+          size,
+          type,
+          accentColor: variant === "accent" ? accentColor : undefined,
+          className,
+        })}
+        {...rest}
+        ref={ref}
+      />
+    );
   }
 );
 

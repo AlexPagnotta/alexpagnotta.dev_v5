@@ -22,7 +22,7 @@ export const LabDemoFullWrapper = ({ backHref, children, className }: LabDemoFul
     <ContentThemeWrapper theme={ContentTheme.LAB}>
       {children}
       <div className={cn("fixed top-0 inset-x-0 pt-32 px-32", className)}>
-        <Button icon size="lg" asChild aria-label="Back to site">
+        <Button variant="primary" icon size="lg" asChild aria-label="Back to site">
           <BaseLink href={backHref}>
             <Image src={MeImage} alt="Me" sizes="24px" />
           </BaseLink>

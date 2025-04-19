@@ -60,6 +60,36 @@
   --color-theme-button-primary-foreground: var(--base-color-theme-button-primary-foreground);
   --color-theme-button-primary-hover-background: var(--base-color-theme-button-primary-hover-background);
 
+  --color-theme-button-accent-light-blue-background: var(--base-color-theme-button-accent-light-blue-background);
+  --color-theme-button-accent-light-blue-foreground: var(--base-color-theme-button-accent-light-blue-foreground);
+  --color-theme-button-accent-light-blue-hover-background: var(
+    --base-color-theme-button-accent-light-blue-hover-background
+  );
+
+  --color-theme-button-accent-blue-background: var(--base-color-theme-button-accent-blue-background);
+  --color-theme-button-accent-blue-foreground: var(--base-color-theme-button-accent-blue-foreground);
+  --color-theme-button-accent-blue-hover-background: var(--base-color-theme-button-accent-blue-hover-background);
+
+  --color-theme-button-accent-green-background: var(--base-color-theme-button-accent-green-background);
+  --color-theme-button-accent-green-foreground: var(--base-color-theme-button-accent-green-foreground);
+  --color-theme-button-accent-green-hover-background: var(--base-color-theme-button-accent-green-hover-background);
+
+  --color-theme-button-accent-red-background: var(--base-color-theme-button-accent-red-background);
+  --color-theme-button-accent-red-foreground: var(--base-color-theme-button-accent-red-foreground);
+  --color-theme-button-accent-red-hover-background: var(--base-color-theme-button-accent-red-hover-background);
+
+  --color-theme-button-accent-purple-background: var(--base-color-theme-button-accent-purple-background);
+  --color-theme-button-accent-purple-foreground: var(--base-color-theme-button-accent-purple-foreground);
+  --color-theme-button-accent-purple-hover-background: var(--base-color-theme-button-accent-purple-hover-background);
+
+  --color-theme-button-accent-pink-background: var(--base-color-theme-button-accent-pink-background);
+  --color-theme-button-accent-pink-foreground: var(--base-color-theme-button-accent-pink-foreground);
+  --color-theme-button-accent-pink-hover-background: var(--base-color-theme-button-accent-pink-hover-background);
+
+  --color-theme-button-accent-yellow-background: var(--base-color-theme-button-accent-yellow-background);
+  --color-theme-button-accent-yellow-foreground: var(--base-color-theme-button-accent-yellow-foreground);
+  --color-theme-button-accent-yellow-hover-background: var(--base-color-theme-button-accent-yellow-hover-background);
+
   --color-theme-link-underline-hover-light-blue: var(--base-color-theme-link-underline-hover-light-blue);
   --color-theme-link-underline-hover-blue: var(--base-color-theme-link-underline-hover-blue);
   --color-theme-link-underline-hover-green: var(--base-color-theme-link-underline-hover-green);
@@ -471,6 +501,34 @@
     --base-color-theme-button-primary-background: var(--base-color-black);
     --base-color-theme-button-primary-foreground: var(--base-color-white);
     --base-color-theme-button-primary-hover-background: var(--base-color-grey-900);
+
+    --base-color-theme-button-accent-light-blue-background: var(--base-color-light-blue-100);
+    --base-color-theme-button-accent-light-blue-foreground: var(--base-color-light-blue-700);
+    --base-color-theme-button-accent-light-blue-hover-background: var(--base-color-light-blue-120);
+
+    --base-color-theme-button-accent-blue-background: var(--base-color-blue-100);
+    --base-color-theme-button-accent-blue-foreground: var(--base-color-blue-700);
+    --base-color-theme-button-accent-blue-hover-background: var(--base-color-blue-120);
+
+    --base-color-theme-button-accent-green-background: var(--base-color-green-100);
+    --base-color-theme-button-accent-green-foreground: var(--base-color-green-700);
+    --base-color-theme-button-accent-green-hover-background: var(--base-color-green-120);
+
+    --base-color-theme-button-accent-red-background: var(--base-color-red-100);
+    --base-color-theme-button-accent-red-foreground: var(--base-color-red-700);
+    --base-color-theme-button-accent-red-hover-background: var(--base-color-red-120);
+
+    --base-color-theme-button-accent-purple-background: var(--base-color-purple-100);
+    --base-color-theme-button-accent-purple-foreground: var(--base-color-purple-700);
+    --base-color-theme-button-accent-purple-hover-background: var(--base-color-purple-120);
+
+    --base-color-theme-button-accent-pink-background: var(--base-color-pink-100);
+    --base-color-theme-button-accent-pink-foreground: var(--base-color-pink-700);
+    --base-color-theme-button-accent-pink-hover-background: var(--base-color-pink-120);
+
+    --base-color-theme-button-accent-yellow-background: var(--base-color-yellow-100);
+    --base-color-theme-button-accent-yellow-foreground: var(--base-color-yellow-700);
+    --base-color-theme-button-accent-yellow-hover-background: var(--base-color-yellow-120);
 
     --base-color-theme-link-underline-hover-light-blue: var(--base-color-light-blue-500);
     --base-color-theme-link-underline-hover-blue: var(--base-color-blue-500);
