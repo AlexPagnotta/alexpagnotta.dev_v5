@@ -1,6 +1,6 @@
 import { SiteConfig } from "~/features/config/config";
 import { IconTextAligner } from "~/features/ui/icon-text-aligner";
-import { BaseLink, Link } from "~/features/ui/link/link";
+import { BaseLink, Link } from "~/features/ui/link";
 
 export const HomepageHeaderContacts = () => {
   return (

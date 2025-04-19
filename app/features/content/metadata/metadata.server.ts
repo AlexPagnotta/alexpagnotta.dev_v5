@@ -1,8 +1,8 @@
 import * as v from "valibot";
 
-import { AccentColors } from "~/features/constants/colors";
 import { ContentType } from "~/features/content/constants";
 import { IconNames } from "~/features/ui/icon/constants";
+import { AccentColors } from "~/features/utils/colors/contants";
 
 /**
  * Base metadata schema with common properties for all content types

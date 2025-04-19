@@ -4,8 +4,7 @@ import type { WorkContentMetadata } from "~/features/content/metadata/metadata.s
 import { cn } from "~/features/style/utils";
 import { Icon } from "~/features/ui/icon/icon-component";
 import { Image } from "~/features/ui/image";
-import { BaseLink, Link } from "~/features/ui/link/link";
-import { getLinkAccentColorFromAccentColor } from "~/features/ui/link/utils";
+import { BaseLink, Link } from "~/features/ui/link";
 import { TextEnricher } from "~/features/ui/text-enricher";
 
 type WorkContentHeaderProps = Omit<ContentHeaderProps, "accentColor"> & {
@@ -16,10 +15,8 @@ export const WorkContentHeader = ({
   metadata: { title, workName, accentColor, workUrl, agencyName, agencyUrl, awards },
   ...rest
 }: WorkContentHeaderProps) => {
-  const contentHeaderAccentColor = getLinkAccentColorFromAccentColor(accentColor) ?? "random";
-
   return (
-    <ContentHeader {...rest} accentColor={contentHeaderAccentColor}>
+    <ContentHeader {...rest} accentColor={accentColor}>
       <ContentHeader.Body className="gap-20">
         <HeaderAppendixWrapper agencyName={agencyName} agencyUrl={agencyUrl}>
           <HeaderTitle title={title} workName={workName} workUrl={workUrl} accentColor={accentColor} />
@@ -36,15 +33,13 @@ const HeaderTitle = ({
   accentColor,
   workUrl,
 }: Pick<WorkContentMetadata, "title" | "workName" | "accentColor" | "workUrl">) => {
-  const linkAccentColor = getLinkAccentColorFromAccentColor(accentColor) ?? "random";
-
   return (
     <ContentHeader.Title>
       <TextEnricher
         mode="replace"
         dict={{
           [workName]: (
-            <Link href={workUrl} underline accentColor={linkAccentColor}>
+            <Link href={workUrl} underline accentColor={accentColor}>
               {workName}
             </Link>
           ),

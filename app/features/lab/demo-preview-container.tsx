@@ -1,7 +1,7 @@
 import { cn } from "~/features/style/utils";
 import { Button } from "~/features/ui/button";
 import { Icon } from "~/features/ui/icon/icon-component";
-import { BaseLink } from "~/features/ui/link/link";
+import { BaseLink } from "~/features/ui/link";
 
 type LabDemoPreviewContainerProps = {
   href?: string;

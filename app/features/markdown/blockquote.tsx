@@ -1,9 +1,9 @@
 import { type ComponentPropsWithoutRef } from "react";
 
-import { type AccentColors } from "~/features/constants/colors";
-import { getRandomMarkdownBlockquoteAccentColor } from "~/features/markdown/blockquote/utils.server";
 import { cn, cva, type VariantProps } from "~/features/style/utils";
 import { Icon } from "~/features/ui/icon/icon-component";
+import { type AccentColor } from "~/features/utils/colors/contants";
+import { getRandomAccentColor } from "~/features/utils/colors/utils.server";
 
 type MarkdownBlockquoteProps = ComponentPropsWithoutRef<"blockquote"> &
   Omit<VariantProps<typeof blockquoteStyles>, "accentColor"> & {
@@ -21,12 +21,12 @@ const blockquoteStyles = cva({
       purple: "bg-theme-blockquote-purple-background text-theme-blockquote-purple-foreground",
       pink: "bg-theme-blockquote-pink-background text-theme-blockquote-pink-foreground",
       yellow: "bg-theme-blockquote-yellow-background text-theme-blockquote-yellow-foreground",
-    } satisfies Record<(typeof AccentColors)[number], string>,
+    } satisfies Record<AccentColor[number], string>,
   },
 });
 
 export const MarkdownBlockquote = ({ className, children, accentColor, ...rest }: MarkdownBlockquoteProps) => {
-  const _accentColor = accentColor === "random" ? getRandomMarkdownBlockquoteAccentColor() : accentColor;
+  const _accentColor = accentColor === "random" ? getRandomAccentColor() : accentColor;
 
   return (
     <blockquote className={blockquoteStyles({ accentColor: _accentColor, className })} {...rest}>

@@ -7,7 +7,7 @@ export const contentMetadata = {
   previewTitle: "Carousel",
   description: "Implementation of an infinite virtualized carousel using framer motion and use-gesture",
   date: "2024-01-24",
-  accentColor: "purple",
+  accentColor: "yellow",
   type: ContentType.LAB,
   category: "Animation",
   stack: ["Motion", "use-gesture 🖐️"],

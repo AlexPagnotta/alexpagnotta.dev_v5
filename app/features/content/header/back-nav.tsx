@@ -1,6 +1,6 @@
 import { cn } from "~/features/style/utils";
 import { Icon } from "~/features/ui/icon/icon-component";
-import { Link, type LinkProps } from "~/features/ui/link/link";
+import { Link, type LinkProps } from "~/features/ui/link";
 
 type ContentHeaderBackNavProps = Pick<LinkProps, "href" | "children" | "className"> & {
   accentColor: NonNullable<LinkProps["accentColor"]>;

@@ -2,11 +2,9 @@ import { type VariantProps } from "cva";
 import NextLink from "next/link";
 import React from "react";
 
-import { type AccentColors } from "~/features/constants/colors";
 import { cva } from "~/features/style/utils";
-import { getRandomLinkAccentColor } from "~/features/ui/link/utils.server";
-
-type LinkAccentColor = Exclude<(typeof AccentColors)[number], "yellow">;
+import { type AccentColor } from "~/features/utils/colors/contants";
+import { getRandomAccentColor } from "~/features/utils/colors/utils.server";
 
 type AnchorElementProps = React.ComponentPropsWithoutRef<"a"> & {
   newWindow?: boolean;
@@ -82,7 +80,9 @@ export const linkStyles = cva({
       purple:
         "hover:text-theme-link-underline-hover-purple focus-visible:text-theme-link-underline-hover-purple active:text-theme-link-underline-hover-purple",
       pink: "hover:text-theme-link-underline-hover-pink focus-visible:text-theme-link-underline-hover-pink active:text-theme-link-underline-hover-pink",
-    } satisfies Record<LinkAccentColor, string>,
+      yellow:
+        "hover:text-theme-link-underline-hover-yellow focus-visible:text-theme-link-underline-hover-yellow active:text-theme-link-underline-hover-yellow",
+    } satisfies Record<AccentColor, string>,
 
     highlight: {
       true: [
@@ -98,7 +98,8 @@ export const linkStyles = cva({
       red: "text-theme-link-highlight-red-foreground before:bg-theme-link-highlight-red-background",
       purple: "text-theme-link-highlight-purple-foreground before:bg-theme-link-highlight-purple-background",
       pink: "text-theme-link-highlight-pink-foreground before:bg-theme-link-highlight-pink-background",
-    } satisfies Record<LinkAccentColor, string>,
+      yellow: "text-theme-link-highlight-yellow-foreground before:bg-theme-link-highlight-yellow-background",
+    } satisfies Record<AccentColor, string>,
     highlightOrientation: {
       left: "before:rotate-[-2deg] hover:before:rotate-[1deg] focus-visible:before:rotate-[1deg] active:before:rotate-[2deg]",
       right:
@@ -114,7 +115,7 @@ export const Link = React.forwardRef(
     { href, underline, accentColor, highlight, highlightOrientation, className, children, ...rest }: LinkProps,
     ref: React.ForwardedRef<HTMLAnchorElement>
   ) => {
-    const _accentColor = accentColor === "random" ? getRandomLinkAccentColor() : accentColor;
+    const _accentColor = accentColor === "random" ? getRandomAccentColor() : accentColor;
 
     return (
       <BaseLink

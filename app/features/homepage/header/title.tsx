@@ -2,7 +2,7 @@ import MeImage from "~/features/assets/icons/me.png";
 import { cn } from "~/features/style/utils";
 import { type IconName } from "~/features/ui/icon/name";
 import { IconTextAligner } from "~/features/ui/icon-text-aligner";
-import { BaseLink } from "~/features/ui/link/link";
+import { BaseLink } from "~/features/ui/link";
 
 const TechIcons = ["react", "next", "remix", "tailwind", "motion"] satisfies IconName[];
 

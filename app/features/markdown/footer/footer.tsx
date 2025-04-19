@@ -1,4 +1,4 @@
-import { BaseLink, Link } from "~/features/ui/link/link";
+import { BaseLink, Link } from "~/features/ui/link";
 import { Video } from "~/features/ui/video";
 
 export const MarkdownFooter = () => {

@@ -23,7 +23,7 @@ import {
   calculateFloatingContentSize,
 } from "~/features/markdown/floating-content/utils";
 import { cn } from "~/features/style/utils";
-import { linkStyles } from "~/features/ui/link/link";
+import { linkStyles } from "~/features/ui/link";
 
 enum FloatingContentMode {
   TOOLTIP = "tooltip",
@@ -181,6 +181,7 @@ const wavyBorderStyles = cva({
       red: "text-theme-floating-content-wavy-line-red",
       purple: "text-theme-floating-content-wavy-line-purple",
       pink: "text-theme-floating-content-wavy-line-pink",
+      yellow: "text-theme-floating-content-wavy-line-yellow",
     },
   },
 });

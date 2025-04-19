@@ -4,7 +4,7 @@ import { ContentTheme } from "~/features/themes/constants";
 import { ContentThemeWrapper } from "~/features/themes/content-theme-wrapper";
 import { Button } from "~/features/ui/button";
 import { Image } from "~/features/ui/image";
-import { BaseLink } from "~/features/ui/link/link";
+import { BaseLink } from "~/features/ui/link";
 
 type LabDemoFullWrapperProps = {
   backHref: string;
