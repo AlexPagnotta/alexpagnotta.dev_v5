@@ -122,6 +122,7 @@
   --color-theme-card-base-background: var(--base-color-theme-card-base-background);
   --color-theme-card-base-title-foreground: var(--base-color-theme-card-base-title-foreground);
   --color-theme-card-base-subtitle-foreground: var(--base-color-theme-card-base-subtitle-foreground);
+  --color-theme-card-base-body-foreground: var(--base-color-theme-card-base-body-foreground);
   --color-theme-card-base-hover-background: var(--base-color-theme-card-base-hover-background);
 
   --color-theme-card-default-lab-background: var(--base-color-theme-card-default-lab-background);
@@ -562,6 +563,7 @@
     --base-color-theme-card-base-background: var(--base-color-grey-100);
     --base-color-theme-card-base-title-foreground: var(--base-color-black);
     --base-color-theme-card-base-subtitle-foreground: var(--base-color-grey-500);
+    --base-color-theme-card-base-body-foreground: var(--base-color-grey-700);
     --base-color-theme-card-base-hover-background: var(--base-color-grey-120);
 
     --base-color-theme-card-default-lab-background: var(--base-color-grey-900);

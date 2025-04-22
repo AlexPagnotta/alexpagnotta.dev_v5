@@ -11,6 +11,7 @@ export type CardProps = ComponentPropsWithoutRef<"div"> &
 type CompoundCard = typeof Card & {
   Title: typeof CardTitle;
   Subtitle: typeof CardSubtitle;
+  Body: typeof CardBody;
   Background: typeof CardBackground;
 };
 
@@ -56,6 +57,12 @@ const CardSubtitle = ({ className, ...rest }: CardSubtitleProps) => {
   return <div className={cn("text-theme-card-base-subtitle-foreground body-2", className)} {...rest} />;
 };
 
+type CardBodyProps = ComponentPropsWithoutRef<"div">;
+
+const CardBody = ({ className, ...rest }: CardBodyProps) => {
+  return <div className={cn("text-theme-card-base-body-foreground body-1 mt-12 line-clamp-4", className)} {...rest} />;
+};
+
 type CardBackgroundProps = ComponentPropsWithoutRef<"div"> & {
   clip?: boolean;
 };
@@ -68,6 +75,7 @@ const CompoundCard = Card as CompoundCard;
 
 CompoundCard.Title = CardTitle;
 CompoundCard.Subtitle = CardSubtitle;
+CompoundCard.Body = CardBody;
 CompoundCard.Background = CardBackground;
 
 export { CompoundCard as Card };

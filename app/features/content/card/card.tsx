@@ -74,7 +74,8 @@ const ContentCard = ({ slug, size, isLast, className, children, ...rest }: BaseC
 
 const ContentCardTitle = Card.Title;
 const ContentCardSubtitle = Card.Subtitle;
+const ContentCardBody = Card.Body;
 const ContentCardBackground = Card.Background;
 
 // Compound pattern not used, see https://github.com/vercel/next.js/issues/44030
-export { ContentCard, ContentCardTitle, ContentCardSubtitle, ContentCardBackground };
+export { ContentCard, ContentCardTitle, ContentCardSubtitle, ContentCardBody, ContentCardBackground };
