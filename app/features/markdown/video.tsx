@@ -8,16 +8,23 @@ type MarkdownVideoProps = Pick<
 > & {
   wide?: boolean;
   showCaption?: boolean;
-  rounded?: boolean;
+  rounded?: "none" | "md" | "lg";
 };
 
-export const MarkdownVideo = ({ wide, title, showCaption, rounded = true, className, ...rest }: MarkdownVideoProps) => {
+export const MarkdownVideo = ({ wide, title, showCaption, rounded = "lg", className, ...rest }: MarkdownVideoProps) => {
   const Component = (
     <figure className={cn("flex flex-col gap-16 w-full", !wide && "my-48")}>
       <Video
         title={title}
         playsInline
-        className={cn("size-full object-cover aspect-video", rounded && "rounded-lg", className)}
+        className={cn(
+          "size-full object-cover aspect-video",
+          {
+            "rounded-md": rounded === "md",
+            "rounded-lg": rounded === "lg",
+          },
+          className
+        )}
         {...rest}
       />
       {showCaption && (

@@ -5,17 +5,23 @@ import { Image, type ImageProps } from "~/features/ui/image";
 type MarkdownImageProps = Pick<ImageProps, "alt" | "src" | "className"> & {
   wide?: boolean;
   showCaption?: boolean;
-  rounded?: boolean;
+  rounded: "none" | "md" | "lg";
 };
 
-export const MarkdownImage = ({ alt, showCaption, wide, rounded = true, className, ...rest }: MarkdownImageProps) => {
+export const MarkdownImage = ({ alt, showCaption, wide, rounded = "lg", className, ...rest }: MarkdownImageProps) => {
   const Component = (
     <figure className={cn("flex flex-col gap-16 w-full", !wide && "my-48")}>
       <Image
         sizes={wide ? "(max-width: 880px) 100vw, 880px" : "(max-width: 560px) 100vw, 560px"}
         placeholder="blur"
         alt={alt}
-        className={cn(rounded && "rounded-lg", className)}
+        className={cn(
+          {
+            "rounded-md": rounded === "md",
+            "rounded-lg": rounded === "lg",
+          },
+          className
+        )}
         {...rest}
       />
       {showCaption && (
