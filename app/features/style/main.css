@@ -146,6 +146,11 @@
   --color-theme-card-overheard-subtitle-foreground: var(--base-color-theme-card-overheard-subtitle-foreground);
   --color-theme-card-overheard-hover-background: var(--base-color-theme-card-overheard-hover-background);
 
+  --color-theme-card-brawl-stars-background: var(--base-color-theme-card-brawl-stars-background);
+  --color-theme-card-brawl-stars-title-foreground: var(--base-color-theme-card-brawl-stars-title-foreground);
+  --color-theme-card-brawl-stars-subtitle-foreground: var(--base-color-theme-card-brawl-stars-subtitle-foreground);
+  --color-theme-card-brawl-stars-hover-background: var(--base-color-theme-card-brawl-stars-hover-background);
+
   --color-theme-card-carousel-background: var(--base-color-theme-card-carousel-background);
   --color-theme-card-carousel-title-foreground: var(--base-color-theme-card-carousel-title-foreground);
   --color-theme-card-carousel-subtitle-foreground: var(--base-color-theme-card-carousel-subtitle-foreground);
@@ -586,6 +591,11 @@
     --base-color-theme-card-overheard-title-foreground: var(--base-color-green-700);
     --base-color-theme-card-overheard-subtitle-foreground: var(--base-color-green-700);
     --base-color-theme-card-overheard-hover-background: var(--base-color-green-120);
+
+    --base-color-theme-card-brawl-stars-background: var(--base-color-purple-100);
+    --base-color-theme-card-brawl-stars-title-foreground: var(--base-color-purple-700);
+    --base-color-theme-card-brawl-stars-subtitle-foreground: var(--base-color-purple-700);
+    --base-color-theme-card-brawl-stars-hover-background: var(--base-color-purple-120);
 
     --base-color-theme-card-carousel-background: var(--base-color-grey-900);
     --base-color-theme-card-carousel-title-foreground: var(--base-color-white);
