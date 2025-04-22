@@ -1,0 +1,131 @@
+import { contentMetadata } from "./metadata";
+
+import { Link } from "~/features/ui/link";
+import { MarkdownBlockquote } from "~/features/markdown/blockquote";
+import { MarkdownFooter } from "~/features/markdown/footer/footer";
+import { MarkdownVideo } from "~/features/markdown/video";
+import { MarkdownImage } from "~/features/markdown/image";
+
+import HomeInitialImage from "./assets/home-initial.jpeg";
+import HomeFullImage from "./assets/home-full.jpeg";
+import ItemDetailImage from "./assets/item-detail.jpeg";
+import AddPlantJokeImage from "./assets/add-plant-joke.jpeg";
+
+Don't worry, this is not about trying to hack a nuclear power plant, or something like that, <i>Hack a Plant</i> is just the name of a small app I built in a 4 hours hackathon in London, I mixed <i>hackathon</i> and <i>plants</i>, funny right (I think so).
+
+Let's start from the beginning, if you are in the software development world, you've probably heard about the term <i>"vibe-coding"</i> 😬 before, if not, let's ask ChatGPT:
+
+<MarkdownBlockquote accentColor={contentMetadata.accentColor}>
+  Vibe-coding is an informal, intuitive approach to coding where you rely on your instincts and creativity rather than
+  strict planning or rigid structure. It's about feeling your way through the code, often experimenting, improvising,
+  and going with what "feels right" in the moment. Think of it like jamming in music, but with code.
+</MarkdownBlockquote>
+
+In other words, relying on AI tools like Cursor, Claude Code, etc. to develop an app, without writing any code, but just describing what you want to build through prompting, and accepting the AI's suggestions.
+
+That really get me curious, and the same was true for my colleagues at <Link href="https://wild.as/" underline accentColor="pink"> WILD</Link>, so during our last company retreat in London,
+we decided to give it a try in a small hackathon session of 4 hours.
+
+The goal was to develop a web app, without specific requirements, but with one important rule: <strong>You were not allowed to write any code</strong>, not even a small line change, everything had to be written through prompting.
+
+# The idea
+
+First thing first, I needed to find a simple idea, something that could be easily implemented in 4 hours, but still impressive enough to show the potential of vibe-coding,
+and inspired by <Link href="https://getplanta.com/" underline accentColor="green">Planta</Link>,
+I decided to build a simple plant-management app, starting with these core features:
+
+- Ability to add a plant simply typing its name
+- Retrieve information about the plant using AI
+- Keep list of plants and data associated with them in local storage
+- Watering reminders based on the plant's needs
+
+# The app
+
+And after 4 hours of intense vibe-coding, with LO-FI music in the background of course,
+I can proudly present you the result, <strong className="text-green-700">Hack a Plant</strong>:
+
+<MarkdownImage
+  alt="Initial Homepage with Welcome Screen"
+  src={HomeInitialImage}
+  wide
+  className="border border-theme-foreground/10 rounded-md"
+  rounded={false}
+  showCaption
+/>
+
+<MarkdownImage
+  alt="Homepage with items"
+  src={HomeFullImage}
+  wide
+  className="border border-theme-foreground/10 rounded-md"
+  rounded={false}
+  showCaption
+/>
+
+<MarkdownImage alt="Plant Detail View" src={ItemDetailImage} wide className="rounded-md" rounded={false} showCaption />
+
+The stack was predefined for the hackathon, with some options to choose from, in my case I went with Cursor as the IDE, and vite + react as the framework,
+tha AI itself then decided to use Shadcn/UI for the components, and OpenAI for the AI API calls.  
+The only other external service I used was <Link href="https://perenual.com/" underline accentColor="blue">Perenual API</Link> to obtain the plant images.
+
+Speaking of the app itself, I was able to include all the initial features, plus a bonus one.
+You can of course add a new plant simply using the name, an API call to OpenAI and Perenual will retrieve all the information needed,
+including watering intervals, light and temperature requirements, and tips on how to take care of it.
+
+<MarkdownVideo
+  title="Process of adding a new plant"
+  src="/assets/videos/writings/hack-a-plant/add-plant-process.mp4"
+  poster="/assets/videos/writings/hack-a-plant/add-plant-process-poster.jpg"
+  className="aspect-[1534/1080] rounded-md border border-theme-foreground/10"
+  wide
+  showCaption
+  autoPlay
+  muted
+  loop
+  controls
+  rounded={false}
+/>
+
+I've also included a funny easter egg, if you try to add a plant that doesn't exist, writing "dog" for example, or "Alex",
+a sarcastic AI-geenrated message will be returned with a suggestion to search for something else.
+
+<MarkdownImage alt="Easter egg" src={AddPlantJokeImage} />
+
+A key feature of the app is the watering reminder system, always derived from the plant's information previously retrieved from OpenAI,
+I was able to extract the watering interval, and show how many days are left until the next watering, with a warning banner when it's getting close.
+
+Regarding the bonus feature, I managed to include a simple recommendation system that is based on the plant's already present on your collection.
+We use the AI for this as well, by asking OpenAI and providing your plants data as context, this enables it to return options that have similar requirements to what you already have.
+
+<MarkdownVideo
+  title="Recommendations system"
+  src="/assets/videos/writings/hack-a-plant/recommendations.mp4"
+  poster="/assets/videos/writings/hack-a-plant/recommendations-poster.jpg"
+  className="aspect-[1534/1080] rounded-md border border-theme-foreground/10"
+  wide
+  showCaption
+  autoPlay
+  muted
+  loop
+  controls
+  rounded={false}
+/>
+
+# Conclusions
+
+Looking back at this experience, I've got two main takeaways to share, the first one is about the app itself, and the second one is for the vibe-coding process.
+
+The app is honestly pretty cool, the UI is simple but clean and functional, and all the features more or less work as expected, it's not a final app of course,
+I would consider it a PoC, but we cannot deny that without AI it would have not been possible to build something like this in less than 4 hours.
+
+Regarding vibe-coding, I've mixed feelings about it, on one hand it's fun, simple, mostly works,
+it's kind of magic to see a real app shape up in front of your eyes, with just some prompts.
+
+On the other hand, at least at the current state, I don't see this as a way to actually build a final product, especially without any kind of <i>human intevention</i>,
+the final code for the app was quite messy, and got worst on every prompt request for new features, in addition to that, once you find a bug, or a bad behaviour,
+it's really hard to point the AI to fix it, and would often require a lot of back and forth even to fix a simple issue.
+
+That said, even now, this approach is super valuable for specific use cases, especially when you have a developer guiding the process and intervening when needed.
+It's a great way for companies to quickly build PoCs, whether for pitches or testing out ideas, and for individual devs to build personal tools or weekend projects, by getting things done faster while keeping the whole process fun and relaxed.
+
+<MarkdownFooter />

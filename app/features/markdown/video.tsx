@@ -2,16 +2,24 @@ import { MarkdownFullContainer } from "~/features/markdown/full-container";
 import { cn } from "~/features/style/utils";
 import { Video, type VideoProps } from "~/features/ui/video";
 
-type MarkdownVideoProps = Pick<VideoProps, "title" | "src" | "autoPlay" | "controls" | "loop" | "muted"> & {
+type MarkdownVideoProps = Pick<
+  VideoProps,
+  "title" | "src" | "autoPlay" | "controls" | "loop" | "muted" | "className"
+> & {
   wide?: boolean;
   showCaption?: boolean;
-  className?: string;
+  rounded?: boolean;
 };
 
-export const MarkdownVideo = ({ wide, title, showCaption, className, ...rest }: MarkdownVideoProps) => {
+export const MarkdownVideo = ({ wide, title, showCaption, rounded = true, className, ...rest }: MarkdownVideoProps) => {
   const Component = (
-    <figure className={cn("flex flex-col gap-16 w-full aspect-video", !wide && "my-48", className)}>
-      <Video title={title} playsInline className="size-full object-cover rounded-lg" {...rest} />
+    <figure className={cn("flex flex-col gap-16 w-full", !wide && "my-48")}>
+      <Video
+        title={title}
+        playsInline
+        className={cn("size-full object-cover aspect-video", rounded && "rounded-lg", className)}
+        {...rest}
+      />
       {showCaption && (
         <figcaption className="text-right body-1 text-theme-foreground-muted pr-[2.8rem]">{title}</figcaption>
       )}

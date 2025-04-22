@@ -8,6 +8,7 @@ import { IkeaProjectCard } from "~/(pages)/(content)/works/ikea/card";
 import { OverheardProjectCard } from "~/(pages)/(content)/works/overheard/card";
 import { TestProjectCard } from "~/(pages)/(content)/works/test-project/card";
 import { AboutMeWritingCard } from "~/(pages)/(content)/writings/about-me/card";
+import { HackAPlantWritingCard } from "~/(pages)/(content)/writings/hack-a-plant/card";
 import { TestWritingCard } from "~/(pages)/(content)/writings/test-writing/card";
 import { type ContentCardProps } from "~/features/content/card/types";
 
@@ -25,6 +26,7 @@ export const ContentCardsMapper: Record<string, ComponentType<ContentCardProps>>
   "/works/test-project": TestProjectCard,
   "/lab/test-experiment": TestExperimentCard,
   "/lab/carousel": CarouselLabCard,
+  "/writings/hack-a-plant": HackAPlantWritingCard,
 
   // Below the fold cards should be imported dynamically
   // "/something": dynamic(() => import("~/(pages)/(content)/something/card").then((mod) => mod.SomethingCard)),
