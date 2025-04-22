@@ -11,7 +11,7 @@ import HomeFullImage from "./assets/home-full.jpeg";
 import ItemDetailImage from "./assets/item-detail.jpeg";
 import AddPlantJokeImage from "./assets/add-plant-joke.jpeg";
 
-Don't worry, this is not about trying to hack a nuclear power plant, or something like that, <i>Hack a Plant</i> is just the name of a small app I built in a 4 hours hackathon in London, I mixed <i>hackathon</i> and <i>plants</i>, funny right (I think so).
+Don't worry, this is not about trying to hack a nuclear power plant, or something like that, <i>Hack a Plant</i> is just the name of a small app I built during an hackathon session in London, I mixed <i>hackathon</i> and <i>plants</i>, funny right (I think so).
 
 Let's start from the beginning, if you are in the software development world, you've probably heard about the term <i>"vibe-coding"</i> 😬 before, if not, let's ask ChatGPT:
 
@@ -30,7 +30,7 @@ The goal was to develop a web app, without specific requirements, but with one i
 
 # The idea
 
-First thing first, I needed to find a simple idea, something that could be easily implemented in 4 hours, but still impressive enough to show the potential of vibe-coding,
+First thing first, I needed to find a simple idea, something that could be easily implemented in a couple of hours, but still impressive enough to show the potential of vibe-coding,
 and inspired by <Link href="https://getplanta.com/" underline accentColor="green">Planta</Link>,
 I decided to build a simple plant-management app, starting with these core features:
 
@@ -64,12 +64,12 @@ I can proudly present you the result, <strong className="text-green-700">Hack a 
 
 <MarkdownImage alt="Plant Detail View" src={ItemDetailImage} wide rounded="md" showCaption />
 
-The stack was predefined for the hackathon, with some options to choose from, in my case I went with Cursor as the IDE, and vite + react as the framework,
+The stack was predefined for the hackathon, with some options to choose from, in my case I went with Cursor as the IDE, and Vite + React as the framework,
 tha AI itself then decided to use Shadcn/UI for the components, and OpenAI for the AI API calls.  
 The only other external service I used was <Link href="https://perenual.com/" underline accentColor="blue">Perenual API</Link> to obtain the plant images.
 
 Speaking of the app itself, I was able to include all the initial features, plus a bonus one.
-You can of course add a new plant simply using the name, an API call to OpenAI and Perenual will retrieve all the information needed,
+You can add a new plant simply using the name, an API call to OpenAI and Perenual will then retrieve all the information needed,
 including watering intervals, light and temperature requirements, and tips on how to take care of it.
 
 <MarkdownVideo
@@ -87,7 +87,7 @@ including watering intervals, light and temperature requirements, and tips on ho
 />
 
 I've also included a funny easter egg, if you try to add a plant that doesn't exist, writing "dog" for example, or "Alex",
-a sarcastic AI-geenrated message will be returned with a suggestion to search for something else.
+a sarcastic AI-generated message will be returned with a suggestion to search for something else.
 
 <MarkdownImage alt="Easter egg" src={AddPlantJokeImage} />
 
@@ -116,10 +116,10 @@ We use the AI for this as well, by asking OpenAI and providing your plants data 
 Looking back at this experience, I've got two main takeaways to share, the first one is about the app itself, and the second one is for the vibe-coding process.
 
 The app is honestly pretty cool, the UI is simple but clean and functional, and all the features more or less work as expected, it's not a final app of course,
-I would consider it a PoC, but we cannot deny that without AI it would have not been possible to build something like this in less than 4 hours.
+I would consider it a PoC, but we cannot deny that without AI it would have not been possible to build something like this in less than an afternoon.
 
 Regarding vibe-coding, I've mixed feelings about it, on one hand it's fun, simple, mostly works,
-it's kind of magic to see a real app shape up in front of your eyes, with just some prompts.
+and it's kind of magic to see a real app shape up in front of your eyes, with just some prompts.
 
 On the other hand, at least at the current state, I don't see this as a way to actually build a final product, especially without any kind of <i>human intevention</i>,
 the final code for the app was quite messy, and got worst on every prompt request for new features, in addition to that, once you find a bug, or a bad behaviour,
