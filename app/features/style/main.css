@@ -116,6 +116,9 @@
   --color-theme-link-highlight-red-foreground: var(--base-color-theme-link-highlight-red-foreground);
   --color-theme-link-highlight-red-background: var(--base-color-theme-link-highlight-red-background);
 
+  --color-theme-link-highlight-yellow-foreground: var(--base-color-theme-link-highlight-yellow-foreground);
+  --color-theme-link-highlight-yellow-background: var(--base-color-theme-link-highlight-yellow-background);
+
   --color-theme-link-underline-hover-yellow-foreground: var(--base-color-theme-link-underline-hover-yellow-foreground);
   --color-theme-link-underline-hover-yellow-background: var(--base-color-theme-link-underline-hover-yellow-background);
 
@@ -146,6 +149,11 @@
   --color-theme-card-overheard-subtitle-foreground: var(--base-color-theme-card-overheard-subtitle-foreground);
   --color-theme-card-overheard-hover-background: var(--base-color-theme-card-overheard-hover-background);
 
+  --color-theme-card-brawl-stars-background: var(--base-color-theme-card-brawl-stars-background);
+  --color-theme-card-brawl-stars-title-foreground: var(--base-color-theme-card-brawl-stars-title-foreground);
+  --color-theme-card-brawl-stars-subtitle-foreground: var(--base-color-theme-card-brawl-stars-subtitle-foreground);
+  --color-theme-card-brawl-stars-hover-background: var(--base-color-theme-card-brawl-stars-hover-background);
+
   --color-theme-card-carousel-background: var(--base-color-theme-card-carousel-background);
   --color-theme-card-carousel-title-foreground: var(--base-color-theme-card-carousel-title-foreground);
   --color-theme-card-carousel-subtitle-foreground: var(--base-color-theme-card-carousel-subtitle-foreground);
@@ -174,6 +182,27 @@
 
   --color-theme-blockquote-yellow-background: var(--base-color-theme-blockquote-yellow-background);
   --color-theme-blockquote-yellow-foreground: var(--base-color-theme-blockquote-yellow-foreground);
+
+  --color-theme-audio-banner-light-blue-background: var(--base-color-theme-audio-banner-light-blue-background);
+  --color-theme-audio-banner-light-blue-foreground: var(--base-color-theme-audio-banner-light-blue-foreground);
+
+  --color-theme-audio-banner-blue-background: var(--base-color-theme-audio-banner-blue-background);
+  --color-theme-audio-banner-blue-foreground: var(--base-color-theme-audio-banner-blue-foreground);
+
+  --color-theme-audio-banner-green-background: var(--base-color-theme-audio-banner-green-background);
+  --color-theme-audio-banner-green-foreground: var(--base-color-theme-audio-banner-green-foreground);
+
+  --color-theme-audio-banner-red-background: var(--base-color-theme-audio-banner-red-background);
+  --color-theme-audio-banner-red-foreground: var(--base-color-theme-audio-banner-red-foreground);
+
+  --color-theme-audio-banner-purple-background: var(--base-color-theme-audio-banner-purple-background);
+  --color-theme-audio-banner-purple-foreground: var(--base-color-theme-audio-banner-purple-foreground);
+
+  --color-theme-audio-banner-pink-background: var(--base-color-theme-audio-banner-pink-background);
+  --color-theme-audio-banner-pink-foreground: var(--base-color-theme-audio-banner-pink-foreground);
+
+  --color-theme-audio-banner-yellow-background: var(--base-color-theme-audio-banner-yellow-background);
+  --color-theme-audio-banner-yellow-foreground: var(--base-color-theme-audio-banner-yellow-foreground);
 
   --color-theme-floating-content-wavy-line-light-blue: var(--base-color-theme-floating-content-wavy-line-light-blue);
   --color-theme-floating-content-wavy-line-blue: var(--base-color-theme-floating-content-wavy-line-blue);
@@ -259,6 +288,7 @@
   --spacing-container-max-width: var(--base-spacing-container-max-width);
   --spacing-container-max-width-w-spacing: var(--base-spacing-container-max-width-w-spacing);
 
+  --spacing-content-body-container-xs-max-width: var(--base-spacing-content-body-container-xs-max-width);
   --spacing-content-body-container-sm-max-width: var(--base-spacing-content-body-container-sm-max-width);
   --spacing-content-body-container-md-max-width: var(--base-spacing-content-body-container-md-max-width);
   --spacing-content-body-container-lg-max-width: var(--base-spacing-content-body-container-lg-max-width);
@@ -557,6 +587,9 @@
     --base-color-theme-link-highlight-red-foreground: var(--base-color-red-700);
     --base-color-theme-link-highlight-red-background: var(--base-color-red-100);
 
+    --base-color-theme-link-highlight-yellow-foreground: var(--base-color-yellow-700);
+    --base-color-theme-link-highlight-yellow-background: var(--base-color-yellow-100);
+
     --base-color-theme-link-underline-hover-yellow-foreground: var(--base-color-yellow-700);
     --base-color-theme-link-underline-hover-yellow-background: var(--base-color-yellow-100);
 
@@ -587,6 +620,11 @@
     --base-color-theme-card-overheard-subtitle-foreground: var(--base-color-green-700);
     --base-color-theme-card-overheard-hover-background: var(--base-color-green-120);
 
+    --base-color-theme-card-brawl-stars-background: var(--base-color-purple-100);
+    --base-color-theme-card-brawl-stars-title-foreground: var(--base-color-purple-700);
+    --base-color-theme-card-brawl-stars-subtitle-foreground: var(--base-color-purple-700);
+    --base-color-theme-card-brawl-stars-hover-background: var(--base-color-purple-120);
+
     --base-color-theme-card-carousel-background: var(--base-color-grey-900);
     --base-color-theme-card-carousel-title-foreground: var(--base-color-white);
     --base-color-theme-card-carousel-subtitle-foreground: var(--base-color-grey-200);
@@ -615,6 +653,27 @@
 
     --base-color-theme-blockquote-yellow-background: var(--base-color-yellow-100);
     --base-color-theme-blockquote-yellow-foreground: var(--base-color-yellow-700);
+
+    --base-color-theme-audio-banner-light-blue-background: var(--base-color-light-blue-100);
+    --base-color-theme-audio-banner-light-blue-foreground: var(--base-color-light-blue-700);
+
+    --base-color-theme-audio-banner-blue-background: var(--base-color-blue-100);
+    --base-color-theme-audio-banner-blue-foreground: var(--base-color-blue-700);
+
+    --base-color-theme-audio-banner-green-background: var(--base-color-green-100);
+    --base-color-theme-audio-banner-green-foreground: var(--base-color-green-700);
+
+    --base-color-theme-audio-banner-red-background: var(--base-color-red-100);
+    --base-color-theme-audio-banner-red-foreground: var(--base-color-red-700);
+
+    --base-color-theme-audio-banner-purple-background: var(--base-color-purple-100);
+    --base-color-theme-audio-banner-purple-foreground: var(--base-color-purple-700);
+
+    --base-color-theme-audio-banner-pink-background: var(--base-color-pink-100);
+    --base-color-theme-audio-banner-pink-foreground: var(--base-color-pink-700);
+
+    --base-color-theme-audio-banner-yellow-background: var(--base-color-yellow-100);
+    --base-color-theme-audio-banner-yellow-foreground: var(--base-color-yellow-700);
 
     --base-color-theme-floating-content-wavy-line-light-blue: var(--base-color-light-blue-500);
     --base-color-theme-floating-content-wavy-line-blue: var(--base-color-blue-500);
@@ -731,6 +790,7 @@
     --base-spacing-container-horizontal: 32px;
     --base-spacing-container-vertical: 64px;
 
+    --base-spacing-content-body-container-xs-max-width: 42rem;
     --base-spacing-content-body-container-sm-max-width: 56rem;
     --base-spacing-content-body-container-md-max-width: 72rem;
     --base-spacing-content-body-container-lg-max-width: var(--base-spacing-container-max-width);

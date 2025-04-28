@@ -5,7 +5,7 @@ import React from "react";
 import { type AccentColor } from "~/features/utils/colors/contants";
 
 export type ButtonProps = React.ComponentPropsWithoutRef<"button"> &
-  Omit<VariantProps<typeof buttonStyles>, "type" | "accentColor" | "variant"> &
+  Omit<VariantProps<typeof buttonStyles>, "type" | "accentColor" | "variant" | "iconAnimation"> &
   (
     | {
         variant: "primary"; // secondary, tertiary, etc.
@@ -15,8 +15,17 @@ export type ButtonProps = React.ComponentPropsWithoutRef<"button"> &
         variant: "accent";
         accentColor: NonNullable<VariantProps<typeof buttonStyles>["accentColor"]>;
       }
+  ) &
+  (
+    | {
+        icon: true;
+        disableAnimation?: boolean;
+      }
+    | {
+        icon?: false;
+        disableAnimation?: never;
+      }
   ) & {
-    icon?: boolean;
     asChild?: boolean;
   };
 
@@ -40,7 +49,11 @@ export const buttonStyles = cva({
     },
     type: {
       default: "",
-      icon: "rounded-full hover:[&>svg]:rotate-16 hover:[&>img]:rotate-16 active:[&>svg]:rotate-16 active:[&>img]:rotate-16",
+      icon: "rounded-full",
+    },
+    iconAnimation: {
+      true: "hover:[&>svg]:rotate-16 hover:[&>img]:rotate-16 active:[&>svg]:rotate-16 active:[&>img]:rotate-16",
+      false: "",
     },
     accentColor: {
       "light-blue": [
@@ -95,7 +108,7 @@ export const buttonStyles = cva({
 
 export const Button = React.forwardRef(
   (
-    { variant, size, icon, accentColor, asChild, className, ...rest }: ButtonProps,
+    { variant, size, icon, disableAnimation, accentColor, asChild, className, ...rest }: ButtonProps,
     ref: React.ForwardedRef<HTMLButtonElement>
   ) => {
     const Component = asChild ? Slot : "button";
@@ -112,6 +125,7 @@ export const Button = React.forwardRef(
           variant,
           size,
           type,
+          iconAnimation: icon && !disableAnimation,
           accentColor: variant === "accent" ? accentColor : undefined,
           className,
         })}

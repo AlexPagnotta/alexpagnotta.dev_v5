@@ -3,6 +3,7 @@ import { type ComponentType } from "react";
 
 import { CarouselLabCard } from "~/(pages)/(content)/lab/carousel/card";
 import { TestExperimentCard } from "~/(pages)/(content)/lab/test-experiment/card";
+import { BrawlStarsProjectCard } from "~/(pages)/(content)/works/brawl-stars/card";
 import { DuolingoProjectCard } from "~/(pages)/(content)/works/duolingo/card";
 import { IkeaProjectCard } from "~/(pages)/(content)/works/ikea/card";
 import { OverheardProjectCard } from "~/(pages)/(content)/works/overheard/card";
@@ -19,14 +20,15 @@ import { type ContentCardProps } from "~/features/content/card/types";
 export const ContentCardsMapper: Record<string, ComponentType<ContentCardProps>> = {
   // Only above the fold cards should be imported statically (first 10 cards)
   "/writings/about-me": AboutMeWritingCard,
+  "/writings/hack-a-plant": HackAPlantWritingCard,
+  "/writings/test-writing": TestWritingCard,
   "/works/ikea": IkeaProjectCard,
   "/works/duolingo": DuolingoProjectCard,
   "/works/overheard": OverheardProjectCard,
-  "/writings/test-writing": TestWritingCard,
+  "/works/brawl-stars": BrawlStarsProjectCard,
   "/works/test-project": TestProjectCard,
   "/lab/test-experiment": TestExperimentCard,
   "/lab/carousel": CarouselLabCard,
-  "/writings/hack-a-plant": HackAPlantWritingCard,
 
   // Below the fold cards should be imported dynamically
   // "/something": dynamic(() => import("~/(pages)/(content)/something/card").then((mod) => mod.SomethingCard)),

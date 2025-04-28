@@ -9,6 +9,8 @@ export type IconName =
   | "linkedin"
   | "motion"
   | "next"
+  | "pause"
+  | "play"
   | "quote"
   | "react"
   | "remix"

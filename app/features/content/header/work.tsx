@@ -1,3 +1,4 @@
+import BronzeLionImage from "~/features/assets/icons/bronze-lion.png";
 import CCAImage from "~/features/assets/icons/cca.png";
 import { ContentHeader, type ContentHeaderProps } from "~/features/content/header/header";
 import type { WorkContentMetadata } from "~/features/content/metadata/metadata.server";
@@ -82,6 +83,9 @@ const HeaderAwardsSubtitle = ({ awards }: Pick<WorkContentMetadata, "awards">) =
     "{Awwwards}": <Icon name="awwwards" className="h-[2.8rem]" />,
     "{FWA}": <Icon name="fwa" className="h-[2.8rem]" />,
     "{CCA}": <Image src={CCAImage} alt="CCA" priority className="h-[3.2rem] w-auto" sizes="32px" />,
+    "{Bronze-Lion}": (
+      <Image src={BronzeLionImage} alt="Cannes Bronze Lion" priority className="h-[3.2rem] w-auto" sizes="32px" />
+    ),
   };
 
   return (

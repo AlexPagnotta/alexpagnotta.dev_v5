@@ -196,7 +196,7 @@ const MarkdownFloatingContentContent = ({ children, className, ...rest }: Markdo
       <div
         ref={refs.setFloating}
         style={floatingStyles}
-        className={cn("flex items-center", !isContentOpen && "invisible", className)}
+        className={cn("flex items-center pointer-events-none", !isContentOpen && "invisible", className)}
         {...getFloatingProps(rest)}
       >
         <div className="shrink-0">{children}</div>
