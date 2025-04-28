@@ -4,7 +4,7 @@ import type { WorkContentMetadata } from "~/features/content/metadata/metadata.s
 export const contentMetadata = {
   title: "An immersive experience for Ikea",
   previewTitle: "IKEA",
-  description: `Ikea "Favoritos"`,
+  description: `Ikea "Favoritos", an interactive experience for Ikea's new marketing campaign`,
   date: "2023-07-23",
   type: ContentType.WORK,
   accentColor: "blue",

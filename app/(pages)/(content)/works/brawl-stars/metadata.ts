@@ -2,14 +2,15 @@ import { ContentType } from "~/features/content/constants";
 import type { WorkContentMetadata } from "~/features/content/metadata/metadata.server";
 
 export const contentMetadata = {
-  title: "ATODO Brawl Stars",
+  title: "A storytelling experience for Brawl Stars",
   previewTitle: "Brawl Stars",
-  description: "Brawl Stars TODO",
-  date: "2023-11-4",
+  description: "Brawl Stars Starr Park CCTV, a storytelling experience for the Brawl Stars game",
+  date: "2023-11-1",
   type: ContentType.WORK,
   accentColor: "purple",
+  workUrl: "https://www.youtube.com/watch?v=quP4mJDC2cE",
   workName: "Brawl Stars",
   agencyName: "wild",
   agencyUrl: "https://wild.as",
-  awards: [],
+  awards: ["Bronze Lion {Bronze-Lion} at Cannes"],
 } satisfies WorkContentMetadata;

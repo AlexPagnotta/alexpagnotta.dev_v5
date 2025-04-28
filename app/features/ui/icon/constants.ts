@@ -13,6 +13,8 @@ const IconNamesRecord: Record<IconName, null> = {
   motion: null,
   next: null,
   quote: null,
+  pause: null,
+  play: null,
   react: null,
   remix: null,
   tailwind: null,

@@ -1,1 +1,45 @@
-TODO
+import { Link } from "~/features/ui/link";
+import { MarkdownVideo } from "~/features/markdown/video";
+import { StarrParkFloatingContent } from "./components/starr-park-floating-content";
+import { BrawlStarsBento } from "./components/bento";
+import { MarkdownAudioBanner } from "~/features/markdown/audio-banner";
+
+<MarkdownAudioBanner src="/assets/audio/works/brawl-stars/song.mp3" volume={0.1} loop accentColor="purple">
+  Would you like to immerse yourself in the Starr Park atmosphere while reading the post?
+</MarkdownAudioBanner>
+
+To celebrate Brawl Stars' fifth anniversary, together with <Link href="https://buck.co/work/supercell-brawl-stars-lore" underline accentColor="pink">Buck</Link>,
+we created a dynamic and interactive experience, to explain and further explore the lore of the game.
+
+As you may already know, if you are a Brawl Stars player, the game takes place in an abandoned amusement park called <StarrParkFloatingContent>Starr Park</StarrParkFloatingContent>,
+and that's exactly where the story starts in our experience.
+
+Via an hidden easter egg in the game, players are teleported to a mysterious security room from 1995.
+Inside, they gradually discover the history of Starr Park through interactive element, including surveillance footage from 5 CCTV screens,
+phone voicemails, a security guard's detailed logbook, and an old computer terminal.
+All these elements will then lead to the events behind the park's abandonment and the origin stories of the game characters.
+
+<MarkdownVideo
+  title="Brawl Stars Starr Park Intro"
+  src="/assets/videos/works/brawl-stars/intro.mp4"
+  poster="/assets/videos/works/brawl-stars/intro-poster.jpg"
+  className="aspect-video"
+  controls
+  wide
+/>
+
+The 5 video footages went live 24 hours a day for 42 days, showing original videos entirely created by Buck.
+In addition to that, all the accessory content, like the objects on the desk, the notes on the logbook, and the phone voicemails, were always different and regularly updated,
+so that players could come up with new theories and speculations every day.
+
+One of the most engaging features was the <i>Timecode</i> terminal input system,
+Supercell would occasionally hide special code throughout the game and their social media posts, creating an exciting treasure hunt for players.
+These codes would unlock exclusive preview access to highlight videos before their official release.
+It was thrilling to check Twitter and Reddit as the community collaborated to crack the codes, some would try to find hints in the videos or come up with fanciful theories,
+while others with less conventional methods, would just try to brute-force the system.
+
+The project has been a great success, it received over <strong>89 million views</strong> and a lot of buzz on social media, with players discussing the recent events and coming up with new theories on what was going to happen next.
+
+Unfortunately, the site is not accessible anymore, but you can still check out the experience and all the events that happened in the park, with this <Link href="https://www.youtube.com/watch?v=quP4mJDC2cE" underline accentColor="pink">summary video</Link> by Supercell.
+
+<BrawlStarsBento />

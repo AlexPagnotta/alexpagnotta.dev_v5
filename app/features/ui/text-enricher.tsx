@@ -7,32 +7,39 @@ type TextEnricherProps = {
 };
 
 /**
- * Enriches text by adding icons and assets to certain words
+ * Enriches text by adding or replacing icons and assets to certain words or phrases
  *
  * @param children - The text to enrich
- * @param dict - The dictionary of words to enrich with the corresponding icon or asset
- * @param mode - The mode to use, either replace the word with the icon or append the icon next to the word
+ * @param dict - The dictionary of phrases to enrich with the corresponding icon or asset
+ * @param mode - The mode to use, either replace the phrase with the icon or append the icon next to it
  * @returns The enriched text
  */
 export const TextEnricher = ({ children, dict, mode, ...rest }: TextEnricherProps) => {
-  // Extract the words to enrich from the dictionary
-  const wordsArray = Object.keys(dict);
+  // Extract the phrases to enrich from the dictionary
+  const phrases = Object.keys(dict);
 
-  // Split the text into phrases, the words to enrich will be at the end of each phrase
-  const splitText = children.split(new RegExp(`(?<=${wordsArray.join("|")})`, "g")).filter(Boolean);
+  // Sort phrases by length (longest first) to handle overlapping matches correctly
+  const sortedPhrases = phrases.sort((a, b) => b.length - a.length);
+
+  // Create a regex pattern that matches any of the phrases
+  const pattern = new RegExp(
+    `(${sortedPhrases.map((phrase) => phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`,
+    "g"
+  );
+
+  // Split the text into segments, preserving the matched phrases
+  const segments = children.split(pattern).filter(Boolean);
 
   return (
     <React.Fragment {...rest}>
-      {splitText.map((segment, index) => {
-        // Retrieve the last word of the phrase, as it will probably be the word to enrich
-        const word = segment.split(" ").pop();
+      {segments.map((segment, index) => {
+        // Check if the segment is a phrase in our dictionary
+        // If not, we return the original text as is
+        const item = dict[segment];
+        if (!item) return <React.Fragment key={index}>{segment}</React.Fragment>;
 
-        // Check if the word is in the dictionary, if not, we return the phrase as is
-        const item = word ? dict[word] : null;
-        if (!word || !item) return <React.Fragment key={index}>{segment}</React.Fragment>;
-
-        // If the mode is replace, we replace the word with the passed component, otherwise we append it
-        const _segment = mode === "replace" ? segment.replace(word, "") : segment;
+        // If the mode is replace, we don't show the original text
+        const _segment = mode === "replace" ? "" : segment;
 
         return (
           <React.Fragment key={index}>
