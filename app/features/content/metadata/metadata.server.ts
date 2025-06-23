@@ -22,7 +22,7 @@ const BaseContentMetadataSchema = v.object({
 const WritingContentMetadataSchema = v.object({
   ...BaseContentMetadataSchema.entries,
   type: v.literal(ContentType.WRITING),
-  category: v.picklist(["Personal", "Dev", "AI"]),
+  category: v.picklist(["Personal", "Dev", "AI", "DYI"]),
 });
 
 /**

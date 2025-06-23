@@ -1,0 +1,70 @@
+import { MarkdownFooter } from "~/features/markdown/footer/footer";
+import { Link } from "~/features/ui/link";
+import { MarkdownImage } from "~/features/markdown/image";
+import { MarkdownSlider, MarkdownSliderItemImage } from "~/features/markdown/slider";
+
+import TrmnlImage from "./assets/trmnl.jpg";
+import FigmaImage from "./assets/figma.jpg";
+import Model3DImage from "./assets/3d-model.jpg";
+import KindleHomeImage from "./assets/kindle-home.jpeg";
+import KindleNewsImage from "./assets/kindle-news.jpeg";
+import KindleTasksImage from "./assets/kindle-tasks.jpeg";
+import KindleScreensaverImage from "./assets/kindle-screensaver.jpeg";
+import KindleBackImage from "./assets/kindle-back.jpeg";
+
+Some time ago, I stumbled upon <Link href="https://usetrmnl.com/" underline accentColor="random">TRMNL</Link>, an e-ink tablet with the ability to display various dashboards, including weather data, Hacker News, calendar events, and more.
+
+<MarkdownImage alt="TRMNL Homepage" src={TrmnlImage} wide rounded="md" showCaption />
+
+I immediately fell in love with the idea, and quickly reached to the "Buy now" button, but then I thought, I have an old kindle, a 3D printer, and some coding skills, maybe i can replicate the same concept with some DYI.
+
+# The software
+
+On the software side, I had a simple list of requirements:
+
+- **Flexibility**: I wanted to be able to add any type of tool or feature, either now or in the future.
+- **Interactive**: A lot of other solutions just display an image on the screen, refreshed after a certain interval of time, in my case I wanted to be able to interact with the software, using the kindle touch screen.
+- **Simple**: One option would have been to develop a native kindle app, loaded though <Link href="https://www.mobileread.com/forums/showthread.php?t=203326" underline accentColor="random">KUAL</Link>, but would be pretty limited in functionalities, and would have forced me to learn an entire new stack for it.
+
+For all these reasons I decided to just build the dashboard as a simple website, specifically I used NextJS + Tailwind, and hosted it on vercel, the full source code is available <Link href="https://github.com/AlexPagnotta/kindle-dash" underline accentColor="random">here</Link>, if you are curious on how it works.
+
+I didn't want to make it super complex for now, so I decided to start with a basic set of features:
+
+- Date and time
+- RSS Feed widget with custom sources
+- Hacker news widet with top posts
+- Notion integration, to show tasks and field from databases
+- Screensaver, displays an image from Unsplash with dithering effect
+
+We defined the tech stack, and the fetures we need, we now need a way to display this website on the device, the Kindle has an experimental native browser, but is pretty outdated and lack some of the features we would need, so I had to take a different route, the Linux route.
+During my reasearch for this project, I came across the <Link href="https://github.com/schuhumi/alpine_kindle">Alpine Kindle project</Link>, a way to boot alpine linux directly in the kindle, this is the perfect solution for me, as it provides us with a full fledged and up to date browser where we can display the dashboard websit without any type of limitation.
+
+That said, this is not the most straightforward process, installing Alpine Linux on kindle requires jailbreak, that is not available on the latest versions of KindleOS, and several plugins/applets to be installed and configured, the entire process is pretty long, but I've added some basic instructions on the <Link href="https://github.com/AlexPagnotta/kindle-dash?tab=readme-ov-file#instructions" underline accentColor="random">project repo</Link>.
+
+# The UI
+
+I'm not a designer, so coming up with a good looking UI for me is always a challenge, even more difficult this time since the Kindle screen has a gray-scale only screen, so no colors, and a limited amount of contrast options.
+In the end I think I was able to come up with something simple but functional, I got some inspiration from the TRMNL project and <Link href="https://usetrmnl.com/framework" underline accentColor="random">their design system</Link>, with some adaptations to account for my use case.
+
+<MarkdownImage alt="Figma design" src={FigmaImage} wide rounded="md" />
+
+# The Kindle
+
+Nothing was really required on the hardware side of the Kindle, just a simple stand would be enough to have a nice lookng dashboard device on the desk, but as I said on the intro, I have a 3D printer, so why not use it to create a custom case for the occasion?
+So after a couple of hours and the help of Autodesk Fusion, I came up with a simple custom case for the Kindle, stand included, to make it as slim as possible, I decided to actually replace the original Kindle case with mine, so I had to first disassemble the Kindle, removing the plastic shell, and then place the motherboard+screen plate on the new case.
+
+<MarkdownImage alt="Autodesk Fusion Project" src={Model3DImage} wide rounded="md" />
+
+# Final Result
+
+It's now time for the big showcase (drum roll...)
+
+<MarkdownImage alt="Home screen" src={KindleHomeImage} rounded="md" showCaption />
+<MarkdownImage alt="News screen" src={KindleNewsImage} rounded="md" showCaption />
+<MarkdownImage alt="Tasks screen" src={KindleTasksImage} rounded="md" showCaption />
+<MarkdownImage alt="Screensaver feature" src={KindleScreensaverImage} rounded="md" showCaption />
+<MarkdownImage alt="Back of the custom case" src={KindleBackImage} rounded="md" showCaption />
+
+This small side project was a really fun for me, as a software dev I am used to build products, but being able to work on something that combines both software and hardware was a completely different experencies, and more importantly, the end products is something that I ended up using daily, to check my tasks for the day, be updated to the latest news, or simply to check the weather.
+
+<MarkdownFooter />
