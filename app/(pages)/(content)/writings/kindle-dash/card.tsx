@@ -14,20 +14,31 @@ import { contentMetadata } from "./metadata";
 
 export const KindleDashWritingCard = ({ aboveFold, cardProps: { className, ...rest } }: ContentCardProps) => {
   return (
-    <ContentCard className={cn("@container", className)} {...rest}>
-      <ContentCardTitle>{contentMetadata.previewTitle}</ContentCardTitle>
-      <ContentCardSubtitle>{getCardSubtitleFromMetadata(contentMetadata)}</ContentCardSubtitle>
+    <ContentCard
+      className={cn(
+        "@container group",
+        "bg-theme-card-kindle-dash-background border border-theme-card-kindle-dash-border",
+        "hover:bg-theme-card-kindle-dash-hover-background data-[highlighted]:bg-theme-card-kindle-dash-hover-background",
+        className
+      )}
+      {...rest}
+    >
+      <ContentCardTitle className="text-theme-card-kindle-dash-title-foreground">
+        {contentMetadata.previewTitle}
+      </ContentCardTitle>
+      <ContentCardSubtitle className="text-theme-card-kindle-dash-subtitle-foreground">
+        {getCardSubtitleFromMetadata(contentMetadata)}
+      </ContentCardSubtitle>
       <ContentCardBackground>
         <Image
           src={CardImage}
-          alt="Avatar of me waving"
-          sizes="220px"
+          alt="Kindle Dash"
+          sizes="240px"
           priority={aboveFold}
           className={cn(
-            "w-[400px] h-auto absolute right-0 bottom-[-20px] -rotate-6 max-w-none",
-            "@sm:w-[400px] @sm:right-[-10px] @sm:bottom-[-40px]",
-            "@md:bottom-[-20px] @md:right-[50px]",
-            "group-data-[highlighted]:-rotate-[10deg] group-data-[highlighted]:scale-110",
+            "w-[190px] h-auto absolute right-[-40px] bottom-[-30px] @sm:w-[230px] @sm:right-[-40px] @sm:bottom-[-40px]",
+            "rotate-[12deg]",
+            "group-data-[highlighted]:rotate-[8deg] group-data-[highlighted]:scale-[105%]",
             "transition-transform duration-200"
           )}
         />

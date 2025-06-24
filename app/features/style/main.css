@@ -160,6 +160,12 @@
   --color-theme-card-carousel-background-cards: var(--base-color-theme-card-carousel-background-cards);
   --color-theme-card-carousel-hover-background: var(--base-color-theme-card-carousel-hover-background);
 
+  --color-theme-card-kindle-dash-background: var(--base-color-theme-card-kindle-dash-background);
+  --color-theme-card-kindle-dash-border: var(--base-color-theme-card-kindle-dash-border);
+  --color-theme-card-kindle-dash-title-foreground: var(--base-color-theme-card-kindle-dash-title-foreground);
+  --color-theme-card-kindle-dash-subtitle-foreground: var(--base-color-theme-card-kindle-dash-subtitle-foreground);
+  --color-theme-card-kindle-dash-hover-background: var(--base-color-theme-card-kindle-dash-hover-background);
+
   --color-theme-bento-item-background: var(--base-color-theme-bento-item-background);
 
   --color-theme-blockquote-light-blue-background: var(--base-color-theme-blockquote-light-blue-background);
@@ -630,6 +636,12 @@
     --base-color-theme-card-carousel-subtitle-foreground: var(--base-color-grey-200);
     --base-color-theme-card-carousel-background-cards: var(--base-color-grey-700);
     --base-color-theme-card-carousel-hover-background: var(--base-color-grey-920);
+
+    --base-color-theme-card-kindle-dash-background: var(--base-color-white);
+    --base-color-theme-card-kindle-dash-border: var(--base-color-grey-120);
+    --base-color-theme-card-kindle-dash-title-foreground: var(--base-color-black);
+    --base-color-theme-card-kindle-dash-subtitle-foreground: var(--base-color-grey-500);
+    --base-color-theme-card-kindle-dash-hover-background: var(--base-color-grey-100);
 
     --base-color-theme-bento-item-background: var(--base-color-grey-100);
 
