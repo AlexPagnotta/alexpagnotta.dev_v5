@@ -28,17 +28,25 @@ const MarkdownSlider = ({ children, className }: SliderProps) => {
 };
 
 type MarkdownSliderImageItemProps = Pick<ImageProps, "alt" | "src"> & {
+  rounded: "none" | "md" | "lg";
   className?: string;
 };
 
-const MarkdownSliderItemImage = ({ alt, src, className }: MarkdownSliderImageItemProps) => {
+const MarkdownSliderItemImage = ({ alt, src, rounded = "lg", className }: MarkdownSliderImageItemProps) => {
   return (
     <Image
       src={src}
       alt={alt}
       placeholder="blur"
       sizes="(max-width: 640px) 100vw, 720px"
-      className={cn("shrink-0 min-w-0 h-[20rem] sm:h-[32rem] md:h-[34rem] w-auto rounded-lg select-none", className)}
+      className={cn(
+        "shrink-0 min-w-0 h-[20rem] sm:h-[32rem] md:h-[34rem] w-auto select-none",
+        {
+          "rounded-md": rounded === "md",
+          "rounded-lg": rounded === "lg",
+        },
+        className
+      )}
     />
   );
 };
